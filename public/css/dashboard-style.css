@@ -1,0 +1,243 @@
+body {
+  background-color: #FCFCFC;
+  font-size: 13px;
+}
+
+h6 { font-size: 1.5rem; margin-top: 0; }
+p { margin: 0; }
+i.medium { font-size: 80px; }
+.card,
+.card-panel { box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14); }
+
+.container-fluid {
+  padding: 1rem 1.5rem;
+  margin: auto;
+}
+.row { margin: 0 -0.75rem; }
+
+.subheader {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: rgba(0,0,0,0.54);
+}
+
+  .main { padding-left: 250px; }
+
+/* nav */
+
+nav {
+  box-shadow: 0 1px 8px rgba(0,0,0,.3);
+
+  ul a { padding: 0 12px; }
+  ul a img {
+    line-height: 56px;
+    vertical-align: middle;
+  }
+
+}
+
+nav,
+nav .nav-wrapper i,
+.navbar-fixed {
+  height: 56px;
+  line-height: 56px;
+}
+
+.nav-wrapper {
+  ul a:hover { background-color: transparent; }
+  li:first-child a { padding-left: 24px; }
+  .title { font-size: 1.4rem; }
+}
+
+.brand-logo img{
+	width: 100px;
+	margin: 5px 20px 0px 20px;
+}
+
+/* Dropdown */
+
+#menu-dropdown {
+	margin: 56px 100px 0px 0px!important;
+	width: 10% !important;
+	overflow: hidden;
+}
+
+/* BUG FIXER - não remover */
+#menu-dropdown > li > a:hover{
+	background-color: transparent !important;
+	color: #fff !important;
+}
+
+#menu-dropdown > li:hover{
+	background-color: #00bcd4 !important;
+}
+
+/* sidenav */
+
+.side-nav {
+  .active {
+    background-color: rgba(0,0,0,0.05);
+    a { color: #212121; font-weight: 500; }
+  }
+}
+
+.side-nav {
+  width: 250px;
+  top: 56px;
+  height: 100%;
+  z-index:0;
+
+  li > a,
+  li > a > i.material-icons {
+    height: 40px;
+    line-height: 40px;
+  }
+   
+  li > a > i.material-icons { margin-right: 24px; }
+    
+  li > a {
+    font-weight: normal;
+    font-size: 13px;
+    color: #616161;
+  }
+
+  li > a:hover { border-radius: 2px; }
+}
+
+.divider{
+	margin: 5px 10px !important;
+	border-color: transparent;
+	background-color: transparent;
+}
+  
+.user-details{
+	margin-bottom: 15px;
+	background: #009688; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #009688, #8bc34a); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #009688, #8bc34a); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #009688, #8bc34a); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #009688, #8bc34a); /* Standard syntax */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.avatar-text{
+	padding: 0px 15px 0px 25px;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 20px 0px 0px 25px;
+	padding-bottom: 0 !important;
+}
+
+.user-name {
+  color: white;
+  font-size: 15px;
+  text-shadow: black 1px 1px 1px;
+}
+
+.user-title {
+  color: white;
+  font-size: 13px;
+  text-shadow: black 1px 1px 1px;
+}
+
+
+/* cards */ 
+
+.card .card-action { border-top: none; }
+
+.card .card-action a { color: #fff !important; }
+
+.card-text { 
+	width: calc(100% - 60px); 
+}
+
+.card-icon i {
+  width: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, .25);
+}
+
+
+/* Avisos */
+
+.notification_content{
+	padding-right: 10px !important;
+}
+
+/* Conteúdo dinâmico */
+
+/* Caixa de Filtros */
+.filter-card .page-title{
+	font-weight: 500;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.filter-card hr{
+	background-color: transparent;
+	border: none;
+	border-bottom: #8bc34a solid 3px;
+} 
+
+/* label color */
+.input-field label {
+    color: #757575;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #8bc34a;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #8bc34a;
+    box-shadow: 0 1px 0 0 #8bc34a;
+}
+/* input radio */
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+	border-color: #8bc34a;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after{
+	border-color: #8bc34a;
+	background-color: #8bc34a;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #8bc34a;
+    box-shadow: 0 1px 0 0 #8bc34a;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+
+/* Tabela */
+tr > th{
+	border-radius: 0px;
+	text-transform: uppercase;
+}
+
+.activate-toolbar{
+	cursor: pointer;
+}
+
+.radio-table{
+	width: 10px !important;
+}
+
+/* Paginação */
+.pagination li.active {
+    background-color: #8bc34a;
+}
