@@ -10,7 +10,11 @@
                     <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">account_circle</i> <span class="left"> Perfil</span></a></li>
                     <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">settings</i> <span class="left"> Ajustes</span></a></li>
                     <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">help</i> <span class="left"> Ajuda</span></a></li>
-                    <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">exit_to_app</i> <span class="left"> Sair</span></a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="grey-text text-darken-2"><i class="material-icons left">exit_to_app</i> <span class="left"> Sair</span></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                    </li>
                 </ul>
             </ul>
         </div>
