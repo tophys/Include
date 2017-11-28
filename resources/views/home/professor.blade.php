@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="#">Criar agora</a>
+                        <a href="criar_questao.php">Criar agora</a>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,6 @@
         $('#calendar').fullCalendar({
             // put your options and callbacks here
         })
-
     });
 </script>
 @endsection

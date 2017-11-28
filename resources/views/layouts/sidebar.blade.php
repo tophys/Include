@@ -7,23 +7,23 @@
         </div>  
     </li>
     <li class="active">
-        <a href="dashboard_colaborador.html">
+        <a href="professor.php">
             <i class="material-icons blue-text text-darken-1">dashboard</i>Principal
         </a>
     </li>
     <hr class="divider">
     <li>
-        <a href="gerenciador_turma.html">
+        <a href="gerenciador_turma.php">
             <i class="material-icons">people</i>Turmas
         </a>
     </li>
     <li>
-        <a href="gerenciador_prova.html">
+        <a href="gerenciador_prova.php">
             <i class="material-icons">library_books</i>Provas
         </a>
     </li>
     <li>
-        <a href="gerenciador_questao.html">
+        <a href="gerenciador_questao.php">
             <i class="material-icons">question_answer</i>Questões
         </a>
     </li>
