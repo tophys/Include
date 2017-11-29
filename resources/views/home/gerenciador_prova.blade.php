@@ -4,10 +4,10 @@
 
 @section('plugins')
     <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+		<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
+		<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
+		<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
+		<link rel="stylesheet" href="../css/dashboard-style.css" />
 @endsection
 
 @section('conteudo')
@@ -36,10 +36,10 @@
 				</div>
 				<div class="input-field col s12 m3">
 					<select>
-					  <option value="" disabled selected>Selecione</option>
-					  <option value="1">DWEI</option>
-					  <option value="2">SWII</option>
-					  <option value="3">SRCI</option>
+						<option value="" disabled selected>Selecione</option>
+						@FOREACH ($materias as $materia)
+							<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+						@ENDFOREACH
 					</select>
 					<label>Matéria</label>
 				</div>

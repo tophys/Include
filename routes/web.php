@@ -18,6 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/dashboard/aluno', 'HomeController@dashboardAluno');
 Route::get('/dashboard/professor', 'HomeController@dashboardProfessor');
 Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
+
+Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
+
+Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
+
+Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
