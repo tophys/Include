@@ -33,9 +33,9 @@
 				<div class="input-field col s12 m3">
 					<select>
 					  <option value="" disabled selected>Selecione</option>
-					  <option value="1">DWEI</option>
-					  <option value="2">SWII</option>
-					  <option value="3">SRCI</option>
+						@FOREACH ($materias as $materia)
+						<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+					@ENDFOREACH
 					</select>
 					<label>Matéria</label>
 				</div>
@@ -70,33 +70,23 @@
 				</thead>
 
 				<tbody class="white">
-				  <tr>
-					<td class="truncate">ADS171 T1</td>
-					<td>Desenvolvimento Web I</td>
-					<td>15/05/2017</td>
-					<td>Ativa</td>
+				@FOREACH ($turmas as $turma)
+				<tr>
+					<td class="truncate">{{ $turma->	nome }}</td>
+					<td>{{ $turma->	materia_id }}</td>
+					<td>{{ $turma->	timestamps }}</td>
+
+				@if ($turma->	ativo == 1)
+   			  <td> ATIVA </td>
+        @elseif ($turma->	ativo == 0) 
+          <td> Inativa </td>
+        @endif
+
 					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
 					</td>
 				  </tr>
-				  <tr>
-						<td class="truncate">ADS171 T2</td>
-						<td>Desenvolvimento Web I</td>
-						<td>15/05/2017</td>
-						<td>Ativa</td>
-					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
-				  <tr>
-						<td class="truncate">ADS271</td>
-						<td>Desenvolvimento Web Avançado</td>
-						<td>15/05/2017</td>
-						<td>Ativa</td>
-					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
+				@ENDFOREACH
 				</tbody>
 			  </table>  
 			   <div class="fixed-action-btn toolbar">

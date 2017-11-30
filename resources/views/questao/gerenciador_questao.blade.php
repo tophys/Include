@@ -33,9 +33,9 @@
 				<div class="input-field col s12 m3">
 					<select>
 					  <option value="" disabled selected>Selecione</option>
-					  <option value="1">DWEI</option>
-					  <option value="2">SWII</option>
-					  <option value="3">SRCI</option>
+						@FOREACH ($materias as $materia)
+						<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+					@ENDFOREACH
 					</select>
 					<label>Matéria</label>
 				</div>
@@ -69,33 +69,17 @@
 				</thead>
 
 				<tbody class="white">
-				  <tr>
-					<td class="truncate">Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
-					<td>Desenvolvimento Web I</td>
-					<td>15/05/2017</td>
+				@FOREACH ($quesotes as $questao)
+				<tr>
+					<td class="truncate">{{ $questao->	descricao }}</td>
+					<td>{{ $questao->	materia_id }}</td>
+					<td>{{ $questao->	timestamps }}</td>
 					<td>Múltipla-escolha</td>
 					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
 					</td>
 				  </tr>
-				  <tr>
-						<td class="truncate">Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
-						<td>Desenvolvimento Web I</td>
-						<td>15/05/2017</td>
-						<td>Múltipla-escolha</td>
-					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
-				  <tr>
-						<td class="truncate">Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
-						<td>Desenvolvimento Web I</td>
-						<td>15/05/2017</td>
-						<td>Múltipla-escolha</td>
-					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
+				@ENDFOREACH
 				</tbody>
 			  </table>  
 			   <div class="fixed-action-btn toolbar">

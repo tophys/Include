@@ -29,9 +29,9 @@
                 <div class="input-field col s12 m3">
                         <select>
                           <option value="" disabled selected>Selecione</option>
-                          <option value="1">DWEI</option>
-                          <option value="2">SWII</option>
-                          <option value="3">SRCI</option>
+                          @FOREACH ($materias as $materia)
+                          <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+                         @ENDFOREACH
                         </select>
                         <label>Matéria</label>
                     </div>
@@ -66,9 +66,9 @@
                             <div class="input-field col s12 m3">
                                 <select>
                                   <option value="" disabled selected>Selecione</option>
-                                  <option value="1">DWEI</option>
-                                  <option value="2">SWII</option>
-                                  <option value="3">SRCI</option>
+                                  @FOREACH ($materias as $materia)
+                                  <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+                                 @ENDFOREACH
                                 </select>
                                 <label>Matéria</label>
                             </div>

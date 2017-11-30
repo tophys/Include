@@ -66,24 +66,21 @@
 				</thead>
 
 				<tbody class="white">
-				  <tr>
-					<td>Prova ADS 1ºSem</td>
-					<td>Desenvolvimento Web I</td>
-					<td>15/05/2017</td>
+				@FOREACH ($provas as $prova)
+				<tr>
+					<td class="truncate">{{ $prova->	nome }}</td>
+					<td>{{ $prova->	materia_id }}</td>
+					<td>{{ $prova->	timestamps }}</td>
+					// Finalizar aqui Steps !
 					<td>23/05/2017</td>
+        @endif
+
 					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
 					</td>
 				  </tr>
-				  <tr>
-					<td>Prova ADS 1ºSem</td>
-					<td>Desenvolvimento Web I</td>
-					<td>15/05/2017</td>
-					<td>23/05/2017</td>
-					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
+				@ENDFOREACH
+				//DELETAR ESSA ULTIMA TR APOS FINALIZAR O FOREACH
 				  <tr>
 					<td>Prova ADS 1ºSem</td>
 					<td>Desenvolvimento Web I</td>

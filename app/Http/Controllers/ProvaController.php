@@ -10,6 +10,15 @@ class ProvaController extends Controller
     public function gerenciarProva()
     {
         $materias = Materia::all()->where('ativo', 0);
-        return view('home.gerenciador_prova')->withMaterias($materias);
+        $provas = Prova::all();
+        return view('prova.gerenciador_prova')->withMaterias($materias)->withProvas($provas);
+    }
+
+    public function criarProva()
+    {
+       
+        $materias = Materia::all()->where('ativo', 0);
+        return view('prova.criar_prova')->withMaterias($materias);   
+
     }
 }

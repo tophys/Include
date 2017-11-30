@@ -8,6 +8,15 @@ class TurmaController extends Controller
 {
     public function gerenciarTurma()
     {
-        return view('home.gerenciador_turma');
+        $materias = Materia::all()->where('ativo', 0);
+        $turmas = Turma::all();
+        return view('turma.gerenciador_turma')->withMaterias($matérias)->withTurmas($turmas);
+    }
+
+    public function criarTurma()
+    {
+        $materias = Materia::all()->where('ativo', 0);
+       
+        return view('turma.criar_turma')->withMaterias($materias);
     }
 }
