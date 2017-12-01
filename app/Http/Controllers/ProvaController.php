@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Materia;
+use App\Prova;
 
 class ProvaController extends Controller
 {

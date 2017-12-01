@@ -43,6 +43,7 @@ class CreateTables extends Migration
             $table->increments('id');
             $table->string('descricao');
             $table->integer('user_id')->unsigned();
+            $table->integer('materia_id')->unsigned();
             $table->boolean('ativo');
             $table->boolean('traduzida');
             $table->timestamps();
@@ -101,6 +102,7 @@ class CreateTables extends Migration
 
         Schema::table('questoes', function(Blueprint $table){
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('materia_id')->references('id')->on('materias');
         });
 
         Schema::table('provas', function(Blueprint $table){

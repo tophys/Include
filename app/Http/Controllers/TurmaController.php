@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Materia;
+use App\Turma;
 
 class TurmaController extends Controller
 {
@@ -10,7 +12,7 @@ class TurmaController extends Controller
     {
         $materias = Materia::all()->where('ativo', 0);
         $turmas = Turma::all();
-        return view('turma.gerenciador_turma')->withMaterias($matérias)->withTurmas($turmas);
+        return view('turma.gerenciador_turma')->withMaterias($materias)->withTurmas($turmas);
     }
 
     public function criarTurma()

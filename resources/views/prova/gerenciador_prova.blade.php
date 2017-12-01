@@ -58,7 +58,7 @@
 				<thead class="light-green white-text">
 				  <tr>
 					  <th>Título</th>
-					  <th>Matéria</th>
+					  
 					  <th>Data de Criação</th>
 					  <th>Agendada</th>
 					  <th>&nbsp;</th>
@@ -69,27 +69,14 @@
 				@FOREACH ($provas as $prova)
 				<tr>
 					<td class="truncate">{{ $prova->	nome }}</td>
-					<td>{{ $prova->	materia_id }}</td>
-					<td>{{ $prova->	timestamps }}</td>
-					// Finalizar aqui Steps !
-					<td>23/05/2017</td>
-        @endif
-
-					<td>
-					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
-					</td>
-				  </tr>
-				@ENDFOREACH
-				//DELETAR ESSA ULTIMA TR APOS FINALIZAR O FOREACH
-				  <tr>
-					<td>Prova ADS 1ºSem</td>
-					<td>Desenvolvimento Web I</td>
-					<td>15/05/2017</td>
+					
+					<td>{{ $prova->created_at->format('d-m-Y h:m:s') }}</td>
 					<td>23/05/2017</td>
 					<td>
 						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
 					</td>
-				  </tr>
+				</tr>
+				@ENDFOREACH
 				</tbody>
 			  </table>  
 			   <div class="fixed-action-btn toolbar">
@@ -121,7 +108,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='js/configuracoes-datepicker.js'></script>
+	<script src='../js/configuracoes-datepicker.js'></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

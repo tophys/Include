@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Materia;
+use App\Questao;
 
 class QuestaoController extends Controller
 {
