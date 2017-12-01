@@ -17,7 +17,6 @@ class ProvaController extends Controller
 
     public function criarProva()
     {
-       
         $materias = Materia::all()->where('ativo', 0);
         return view('prova.criar_prova')->withMaterias($materias);   
 

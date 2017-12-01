@@ -25,10 +25,11 @@ Route::get('/dashboard/professor', 'HomeController@dashboardProfessor');
 Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
-Route::get('/gerenciar/novaprova','ProvaController@criarProva');
+Route::get('/nova/prova','ProvaController@criarProva');
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
-Route::get('/gerenciar/novaquestao','QuestaoController@criarQuestao');
+Route::get('/nova/questao','QuestaoController@criarQuestao');
 
 Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
-Route::get('/gerenciar/novaturma','TurmaController@criarTurma');
+Route::get('/nova/turma','TurmaController@criarTurma');
+Route::post('/nova/turma/salvar','TurmaController@salvarTurma');

@@ -15,6 +15,7 @@
 	  <div class="container-fluid">
 		<div class="row">
 		<div class="col s12 m12">
+		<form method="post" action="{{url('/nova/turma/salvar')}}">
 			<div class="card filter-card transparent z-depth-0">  
 			  <div class="card-content row">
 			  <span class="page-title light-green-text">Cadastro de turma</span>
@@ -25,27 +26,27 @@
 			  <br>
 			  <div class="row">
 				<div class="input-field col s12 m5 offset-m1">
-					<input placeholder="&nbsp;" id="turma_titulo" type="text" class="validate">
-					<label for="turma_titulo">Nome</label>
+					<input placeholder="&nbsp;" id="nome" name='nome' type="text" class="validate">
+					<label for="nome">Nome</label>
 				</div>
 				<div class="input-field col s12 m2">
 					<label>Data de Criação</label>
-					<input id="turma_criacao" type="text" value="22/11/2017" disabled readonly>
+					<input id="turma_criacao" type="text" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" disabled readonly>
 				</div>
 				<div class="input-field col s12 m3">
-					<select>
+					<select name='materia_id' id='materia_id'>
 					  <option value="" disabled selected>Selecione</option>
 						@FOREACH ($materias as $materia)
 						<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
-					@ENDFOREACH
+						@ENDFOREACH
 					</select>
 					<label>Matéria</label>
 				</div>
               </div>
               <div class="row">
                 <div class="input-field col s12 m10 offset-m1">
-                    <textarea placeholder="&nbsp;" id="turma_descricao" class="materialize-textarea"></textarea>
-                    <label for="turma_descricao">Descrição:</label>
+                    <textarea placeholder="&nbsp;" id="descricao" name='descricao' class="materialize-textarea"></textarea>
+                    <label for="descricao">Descrição:</label>
                 </div>
               </div>
 			  <div class="col sm12 m10 offset-m1">
