@@ -39,7 +39,7 @@ class ProvaController extends Controller
     public function alterarProva($id)
     {
         $prova = Prova::find($id);
-        $questoes = $prova->questoes()->all();
+        $questoes = $prova->questoes()->get();
         $materias = Materia::all();
         return view('prova.alterar_prova')->withProva($prova)->withQuestoes($questoes)->withMaterias($materias);
     }
