@@ -19,7 +19,8 @@
 			  <div class="card-content row">
 			  <span class="page-title light-green-text">Alteração de prova</span>
 			  <hr>
-              <form method="post" action="{{ route('alterar.prova') }}">
+              <form method="PUT" action="{{ route('alterar.prova', ['id' => $prova->id]) }}">
+              {{ method_field('PUT') }}
               {{ csrf_field() }}
 			  <br>
 			  <div class="row">
@@ -32,7 +33,7 @@
                           <option value="" disabled>Selecione</option>
                           @FOREACH ($materias as $materia)
                           <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
-                         @ENDFOREACH
+                          @ENDFOREACH
                         </select>
                         <label>Matéria</label>
                     </div>
@@ -45,10 +46,10 @@
                   <div class="col s12 m12" id="questions-results">
                     <ul class="collection with-header">
                         <li class="collection-header light-green"><span class="page-title white-text">Questões</span></li>
-                        @FOREACH ($provas as $prova)
+                        @FOREACH ($questoes as $questao)
                         <li class="collection-item">
                         <div>
-                                <span>{{ $prova -> questao()-> first() -> descricao }} </span>
+                                <span>{{ $questao->descricao }} </span>
                                 <button href="#!" class="secondary-content"><i class="material-icons light-green-text">add</i></button>
                             </div>
                             </li>
@@ -59,7 +60,7 @@
               <div class="row">
                     <br>
                     <div class="col sm12 m3 right">
-                      <button class="waves-effect right waves-light btn orange lighten-1" href="gerenciar_prova.html">Salvar Alterações</button>
+                      <button class="waves-effect right waves-light btn orange lighten-1" >Salvar Alterações</button>
                     </div>
                 </div>
 			  </form>

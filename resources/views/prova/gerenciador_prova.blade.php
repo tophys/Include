@@ -73,19 +73,19 @@
 					<td>{{ $prova->created_at->format('d-m-Y h:m:s') }}</td>
 					<td>23/05/2017</td>
 					<td>
-						<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+						<a href=" {{route('alterar.prova', ['id' => $prova->id])}} "><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
 					</td>
 				</tr>
 				@ENDFOREACH
 				</tbody>
 			  </table>  
 			   <div class="fixed-action-btn toolbar">
-				<ul>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">block</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">search</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">edit</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">delete</i></a></li>
-				</ul>
+					<ul>
+						<li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">block</i></a></li>
+						<li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">search</i></a></li>
+						<li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">edit</i></a></li>
+						<li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">delete</i></a></li>
+					</ul>
 			  </div>
 		</div>
 		<div class="col s12 m12 center">

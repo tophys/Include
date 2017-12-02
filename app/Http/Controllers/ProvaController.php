@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Materia;
 use App\Prova;
 use Illuminate\Support\Facades\Auth;
+use App\Questao;
 
 class ProvaController extends Controller
 {
@@ -34,4 +35,18 @@ class ProvaController extends Controller
         $prova->save();
         return 'Prova salva com êxito!';
     }
+
+    public function alterarProva($id)
+    {
+        $prova = Prova::find($id);
+        $questoes = $prova->questoes()->all();
+        $materias = Materia::all();
+        return view('prova.alterar_prova')->withProva($prova)->withQuestoes($questoes)->withMaterias($materias);
+    }
+
+    public function salvarAlteracaoProva(Request $data)
+    {
+
+    }
+
 }

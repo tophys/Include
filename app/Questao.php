@@ -12,4 +12,9 @@ class Questao extends Model
     {
         $this->belongsTo('App\Materia');
     }
+
+    public function provas()
+    {
+        $this->belongsToMany('App\Prova');
+    }
 }
