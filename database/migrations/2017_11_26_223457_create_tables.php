@@ -53,7 +53,6 @@ class CreateTables extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('nome');
-            $table->string('descricao');
             $table->timestamps();
         });
 

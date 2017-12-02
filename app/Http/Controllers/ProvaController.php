@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Materia;
 use App\Prova;
+use Illuminate\Support\Facades\Auth;
 
 class ProvaController extends Controller
 {
@@ -24,10 +25,13 @@ class ProvaController extends Controller
     public function salvarProva(Request $data)
     {
         $this->validate($data,array(
-            '' => '',
-            '' => ''
+            'nome' => 'required|max:255',
+            'materia_id' => 'required|integer'
         ));
         $prova = new Prova();
-
+        $prova->nome = $data->nome;
+        $prova->user_id = Auth::user()->id;
+        $prova->save();
+        return 'Prova salva com êxito!';
     }
 }
