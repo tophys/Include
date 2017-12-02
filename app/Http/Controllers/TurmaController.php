@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Materia;
 use App\Turma;
+use Illuminate\Support\Facades\Auth;
 
 class TurmaController extends Controller
 {
@@ -33,7 +34,9 @@ class TurmaController extends Controller
         $turma->nome = $data->nome;
         $turma->descricao = $data->descricao;
         $turma->materia_id = $data->materia_id;
-        $turma.save();
+        $turma->user_id = Auth::user()->id;
+        $turma->ativo = 0;
+        $turma->save();
         return 'Turma Salva com êxito!';
     }
 }
