@@ -19,7 +19,8 @@
 			  <div class="card-content row">
 			  <span class="page-title light-green-text">Alteração de prova</span>
 			  <hr>
-			  <form>
+              <form method="post" action="{{ route('alterar.prova') }}">
+              {{ csrf_field() }}
 			  <br>
 			  <div class="row">
                 <div class="input-field col s12 m7">
