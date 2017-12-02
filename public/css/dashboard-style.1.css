@@ -217,11 +217,6 @@ nav .nav-wrapper i,
 	border-color: #8bc34a;
 	background-color: #8bc34a;
 }
-
-.radio-button-label label{
-  color: #212121 !important;
-}
-
 /* Botão Switch */
 .switch label input[type=checkbox]:checked+.lever, 
 .switch label input[type=checkbox]:checked+.lever:after{
@@ -260,22 +255,4 @@ tr > th{
 /* Paginação */
 .pagination li.active {
     background-color: #8bc34a;
-}
-
-/* Conf de exibição das questões  */
-.question-number{
-  font-weight: 800;
-}
-
-.question-content{
-  margin: 5%;
-}
-
-.collapsible-body{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.dropdown-content{
-  z-index: 100000;
 }

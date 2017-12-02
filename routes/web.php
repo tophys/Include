@@ -37,5 +37,8 @@ Route::get('/nova/questao','QuestaoController@criarQuestao');
 Route::post('/nova/questao',['as' => 'nova.questao','uses' =>'QuestaoController@salvarQuestao']);
 Route::get('/nova/turma','TurmaController@criarTurma');
 Route::post('/nova/turma', [ 'as' => 'nova.turma', 'uses' => 'TurmaController@salvarTurma']);
+Route::get('/nova/alternativa', 'AlternativaController@criarAlternativa');
+Route::post('/nova/alternativa', [ 'as' => 'nova.alternativa', 'uses' => 'AlternativaController@salvarAlternativa']);
+
 
 
