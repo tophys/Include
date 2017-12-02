@@ -27,7 +27,8 @@ Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/nova/prova','ProvaController@criarProva');
 Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);
-Route::post('/alterar/prova',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
+Route::get('/alterar/prova/{id}','ProvaController@alterarProva');
+Route::post('/alterar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/nova/questao','QuestaoController@criarQuestao');
