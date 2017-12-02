@@ -30,6 +30,8 @@ Route::put('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaCont
 Route::get('/gerenciar/prova/{id}/selecionar','QuestaoController@selecionarQuestaoProva');
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
+Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
+Route::put('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@salvarAlteracaoQuestao']);
 
 Route::get('/nova/prova','ProvaController@criarProva');
 Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);
