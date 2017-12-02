@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bemvindo');
 });
 
 Auth::routes();
@@ -32,4 +32,4 @@ Route::get('/nova/questao','QuestaoController@criarQuestao');
 
 Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
 Route::get('/nova/turma','TurmaController@criarTurma');
-Route::post('/nova/turma/salvar','TurmaController@salvarTurma');
+Route::post('/nova/turma','TurmaController@salvarTurma');
