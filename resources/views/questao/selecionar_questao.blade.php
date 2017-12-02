@@ -75,6 +75,12 @@
                        @ENDFOREACH                       
                     </ul>
                     </div>
+                    <div class="col s12 m12 center">
+                        <ul class="pagination">
+                            <li class="waves-effect disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
                 </div>
 			  <div class="row">
                   <br>
