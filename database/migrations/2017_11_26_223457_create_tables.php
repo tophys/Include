@@ -41,7 +41,7 @@ class CreateTables extends Migration
 
         Schema::create('questoes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descricao');
+            $table->text('descricao');
             $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
             $table->boolean('ativo');
