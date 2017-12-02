@@ -24,11 +24,11 @@
 			  <br>
 			  <div class="row">
                 <div class="input-field col s12 m7">
-                    <input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate" value="Prova de ADS - 1º Semestre">
-                    <label for="prova_titulo">Título</label>
+                    <input placeholder="&nbsp;" id="nome" type="text" class="validate" value="{{$prova -> nome}}">
+                    <label for="nome">Título</label>
                 </div>
                 <div class="input-field col s12 m3">
-                        <select>
+                        <select name='materia_id'>
                           <option value="" disabled>Selecione</option>
                           @FOREACH ($materias as $materia)
                           <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
@@ -38,43 +38,21 @@
                     </div>
                     <div class="input-field col s12 m2">
                             <label for="prova_criacao">Data de Criação</label>
-                            <input id="prova_criacao" type="text" value="22/11/2017" disabled readonly>
+                            <input id="prova_criacao" type="text" value="{{$prova -> created_at-> format('d-m-Y')}}" disabled readonly>
                         </div>
               </div>
               <div class="row">
                   <div class="col s12 m12" id="questions-results">
                     <ul class="collection with-header">
                         <li class="collection-header light-green"><span class="page-title white-text">Questões</span></li>
+                        @FOREACH ($provas as $prova)
                         <li class="collection-item">
-                            <div>
-                                <span>Os teclados que são desenvolvidos no padrão
-                                        ABNT2 não possuem o caractere cedilha. </span>
-                                <a href="#!" class="secondary-content"><i class="material-icons light-green-text">delete</i></a>
+                        <div>
+                                <span>{{ $prova -> questao()-> first() -> descricao }} </span>
+                                <button href="#!" class="secondary-content"><i class="material-icons light-green-text">add</i></button>
                             </div>
-                        </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>Entre os dispositivos de entrada de dados em
-                                        informática, incluem-se:</span>
-                                <a href="#!" class="secondary-content"><i class="material-icons light-green-text">delete</i></a>
-                            </div>
-                        </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>Para a recuperação de arquivos em HD
-                                        danificado, um dos procedimentos
-                                        normalmente utilizados é o Particionar. </span>
-                                <a href="#!" class="secondary-content"><i class="material-icons light-green-text">delete</i></a>
-                            </div>
-                        </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>A menor unidade de informação armazenável em
-                                        um computador é o byte, suficiente, em muitos
-                                        casos, para armazenar um caracter. </span>
-                                <a href="#!" class="secondary-content"><i class="material-icons light-green-text">delete</i></a>
-                            </div>
-                        </li>
+                            </li>
+                       @ENDFOREACH                        
                     </ul>
                     </div>
               </div>
@@ -92,7 +70,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='js/configuracoes-datepicker.js'></script>
+	<script src='../js/configuracoes-datepicker.js'></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

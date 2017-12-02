@@ -35,7 +35,7 @@
 					<input placeholder="&nbsp;" id="prova_agenda" type="text" class="datepicker" readonly>
 				</div>
 				<div class="input-field col s12 m3">
-					<select>
+					<select name='materia_id'>
 						<option value="" disabled selected>Selecione</option>
 						@FOREACH ($materias as $materia)
 							<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
