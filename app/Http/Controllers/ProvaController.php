@@ -19,6 +19,15 @@ class ProvaController extends Controller
     {
         $materias = Materia::all()->where('ativo', 0);
         return view('prova.criar_prova')->withMaterias($materias);   
+    }
+
+    public function salvarProva(Request $data)
+    {
+        $this->validate($data,array(
+            '' => '',
+            '' => ''
+        ));
+        $prova = new Prova();
 
     }
 }

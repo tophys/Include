@@ -72,8 +72,8 @@
 				<tbody class="white">
 				@FOREACH ($turmas as $turma)
 				<tr>
-					<td class="truncate">{{ $turma->	nome }}</td>
-					<td>{{ $turma->	materia_id }}</td>
+					<td class="truncate">{{ $turma->nome }}</td>
+					<td>{{ $turma->materia()->first()->nome }}</td>
 					<td>{{ $turma->	timestamps }}</td>
 
 				@if ($turma->	ativo == 1)

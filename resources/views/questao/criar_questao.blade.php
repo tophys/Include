@@ -37,7 +37,7 @@
 					<select>
 					  <option value="" disabled selected>Selecione</option>
 						@FOREACH ($materias as $materia)
-						<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+						<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
 					@ENDFOREACH
 					</select>
 					<label>Matéria</label>

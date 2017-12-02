@@ -71,9 +71,9 @@
 				<tbody class="white">
 				@FOREACH ($questoes as $questao)
 				<tr>
-					<td class="truncate">{{ $questao->	descricao }}</td>
-					<td>{{ $questao->	materia_id }}</td>
-					<td>{{ $questao->	timestamps }}</td>
+					<td class="truncate">{{ $questao->descricao }}</td>
+					<td>{{ $questao->meteria()->first()->nome }}</td>
+					<td>{{ $questao->timestamps }}</td>
 					<td>Múltipla-escolha</td>
 					<td>
 					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
