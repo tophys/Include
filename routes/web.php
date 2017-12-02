@@ -26,6 +26,7 @@ Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/nova/prova','ProvaController@criarProva');
+Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'QuestaoController@salvarQuestao']);
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/nova/questao','QuestaoController@criarQuestao');

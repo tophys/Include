@@ -76,9 +76,9 @@
 					<td>{{ $turma->materia()->first()->nome }}</td>
 					<td>{{ $turma->	timestamps }}</td>
 
-				@if ($turma->	ativo == 1)
-   			  <td> ATIVA </td>
-        @elseif ($turma->	ativo == 0) 
+				@if ($turma->	ativo == 0)
+   			  <td> Ativa </td>
+        @else
           <td> Inativa </td>
         @endif
 
