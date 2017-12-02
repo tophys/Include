@@ -22,7 +22,7 @@ class TurmaController extends Controller
         return view('turma.criar_turma')->withMaterias($materias);
     }
 
-    public function salvarTurma($data)
+    public function salvarTurma(Request $data)
     {
         $turma = new Turma();
         $turma->nome = $data['nome'];

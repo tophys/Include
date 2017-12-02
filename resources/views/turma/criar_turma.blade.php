@@ -50,7 +50,7 @@
                 </div>
               </div>
 			  <div class="col sm12 m10 offset-m1">
-				<a class="waves-effect right waves-light btn orange lighten-1">Salvar</a>
+				<button class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
 			  </div>
 			  </form>
 			  </div>
