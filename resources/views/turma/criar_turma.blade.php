@@ -15,7 +15,7 @@
 	  <div class="container-fluid">
 		<div class="row">
 		<div class="col s12 m12">
-		<form method="post" action="{{ route('nova/prova') }}">
+		<form method="post" action="{{ route('nova.turma') }}">
 			<div class="card filter-card transparent z-depth-0">  
 			  <div class="card-content row">
 			  <span class="page-title light-green-text">Cadastro de turma</span>

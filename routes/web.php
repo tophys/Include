@@ -32,4 +32,4 @@ Route::get('/nova/questao','QuestaoController@criarQuestao');
 
 Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
 Route::get('/nova/turma','TurmaController@criarTurma');
-Route::post('/nova/turma','TurmaController@salvarTurma');
+Route::post('/nova/turma', [ 'as' => 'nova.turma', 'uses' => 'TurmaController@salvarTurma']);

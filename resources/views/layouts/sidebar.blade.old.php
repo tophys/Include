@@ -19,7 +19,7 @@
     <li>
     @ENDIF
         <a href="{{ url('dashboard/professor')}}">
-            <i class="material-icons text-darken-1">dashboard</i>Principal
+            <i class="material-icons blue-text text-darken-1">dashboard</i>Principal
         </a>
     </li>
     <hr class="divider">

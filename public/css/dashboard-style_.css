@@ -80,7 +80,6 @@ nav .nav-wrapper i,
     a { color: #212121; font-weight: 500; }
   }
 }
-.side-nav .active i.material-icons { color: #ff7043;}
 
 .side-nav {
   width: 250px;
@@ -200,15 +199,6 @@ nav .nav-wrapper i,
     border-bottom: 1px solid #8bc34a;
     box-shadow: 0 1px 0 0 #8bc34a;
 }
-/* label focus color textarea */
-.input-field .materialize-textarea:focus + label {
-  color: #8bc34a  !important;
-}
-/* label underline focus color textarea */
-.input-field .materialize-textarea:focus {
-  border-bottom: 1px solid #8bc34a !important;
-  box-shadow: 0 1px 0 0 #8bc34a !important;
-}
 /* input radio */
 [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
 	border-color: #8bc34a;
@@ -216,11 +206,6 @@ nav .nav-wrapper i,
 [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after{
 	border-color: #8bc34a;
 	background-color: #8bc34a;
-}
-/* Botão Switch */
-.switch label input[type=checkbox]:checked+.lever, 
-.switch label input[type=checkbox]:checked+.lever:after{
-  background-color: #8bc34a;
 }
 
 /* valid color */
