@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Include@ - Questões</title>
+	<link rel="icon" href="images/logo-icon.png">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Pacifico'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet prefetch' href='css/dashboard-style.css'>
+</head>
+
+<body>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper cyan">
+				<ul>
+					<li>
+						<a href="dashboard_colaborador.html" class="brand-logo">
+							<img src="images/logo-large.png">
+						</a>
+					</li>
+				</ul>
+				<ul class="right">
+					<li>
+						<a class="dropdown-button" href="#!" data-activates="menu-dropdown">
+							<i class="material-icons">more_vert</i>
+						</a>
+					</li>
+					<ul id="menu-dropdown" class="dropdown-content">
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">account_circle</i>
+								<span class="left"> Perfil</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">settings</i>
+								<span class="left"> Ajustes</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">help</i>
+								<span class="left"> Ajuda</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">exit_to_app</i>
+								<span class="left"> Sair</span>
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<ul class="side-nav fixed">
+		<li class="user-details cyan darken-2 avatar">
+			<img src="https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png">
+			<div class="avatar-text">
+				<span class="user-name">Carlos Coletto</span>
+				<span class="user-title">Colaborador</span>
+			</div>
+		</li>
+		<li>
+			<a href="dashboard_colaborador.html">
+				<i class="material-icons text-darken-1">dashboard</i>Principal</a>
+		</li>
+		<hr class="divider">
+		<li>
+			<a href="gerenciador_turma.html">
+				<i class="material-icons">people</i>Turmas</a>
+		</li>
+		<li>
+			<a href="gerenciador_prova.html">
+				<i class="material-icons">library_books</i>Provas</a>
+		</li>
+		<li class="active">
+			<a href="gerenciador_questao.html">
+				<i class="material-icons">question_answer</i>Questões</a>
+		</li>
+		<hr class="divider">
+		<li>
+			<a href="#">
+				<i class="material-icons">today</i>Calendário</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="material-icons">notifications_active</i>Avisos</a>
+		</li>
+	</ul>
+
+	<div class="main">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col s12 m12">
+					<div class="card filter-card transparent z-depth-0">
+						<div class="card-content">
+							<span class="page-title light-green-text">Cadastro de questão</span>
+							<hr>
+							<form>
+								<br>
+								<div class="row">
+									<div class="input-field col s12 m3 offset-m3">
+										<label for="questao_criacao">Data de Criação</label>
+										<input id="questao_criacao" type="text" value="22/11/2017" disabled readonly>
+									</div>
+									<div class="input-field col s12 m3">
+										<select>
+											<option value="" disabled>Selecione</option>
+											<option value="1" selected>DWEI</option>
+											<option value="2">SWII</option>
+											<option value="3">SRCI</option>
+										</select>
+										<label>Matéria</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12 m12">
+										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea">Um malware (software malicioso) é um software ilegal destinado a se infiltrar nos computadores. Vírus, trojanhorses, worms e spywares são considerados malwares, mas softwares legais podem ser considerados indevidamente como malwares quando:</textarea>
+										<label for="enunciado_descricao">Enunciado:</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col sm12 m3 offset-m4">
+										<a href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</a>
+									</div>
+									<div class="col sm12 m3">
+										<a href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
+									</div>
+									<div class="col sm12 m2">
+										<a href="gerenciador_questao.html" class="waves-effect right waves-light btn orange lighten-1">Salvar</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src='js/configuracoes-datepicker.js'></script>
+		<script>
+
+			$(document).ready(function () {
+				$('select').material_select();
+
+				$('.dropdown-button').dropdown({
+					hover: false, // Activate on hover
+					belowOrigin: true, // Displays dropdown below the button
+					alignment: 'right' // Displays dropdown with edge aligned to the left of button
+				}
+				);
+			});
+		</script>
+</body>
+
+</html>
