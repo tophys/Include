@@ -1,6 +1,6 @@
 @extends('layouts.padrao')
 
-@section('titulo','Criar Questões')
+@section('titulo','Alterar Questões')
 
 @section('plugins')
     <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
