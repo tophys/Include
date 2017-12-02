@@ -27,15 +27,15 @@ Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
 Route::put('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
+Route::get('/gerenciar/prova/{id}/selecionar','QuestaoController@selecionarQuestaoProva');
+Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
+Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
+
 Route::get('/nova/prova','ProvaController@criarProva');
 Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);
-
-
-
-Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/nova/questao','QuestaoController@criarQuestao');
 Route::post('/nova/questao',['as' => 'nova.questao','uses' =>'QuestaoController@salvarQuestao']);
-
-Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
 Route::get('/nova/turma','TurmaController@criarTurma');
 Route::post('/nova/turma', [ 'as' => 'nova.turma', 'uses' => 'TurmaController@salvarTurma']);
+
+

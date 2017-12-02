@@ -3,11 +3,11 @@
 @section('titulo','Selecionar Questões')
 
 @section('plugins')
-    <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+    <link rel="stylesheet" href="../../../fullcalendar/fullcalendar.min.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.min.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.css" />
+	<link rel="stylesheet" href="../../../css/dashboard-style.css" />
 @endsection
 
 @section('conteudo')
@@ -24,7 +24,7 @@
 				</div>	
               </div>
               <div class="row">
-                  <form>
+                  <form method="post" action="">
                   {{ csrf_field() }}
                     <div class="col s12 m12 card transparent z-depth-0">
                         <div class="card-content">
@@ -38,7 +38,7 @@
                                 <input placeholder="&nbsp;" id="prova_criacao" type="text" class="datepicker"  value="{{Carbon\Carbon::today()->format('d-m-Y')}}" disabled readonly>
                             </div>
                             <div class="input-field col s12 m3">
-                                <select>
+                                <select name='materia_id'>
                                   <option value="" disabled selected>Selecione</option>
                                   @FOREACH ($materias as $materia)
                                   <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
@@ -49,7 +49,7 @@
                             <div class="input-field col s12 m3">
                                 <select>
                                   <option value="" disabled selected>Selecione</option>
-                                  <option value="1">Múltipla-escolha</option>
+                                  <option value="1">Alternativa</option>
                                 </select>
                                 <label>Tipo</label>
                             </div>
@@ -93,7 +93,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='../js/configuracoes-datepicker.js'></script>
+	<script src='../../../js/configuracoes-datepicker.js'></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

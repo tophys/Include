@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Materia;
 use App\Questao;
+use App\Prova;
 use Illuminate\Support\Facades\Auth;
 
 class QuestaoController extends Controller
@@ -35,5 +36,13 @@ class QuestaoController extends Controller
         $questao->ativo = 0;
         $questao->salve();
         return 'Questão salva com êxito';
+    }
+
+    public function selecionarQuestaoProva($id)
+    {
+        $prova = Prova::find($id);
+        $materias = Materia::take(10)->get();
+        $questoes = Questao::take(10)->get();
+        return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
     }
 }
