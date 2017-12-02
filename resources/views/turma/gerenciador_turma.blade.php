@@ -1,6 +1,6 @@
 @extends('layouts.padrao')
 
-@section('titulo','Dashboard Professor')
+@section('titulo','Gerenciar Turmas')
 
 @section('plugins')
     <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
