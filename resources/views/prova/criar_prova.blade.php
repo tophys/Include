@@ -24,8 +24,8 @@
 			  <br>
 			  <div class="row">
                 <div class="input-field col s12 m7">
-                    <input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate">
-                    <label for="prova_titulo">Título</label>
+                    <input placeholder="&nbsp;" id="nome" type="text" class="validate">
+                    <label for="nome">Título</label>
                 </div>
                 <div class="input-field col s12 m3">
                 <select>

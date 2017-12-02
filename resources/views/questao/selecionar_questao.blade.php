@@ -30,8 +30,8 @@
                         <div class="card-content">
                             <div class="row">
                             <div class="input-field col s12 m4">
-                                <input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate">
-                                <label for="prova_titulo">Enunciado</label>
+                                <input placeholder="&nbsp;" id="descricao" type="text" class="validate">
+                                <label for="descricao">Enunciado</label>
                             </div>
                             <div class="input-field col s12 m2">
                                 <label>Data de Criação</label>
