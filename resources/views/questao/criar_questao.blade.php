@@ -20,6 +20,7 @@
 			  <span class="page-title light-green-text">Cadastro de questão</span>
 			  <hr>
 			  <form method="post" action="{{ route('nova.questao') }}">
+              {{ csrf_field() }}
 			  <br>
 			  <div class="row">
                 <div class="input-field col s12 m10 offset-m1">
