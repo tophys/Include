@@ -31,7 +31,11 @@
 									<select name='materia_id' id='materia_id'>
 									<option value="" disabled selected>Selecione</option>
 									@FOREACH ($materias as $materia)
-									<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
+										@IF ($materia->id == $questao->materia_id)
+										<option selected value="{{ $materia->id }}">{{ $materia->nome }}</option>
+										@ELSE
+										<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
+										@ENDIF
 									@ENDFOREACH
 									</select>
 										<label>Matéria</label>
