@@ -17,7 +17,7 @@
 				<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
 						<div class="card-content">
-							<span class="page-title light-green-text">Cadastro de questão</span>
+							<span class="page-title light-green-text">Alteração de Questão</span>
 							<hr>
 							<form method="PUT" action="{{ route('alterar.questao', ['id' => $questao->id]) }}">
                             {{ method_field('PUT') }} {{ csrf_field() }}

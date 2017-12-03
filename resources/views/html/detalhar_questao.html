@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Include@ - Provas</title>
+	<title>Include@ - Questões</title>
 	<link rel="icon" href="images/logo-icon.png">
 	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'>
 	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Pacifico'>
@@ -75,11 +75,11 @@
 			<a href="gerenciador_turma.html">
 				<i class="material-icons">people</i>Turmas</a>
 		</li>
-		<li class="active">
+		<li>
 			<a href="gerenciador_prova.html">
 				<i class="material-icons">library_books</i>Provas</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="gerenciador_questao.html">
 				<i class="material-icons">question_answer</i>Questões</a>
 		</li>
@@ -99,88 +99,80 @@
 			<div class="row">
 				<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
-						<div class="card-content row">
-							<span class="page-title light-green-text">Liberação de provas</span>
+						<div class="card-content">
+							<span class="page-title light-green-text">Detalhes da Questão</span>
 							<hr>
-							<form class="col s12 m12">
-								<br>
-								<div class="row valign-wrapper">
-									<div class="input-field col s12 m3 offset-m2">
-										<select>
-											<option value="" disabled selected>Selecione</option>
-											<option value="1">DWEI</option>
+							<br>
+							<div class="row">
+									<div class="input-field col s12 m3 offset-m3">
+										<label for="questao_criacao">Data de Criação</label>
+										<input id="questao_criacao" type="text" value="22/11/2017" disabled readonly>
+									</div>
+									<div class="input-field col s12 m3">
+										<select disabled>
+											<option value="" disabled>Selecione</option>
+											<option value="1" selected>DWEI</option>
 											<option value="2">SWII</option>
 											<option value="3">SRCI</option>
 										</select>
-										<label>Turma</label>
-									</div>
-									<div class="input-field col s12 m2">
-										<label>Data de Agendamento</label>
-										<input placeholder="&nbsp;" id="prova_agenda" type="text" class="datepicker" readonly>
-									</div>
-									<div class="col sm12 m3 center">
-										<button class="waves-effect waves-light btn orange lighten-1">Liberar Prova</button>
-									</div>
-									<div class="col sm12 m2 left">
-										&nbsp;
+										<label>Matéria</label>
 									</div>
 								</div>
-							</form>
+								<div class="row">
+									<div class="input-field col s12 m12">
+										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>Um malware (software malicioso) é um software ilegal destinado a se infiltrar nos computadores. Vírus, trojanhorses, worms e spywares são considerados malwares, mas softwares legais podem ser considerados indevidamente como malwares quando:</textarea>
+										<label for="enunciado_descricao">Enunciado:</label>
+									</div>
+								</div>
+								<div class="row">
+								<div class="col s12 m12" id="questions-results">
+									<ul class="collection with-header">
+										<li class="collection-header light-green">
+											<span class="page-title white-text">Alternativas</span>
+										</li>
+										<li class="collection-item">
+												<div class="radio-button-label">
+														<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
+														<label for="alt1">
+													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
+														um caracter.</label>
+												</div>
+										</li>
+										<li class="collection-item">
+												<div class="radio-button-label">
+														<input class="with-gap" name="alternativas" type="radio" id="alt2" disabled/>
+														<label for="alt2">
+													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
+														um caracter.</label>
+												</div>
+										</li>
+										<li class="collection-item">
+												<div class="radio-button-label">
+														<input class="with-gap" name="alternativas" type="radio" id="alt3" disabled/>
+														<label for="alt3">
+													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
+														um caracter.</label>
+												</div>
+										</li>
+										<li class="collection-item">
+											<div class="radio-button-label">
+													<input class="with-gap" name="alternativas" type="radio" id="alt4" disabled/>
+													<label for="alt4">
+												A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
+													um caracter.</label>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+									<br>
+									<div class="col sm12 m3 right">
+										<a class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_questao.html">Voltar</a>
+									</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s12 m8 offset-m2">
-					<table class="highlight centered bordered z-depth-1">
-						<thead class="light-green white-text">
-							<tr>
-								<th>Turma</th>
-								<th>Data do Agendamento</th>
-								<th>&nbsp;</th>
-							</tr>
-						</thead>
-						<tbody class="white">
-							<tr>
-								<td>ADS171</td>
-								<td>23/05/2017</td>
-								<td>
-									<!-- Se a flag for bloqueada
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
-									<!-- Se a flag for liberada-->
-									<a><i class="material-icons grey-text text-darken-1">check</i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>ADS171</td>
-								<td>23/05/2017</td>
-								<td>
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>ADS171</td>
-								<td>23/05/2017</td>
-								<td>
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col s12 m8 offset-m2 center">
-					<ul class="pagination">
-						<li class="disabled waves-effect">
-							<a href="#!">
-								<i class="material-icons">chevron_left</i>
-							</a>
-						</li>
-						<li class="waves-effect">
-							<a href="#!">
-								<i class="material-icons">chevron_right</i>
-							</a>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -188,6 +180,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<script src='js/configuracoes-datepicker.js'></script>
 		<script>
+			
 				$(document).ready(function () {
 					$('select').material_select();
 				});
