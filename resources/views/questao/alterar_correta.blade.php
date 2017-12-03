@@ -20,7 +20,7 @@
 							<span class="page-title light-green-text">Alterar Alternativa correta</span>
 							<hr>
 							<br>
-							<form>
+							<form method="post" action="">
 								<div class="row">
 								<div class="col s12 m12" id="questions-results">
 									<ul class="collection with-header">
@@ -30,7 +30,7 @@
 										@FOREACH ($alternativas as $alternativa)
 										<li class="collection-item">
 											<div class="radio-button-label">
-												@IF ($alternativa->correta)
+												@IF ($alternativa->correta == 0)
 													<input class="with-gap" checked name="alternativas" id="{{$alternativa->id}}" type="radio" value="{{$alternativa->id}}" />
 												@ELSE
 													<input class="with-gap" name="alternativas" type="radio" id="{{$alternativa->id}}" value="{{$alternativa->id}}" />
@@ -40,13 +40,14 @@
 											</div>
 										</li>
 										@ENDFOREACH	
+										<input type="hidden" name="questao_id" value="{{$id}}"/>
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="">Salvar Alterações</button>
+										<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.alternativa.correta', ['id' => $id])}}">Salvar Alterações</button>
 									</div>
 							</div>
 							</form>

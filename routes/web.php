@@ -35,6 +35,7 @@ Route::put('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'Quest
 Route::get('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);
 Route::put('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@salvarAlteracaoAlternativa']);
 Route::get('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.alternativa.correta', 'uses' => 'AlternativaController@alterarAlternativaCorreta']);
+Route::post('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.alternativa.correta', 'uses' => 'AlternativaController@salvarAlternativaCorreta']);
 
 Route::get('/nova/prova','ProvaController@criarProva');
 Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);

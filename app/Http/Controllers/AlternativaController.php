@@ -40,7 +40,19 @@ class AlternativaController extends Controller
     public function alterarAlternativaCorreta($id)
     {
         $alternativas = Questao::find($id)->alternativas()->get();
-        return view('questao.alterar_correta')->withAlternativas($alternativas);
+        return view('questao.alterar_correta')->withAlternativas($alternativas)->withId($id);
+    }
+
+    public function salvarAlternativaCorreta(Request $data)
+    {
+        $alternativaNova = Alternativa::find($data->alternativas);
+        $alternativaAntiga = Questao::find($data->questao_id)->where('correta', 0);
+        $alternativaNova->correta = 0;
+        $alternativaAntiga->correta = 1;
+        $alternativaNova->save();
+        $alternativaAntiga->save();
+        return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
+
     }
 
 }

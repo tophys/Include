@@ -63,7 +63,11 @@
 										@FOREACH ($alternativas as $alternativa)
 										<li class="collection-item">
 											<div class="radio-button-label">
+												@IF ($alternativa->correta == 0)
 												<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
+												@ELSE
+												<input class="with-gap" name="alternativas" type="radio" id="alt1" disabled/>
+												@ENDIF
 												<label id="descricao" for="alt1"> {{$alternativa -> descricao}} </label>
 												<a class="right dropdown-button" data-activates="data{{$alternativa->id}}">
 													<i class="material-icons grey-text text-darken-1">more_vert</i>
