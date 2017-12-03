@@ -76,7 +76,7 @@
 					<td>{{ $questao->timestamps }}</td>
 					<td>Múltipla-escolha</td>
 					<td>
-					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<a><i class="material-icons grey-text text-darken-1">more_vert</i></a> 
 					<ul id='data{{$questao->id}}' class='dropdown-content'>
 							<li>
 								<a href="#!">Detalhar</a>

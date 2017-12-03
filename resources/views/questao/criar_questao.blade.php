@@ -64,6 +64,14 @@
 												<a class="right">
 													<i class="material-icons grey-text text-darken-1">more_vert</i>
 												</a>
+												<ul id='data{{$alternativa->id}}' class='dropdown-content'>
+													<li>
+														<a href="{{route('alterar.alternativa', ['id' => $alternativa->id])}}">Alterar</a>
+													</li>
+													<li>
+														<a href="#!">Excluir</a>
+													</li>
+												</ul>
 											</div>
 										</li>
 										@ENDFOREACH		
