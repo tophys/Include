@@ -82,9 +82,6 @@
 								<a href="#!">Detalhar</a>
 							</li>
 							<li>
-								<a href="#!">Liberar</a>
-							</li>
-							<li>
 								<a href="{{route('alterar.questao', ['id' => $questao->id])}}">Alterar</a>
 							</li>
 							<li>
