@@ -78,12 +78,6 @@ class CreateTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('alternativa_questao', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('alternativa_id')->unsigned();
-            $table->integer('questao_id')->unsigned();
-        });
-
 
 
 
@@ -119,11 +113,6 @@ class CreateTables extends Migration
         });
 
         Schema::table('alternativas', function(Blueprint $table){
-            $table->foreign('questao_id')->references('id')->on('questoes');
-        });
-
-        Schema::table('alternativa_questao', function(Blueprint $table){
-            $table->foreign('alternativa_id')->references('id')->on('alternativas');
             $table->foreign('questao_id')->references('id')->on('questoes');
         });
 
