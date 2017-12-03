@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Alternativa;
 
 class AlternativaController extends Controller
 {
@@ -21,6 +22,17 @@ class AlternativaController extends Controller
         $this->validade($data, [
             'descricao' => 'required'
         ]);
+        $alternativa = new Alternativa();
+        if ($data->has('correta'))
+            $alternativa->correta = 0;
+        else
+        $alternativa->descricao = $data->descricao;
+        $alternativa->correta = 1;
+        $alternativa->questao_id = $data->questao_id;
+        $alternativa->traduzida = 1;
+        $alternativa->save();
+        return redirect()->route();
+        
     }
 
 }

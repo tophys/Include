@@ -27,7 +27,7 @@
                                         <div class="switch right">
                                             <label>
                                                 Errada
-                                                <input type="checkbox">
+                                                <input name="correta" value="correta" type="checkbox">
                                                 <span class="lever"></span>
                                                 Correta
                                             </label>

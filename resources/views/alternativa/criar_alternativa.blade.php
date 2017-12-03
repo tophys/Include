@@ -27,7 +27,7 @@
                                         <div class="switch right">
                                             <label>
                                                 Errada
-                                                <input value="correta" type="checkbox">
+                                                <input value="correta" name="correta" type="checkbox">
                                                 <span class="lever"></span>
                                                 Correta
                                             </label>
@@ -35,6 +35,7 @@
                                         <div class="input-field">
                                             <label for="altr_1">Alternativa</label>
                                             <input id="descricao" name="descricao" type="text">
+                                            <input hide name="questao_id" value="{{$id}}" />
                                         </div>
                                     </li>
                                 </div>
