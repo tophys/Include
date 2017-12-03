@@ -71,24 +71,31 @@
 				<tbody class="white">
 				@FOREACH ($questoes as $questao)
 				<tr>
-					<td class="truncate">{{ $questao->descricao }}</td>
-					<td>{{ $questao->meteria()->first()->nome }}</td>
+					<td>{{ $questao->descricao }}</td>
+					<td>{{ $questao->materia()->first()->nome }}</td>
 					<td>{{ $questao->timestamps }}</td>
 					<td>Múltipla-escolha</td>
 					<td>
 					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<ul id='data{{$questao->id}}' class='dropdown-content'>
+							<li>
+								<a href="#!">Detalhar</a>
+							</li>
+							<li>
+								<a href="#!">Liberar</a>
+							</li>
+							<li>
+								<a href="{{route('alterar.questao', ['id' => $questao->id])}}">Alterar</a>
+							</li>
+							<li>
+								<a href="#!">Excluir</a>
+							</li>
+						</ul> 
 					</td>
 				  </tr>
 				@ENDFOREACH
 				</tbody>
 			  </table>  
-			   <div class="fixed-action-btn toolbar">
-				<ul>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">search</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">edit</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">delete</i></a></li>
-				</ul>
-			  </div>
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
