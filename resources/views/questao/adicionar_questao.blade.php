@@ -3,11 +3,11 @@
 @section('titulo','Criar Questões')
 
 @section('plugins')
-    <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+    <link rel="stylesheet" href="../../fullcalendar/fullcalendar.min.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.min.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.css" />
+	<link rel="stylesheet" href="../../css/dashboard-style.css" />
 @endsection
 
 @section('conteudo')
@@ -31,7 +31,11 @@
 										<select name='materia_id' id='materia_id'>
 											<option value="" disabled selected>Selecione</option>
 											@FOREACH ($materias as $materia)
-											<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
+												@IF ($materia->id == $questao->materia_id)
+												<option selected value="{{ $materia->id }}">{{ $materia->nome }}</option>
+												@ELSE
+												<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
+												@ENDIF
 											@ENDFOREACH
 										</select>
 										<label>Matéria</label>
@@ -39,13 +43,13 @@
 								</div>
 								<div class="row">
 									<div class="input-field col s12 m12">
-										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea">{{ $questao->nome }}</textarea>
+										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea">{{ $questao->descricao }}</textarea>
 										<label id="descricao" for="enunciado_descricao">Enunciado:</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col sm12 m12">
-										<a href="criar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
+										<a href="" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
 									</div>
 								</div>
 							</form>
@@ -61,7 +65,7 @@
 											<div class="radio-button-label">
 												<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
 												<label id="descricao" for="alt1"> {{$alternativa -> descricao}} </label>
-												<a class="right">
+												<a class="right dropdown-button" data-activates="data{{$alternativa->id}}">
 													<i class="material-icons grey-text text-darken-1">more_vert</i>
 												</a>
 												<ul id='data{{$alternativa->id}}' class='dropdown-content'>
@@ -91,7 +95,7 @@
 			</div>
 			<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<script src='js/configuracoes-datepicker.js'></script>
+			<script src='../../js/configuracoes-datepicker.js'></script>
 			<script>
 
 			$(document).ready(function () {
