@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alternativa;
+use App\Questao;
 
 class AlternativaController extends Controller
 {
@@ -26,13 +27,20 @@ class AlternativaController extends Controller
         if ($data->has('correta'))
             $alternativa->correta = 0;
         else
+            $alternativa->correta = 1;
+
         $alternativa->descricao = $data->descricao;
-        $alternativa->correta = 1;
         $alternativa->questao_id = $data->questao_id;
         $alternativa->traduzida = 1;
         $alternativa->save();
         return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
         
+    }
+
+    public function alterarAlternativaCorreta($id)
+    {
+        $alternativas = Questao::find($id)->alternativas()->get();
+        return view('questao.alterar_correta')->withAlternativas($alternativas);
     }
 
 }

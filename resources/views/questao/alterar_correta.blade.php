@@ -3,11 +3,11 @@
 @section('titulo','Alterar alternativa Correta')
 
 @section('plugins')
-    <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+    <link rel="stylesheet" href="../../../fullcalendar/fullcalendar.min.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.min.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.css" />
+	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.css" />
+	<link rel="stylesheet" href="../../../css/dashboard-style.css" />
 @endsection
 
 @section('conteudo')
@@ -31,11 +31,11 @@
 										<li class="collection-item">
 											<div class="radio-button-label">
 												@IF ($alternativa->correta)
-													<input class="with-gap" checked name="alternativas" type="radio" value="{{$alternativa->id}}" />
+													<input class="with-gap" checked name="alternativas" id="{{$alternativa->id}}" type="radio" value="{{$alternativa->id}}" />
 												@ELSE
-													<input class="with-gap" name="alternativas" type="radio" value="{{$alternativa->id}}" />
+													<input class="with-gap" name="alternativas" type="radio" id="{{$alternativa->id}}" value="{{$alternativa->id}}" />
 												@ENDIF
-													<label for="alt1">
+													<label for="{{$alternativa->id}}" >{{$alternativa->descricao}}
 													</label>
 											</div>
 										</li>
@@ -46,7 +46,7 @@
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('/gerenciar/questao')}}">Salvar Alterações</button>
+										<button class="waves-effect right waves-light btn orange lighten-1" href="">Salvar Alterações</button>
 									</div>
 							</div>
 							</form>
@@ -57,7 +57,7 @@
 		</div>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		<script src='js/configuracoes-datepicker.js'></script>
+		<script src='../../../js/configuracoes-datepicker.js'></script>
 		<script>
 			
 				$(document).ready(function () {
