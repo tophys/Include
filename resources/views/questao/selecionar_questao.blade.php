@@ -85,7 +85,7 @@
 			  <div class="row">
                   <br>
                   <div class="col sm12 m3 offset-m6">
-					<button class="waves-effect right waves-light btn orange lighten-1" href="criar_questao.html">Criar nova questão</button>
+					<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar nova questão</a>
                   </div>
                   <div class="col sm12 m3">
 					<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.prova', ['id' => $prova->id])}}">Salvar a Prova</button>

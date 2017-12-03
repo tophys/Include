@@ -60,6 +60,7 @@ class CreateTables extends Migration
             $table->increments('id');
             $table->integer('turma_id')->unsigned();
             $table->integer('prova_id')->unsigned();
+            $table->date('data_liberada');
             $table->boolean('ativo');
         });
 

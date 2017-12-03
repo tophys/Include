@@ -30,7 +30,11 @@
 										@FOREACH ($alternativas as $alternativa)
 										<li class="collection-item">
 											<div class="radio-button-label">
+												@IF ($alternativa->correta)
+													<input class="with-gap" checked name="alternativas" type="radio" value="{{$alternativa->id}}" />
+												@ELSE
 													<input class="with-gap" name="alternativas" type="radio" value="{{$alternativa->id}}" />
+												@ENDIF
 													<label for="alt1">
 													</label>
 											</div>
