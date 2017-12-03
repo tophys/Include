@@ -38,7 +38,7 @@
 				  <p>Traduza toda uma questão.</p>
 				</div>
 				<div class="card-icon">
-				  <i class="material-icons medium valign">add_to_photos</i>
+				  <i class="material-icons medium valign">library_books</i>
 				</div>
 			  </div>
 			  <div class="card-action">
@@ -54,11 +54,11 @@
 				  <p>Traduza apenas uma alternativa.</p>
 				</div>
 				<div class="card-icon">
-				  <i class="material-icons medium valign">event_available</i>
+				  <i class="material-icons medium valign">radio_button_checked</i>
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="traduzir_alternativa.html">Traduzir</a>
+				<a href="traduzir_alternativa.html">Traduzir agora</a>
 			  </div>
 			</div>
 		  </div>
