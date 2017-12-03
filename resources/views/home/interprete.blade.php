@@ -26,7 +26,7 @@
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="traducao_prova.html">Traduzir agora</a>
+				<a href="traduzir_prova.html">Traduzir agora</a>
 			  </div>
 			</div>
 		  </div>
