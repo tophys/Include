@@ -15,4 +15,9 @@ class Materia extends Model
     {
         return $this->hasMany('App\Questao');
     }
+
+    public function provas()
+    {
+        return $this->hasMany('App\Prova');    
+    }
 }

@@ -10,4 +10,9 @@ class Prova extends Model
     {
         return $this->belongsToMany('App\Questao');
     }
+
+    public function materia()
+    {
+        return $this->belongsTo('App\Materia');
+    }
 }

@@ -81,4 +81,11 @@ class ProvaController extends Controller
         return redirect()->route('alterar.prova', ['id' => $data->id]);
     }
 
+    public function selecionarLiberacaoProva()
+    {
+        $materias = Materia::all()->where('ativo', 0);
+        $provas = Prova::all()->where('ativo', 0)->where('user_id', Auth::user()->id);
+        return view('prova.liberar_prova')->withMaterias($materias)->withProvas($provas);
+    }
+
 }

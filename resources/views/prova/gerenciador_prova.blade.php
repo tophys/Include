@@ -79,7 +79,7 @@
 								<a href="#!">Detalhar</a>
 							</li>
 							<li>
-								<a href="#!">Liberar</a>
+								<a href="{{route('liberar.prova', ['id' => $prova->id])}}">Liberar</a>
 							</li>
 							<li>
 								<a href="{{route('alterar.prova', ['id' => $prova->id])}}">Alterar</a>
