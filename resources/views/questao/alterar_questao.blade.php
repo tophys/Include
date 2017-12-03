@@ -49,13 +49,13 @@
 								</div>
 								<div class="row">
 									<div class="col sm12 m3 offset-m4">
-										<a href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</a>
+										<button href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</button>
 									</div>
 									<div class="col sm12 m3">
-										<a href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
+										<button href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</button>
 									</div>
 									<div class="col sm12 m2">
-										<a href="gerenciador_questao.html" class="waves-effect right waves-light btn orange lighten-1">Salvar</a>
+										<button href="gerenciador_questao.html" class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
 									</div>
 								</div>
 							</form>

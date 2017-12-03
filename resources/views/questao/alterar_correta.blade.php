@@ -62,13 +62,13 @@
 									</ul>
 								</div>
 							</div>
-							</form>
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<a class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_questao.html">Salvar Alterações</a>
+										<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_questao.html">Salvar Alterações</button>
 									</div>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
