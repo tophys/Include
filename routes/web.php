@@ -46,3 +46,5 @@ Route::post('/nova/alternativa', [ 'as' => 'nova.alternativa', 'uses' => 'Altern
 
 
 
+
+
