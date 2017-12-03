@@ -61,9 +61,15 @@
                             </div>
                             <div class="row">
                                 <br>
-                                <div class="col sm12 m3 right">
-                                    <button class="waves-effect right waves-light btn orange lighten-1">Salvar Alterações</button>
-                                </div>
+                                <div class="col sm12 m3 offset-m3">
+									<button class="waves-effect right waves-light btn orange lighten-1" href="criar_questao.html">Criar Questão</button>
+								</div>
+								<div class="col sm12 m3">
+									<button class="waves-effect right waves-light btn orange lighten-1" href="selecionar_questao.html">Selecionar Questões</button>
+								</div>
+								<div class="col sm12 m3">
+									<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciar_prova.html">Salvar Alterações</button>
+								</div>
                             </div>
                         </form>
                     </div>
