@@ -276,6 +276,7 @@ tr > th{
   padding-bottom: 15px;
 }
 
-.dropdown-content{
-  z-index: 100000;
+/* Tabelas - Exibição */
+td > a{
+  cursor: pointer;
 }
