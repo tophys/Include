@@ -49,7 +49,7 @@
 								</div>
 								<div class="row">
 									<div class="col sm12 m12">
-										<a href="" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
+										<a href="{{route('nova.alternativa', ['id' => $questao->id])}}" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
 									</div>
 								</div>
 							</form>

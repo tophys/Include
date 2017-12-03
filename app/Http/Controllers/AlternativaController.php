@@ -19,7 +19,7 @@ class AlternativaController extends Controller
 
     public function salvarAlternativa(Request $data)
     {
-        $this->validade($data, [
+        $this->validate($data, [
             'descricao' => 'required'
         ]);
         $alternativa = new Alternativa();
@@ -31,7 +31,7 @@ class AlternativaController extends Controller
         $alternativa->questao_id = $data->questao_id;
         $alternativa->traduzida = 1;
         $alternativa->save();
-        return redirect()->route('alterar.questao', ['id' => $questao_id]);
+        return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
         
     }
 

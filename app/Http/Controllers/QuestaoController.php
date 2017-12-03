@@ -43,7 +43,7 @@ class QuestaoController extends Controller
         $questao->ativo = 0;
         $questao->traduzida = 1;
         $questao->save();
-        return redirect()->route('criar.alternativa', ['id' => $questao->id]);
+        return redirect()->route('nova.alternativa', ['id' => $questao->id]);
     }
 
     public function selecionarQuestaoProva($id)

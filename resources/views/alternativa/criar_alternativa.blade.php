@@ -35,7 +35,7 @@
                                         <div class="input-field">
                                             <label for="altr_1">Alternativa</label>
                                             <input id="descricao" name="descricao" type="text">
-                                            <input hide name="questao_id" value="{{$id}}" />
+                                            <input type="hidden" name="questao_id" value="{{$id}}" />
                                         </div>
                                     </li>
                                 </div>
