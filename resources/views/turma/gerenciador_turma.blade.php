@@ -87,7 +87,7 @@
 					<a><i class="material-icons activate-toolbar grey-text text-darken-1">https</i></a> -->
 					<!-- Se estiver ativa-->
 					<a><i class="material-icons grey-text text-darken-1">no_encryption</i></a>
-					<a><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
+					<a href="{{route('excluir.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
 					</td>
 				  </tr>
 				@ENDFOREACH

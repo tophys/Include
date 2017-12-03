@@ -1,6 +1,6 @@
 @extends('layouts.padrao')
 
-@section('titulo','Criar Questões')
+@section('titulo','Gerenciar Questão')
 
 @section('plugins')
     <link rel="stylesheet" href="../../fullcalendar/fullcalendar.min.css" />
@@ -17,7 +17,7 @@
 				<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
 						<div class="card-content">
-							<span class="page-title light-green-text">Cadastro de questão</span>
+							<span class="page-title light-green-text">Gerenciar questão</span>
 							<hr>
 							<form method="post" action="{{ route('nova.questao') }}">
              				  {{ csrf_field() }}
@@ -77,7 +77,7 @@
 														<a href="{{route('alterar.alternativa', ['id' => $alternativa->id])}}">Alterar</a>
 													</li>
 													<li>
-														<a href="#!">Excluir</a>
+														<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
 													</li>
 												</ul>
 											</div>

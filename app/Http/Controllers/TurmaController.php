@@ -12,7 +12,7 @@ class TurmaController extends Controller
     public function gerenciarTurma()
     {
         $materias = Materia::all()->where('ativo', 0);
-        $turmas = Turma::all();
+        $turmas = Turma::all()->where('ativo', 0);
         return view('turma.gerenciador_turma')->withMaterias($materias)->withTurmas($turmas);
     }
 
@@ -38,5 +38,12 @@ class TurmaController extends Controller
         $turma->ativo = 0;
         $turma->save();
         return 'Turma Salva com êxito!';
+    }
+
+    public function excluirTurma($id)
+    {
+        return 'Aqui com o id: ' . $id;
+        Turma::where('id', $id)->update(array('ativo' => 1));
+        return redirect('/gerenciar/turma');
     }
 }

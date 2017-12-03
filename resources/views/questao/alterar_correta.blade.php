@@ -20,7 +20,8 @@
 							<span class="page-title light-green-text">Alterar Alternativa correta</span>
 							<hr>
 							<br>
-							<form method="post" action="">
+							<form method="POST"  action="{{route('alterar.alternativa.correta', ['id' => $id])}}">
+							{{ csrf_field() }}
 								<div class="row">
 								<div class="col s12 m12" id="questions-results">
 									<ul class="collection with-header">
@@ -47,7 +48,7 @@
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.alternativa.correta', ['id' => $id])}}">Salvar Alterações</button>
+										<button class="waves-effect right waves-light btn orange lighten-1">Salvar Alterações</button>
 									</div>
 							</div>
 							</form>

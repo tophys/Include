@@ -13,7 +13,7 @@ class QuestaoController extends Controller
     public function gerenciarQuestao()
     {
         $materias = Materia::all()->where('ativo', 0);
-        $questoes = Questao::all();
+        $questoes = Questao::all()->where('ativo',0);
         return view('questao.gerenciador_questao')->withMaterias($materias)->withQuestoes($questoes);
     }
     public function criarQuestao()
@@ -61,5 +61,11 @@ class QuestaoController extends Controller
         $alternativas = $questao->alternativas()->get();
         $materias = Materia::all();
         return view('questao.adicionar_questao')->withQuestao($questao)->withAlternativas($alternativas)->withMaterias($materias);
+    }
+
+    public function excluirQuestao($id)
+    {
+        Questao::where('id',$id)->update(array('ativo' => 1));
+        return redirect('/gerenciar/questao');
     }
 }

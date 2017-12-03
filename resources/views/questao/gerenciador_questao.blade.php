@@ -73,7 +73,7 @@
 				<tr>
 					<td>{{ $questao->descricao }}</td>
 					<td>{{ $questao->materia()->first()->nome }}</td>
-					<td>{{ $questao->timestamps }}</td>
+					<td>{{ $questao->created_at->format('d-m-Y') }}</td>
 					<td>Múltipla-escolha</td>
 					<td>
 					<a class="dropdown-button" data-activates="data{{$questao->id}}"><i class="material-icons grey-text text-darken-1">more_vert</i></a> 
@@ -85,7 +85,7 @@
 								<a href="{{route('alterar.questao', ['id' => $questao->id])}}">Alterar</a>
 							</li>
 							<li>
-								<a href="#!">Excluir</a>
+								<a href="{{route('excluir.questao', ['id' => $questao->id])}}">Excluir</a>
 							</li>
 						</ul> 
 					</td>

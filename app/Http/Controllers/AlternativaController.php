@@ -32,6 +32,7 @@ class AlternativaController extends Controller
         $alternativa->descricao = $data->descricao;
         $alternativa->questao_id = $data->questao_id;
         $alternativa->traduzida = 1;
+        $alternativa->ativo = 0;
         $alternativa->save();
         return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
         
@@ -45,14 +46,15 @@ class AlternativaController extends Controller
 
     public function salvarAlternativaCorreta(Request $data)
     {
-        $alternativaNova = Alternativa::find($data->alternativas);
-        $alternativaAntiga = Questao::find($data->questao_id)->where('correta', 0);
-        $alternativaNova->correta = 0;
-        $alternativaAntiga->correta = 1;
-        $alternativaNova->save();
-        $alternativaAntiga->save();
+        Questao::find($data->questao_id)->alternativas()->update(array('correta' => 1));
+        Alternativa::where('id', $data->alternativas)->update(array('correta' => 0));
         return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
+    }
 
+    public function excluirAlternativa($idQuestao, $idAlternativa)
+    {
+        Alternativa::where('id', $idAlternativa)->update(array('ativo' => 1));
+        return redirect()->route('alterar.questao', ['id' => $idQuestao]);
     }
 
 }
