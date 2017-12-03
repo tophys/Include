@@ -49,10 +49,10 @@
 								</div>
 								<div class="row">
 									<div class="col sm12 m3 offset-m4">
-										<button href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</button>
+										<a href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</a>
 									</div>
 									<div class="col sm12 m3">
-										<button href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</button>
+										<a href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
 									</div>
 									<div class="col sm12 m2">
 										<button href="gerenciador_questao.html" class="waves-effect right waves-light btn orange lighten-1">Salvar</button>

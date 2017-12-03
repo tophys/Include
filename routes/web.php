@@ -33,6 +33,7 @@ Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
 Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
 Route::put('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@salvarAlteracaoQuestao']);
 
+
 Route::get('/nova/prova','ProvaController@criarProva');
 Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);
 Route::get('/nova/questao','QuestaoController@criarQuestao');

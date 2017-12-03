@@ -27,45 +27,22 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
 										</li>
-										<li class="collection-item">
-												<div class="radio-button-label">
-														<input class="with-gap" name="alternativas" type="radio" id="alt1" checked/>
-														<label for="alt1">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
-														um caracter.</label>
-												</div>
-										</li>
-										<li class="collection-item">
-												<div class="radio-button-label">
-														<input class="with-gap" name="alternativas" type="radio" id="alt2"/>
-														<label for="alt2">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
-														um caracter.</label>
-												</div>
-										</li>
-										<li class="collection-item">
-												<div class="radio-button-label">
-														<input class="with-gap" name="alternativas" type="radio" id="alt3"/>
-														<label for="alt3">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
-														um caracter.</label>
-												</div>
-										</li>
+										@FOREACH ($alternativas as $alternativa)
 										<li class="collection-item">
 											<div class="radio-button-label">
-													<input class="with-gap" name="alternativas" type="radio" id="alt4"/>
-													<label for="alt4">
-												A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar
-													um caracter.</label>
+													<input class="with-gap" name="alternativas" type="radio" value="{{$alternativa->id}}" />
+													<label for="alt1">
+													</label>
 											</div>
 										</li>
+										@ENDFOREACH	
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_questao.html">Salvar Alterações</button>
+										<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('/gerenciar/questao')}}">Salvar Alterações</button>
 									</div>
 							</div>
 							</form>

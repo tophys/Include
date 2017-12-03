@@ -70,11 +70,11 @@
 				<tr>
 					<td class="truncate">{{ $prova->	nome }}</td>
 					
-					<td>{{ $prova->created_at->format('d-m-Y h:m:s') }}</td>
+					<td>{{ $prova->created_at->format('d-m-Y') }}</td>
 					<td>23/05/2017</td>
 					<td>
-						<a href=" {{route('alterar.prova', ['id' => $prova->id])}} " class="dropdown-button" data-activates='dropdown1'><i class="material-icons grey-text text-darken-1">more_vert</i></a>
-						<ul id='dropdown1' class='dropdown-content'>
+						<a class="dropdown-button" data-activates='data{{$prova->id}}'><i class="material-icons grey-text text-darken-1">more_vert</i></a>
+						<ul id='data{{$prova->id}}' class='dropdown-content'>
 							<li>
 								<a href="#!">Detalhar</a>
 							</li>
@@ -82,7 +82,7 @@
 								<a href="#!">Liberar</a>
 							</li>
 							<li>
-								<a href="#!">Alterar</a>
+								<a href="{{route('alterar.prova', ['id' => $prova->id])}}">Alterar</a>
 							</li>
 							<li>
 								<a href="#!">Excluir</a>
