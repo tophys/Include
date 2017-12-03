@@ -83,19 +83,16 @@
         @endif
 
 					<td>
-					<a><i class="material-icons activate-toolbar grey-text text-darken-1">more_vert</i></a> 
+					<!--Se estiver inativa
+					<a><i class="material-icons activate-toolbar grey-text text-darken-1">https</i></a> -->
+					<!-- Se estiver ativa-->
+					<a><i class="material-icons grey-text text-darken-1">no_encryption</i></a>
+					<a><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
 					</td>
 				  </tr>
 				@ENDFOREACH
 				</tbody>
 			  </table>  
-			   <div class="fixed-action-btn toolbar">
-				<ul>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">search</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">edit</i></a></li>
-				  <li class="waves-effect waves-light orange lighten-1"><a href="#!"><i class="material-icons">delete</i></a></li>
-				</ul>
-			  </div>
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
