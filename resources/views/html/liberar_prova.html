@@ -100,69 +100,29 @@
 				<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
 						<div class="card-content row">
-							<span class="page-title light-green-text">Detalhes da Prova</span>
+							<span class="page-title light-green-text">Liberação de provas</span>
 							<hr>
-							<form>
+							<form class="col s12 m12">
 								<br>
-								<div class="row">
-									<div class="input-field col s12 m7">
-										<input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate" value="Prova de ADS - 1º Semestre" disabled>
-										<label for="prova_titulo">Título</label>
-									</div>
-									<div class="input-field col s12 m3">
-										<select disabled>
-											<option value="" disabled>Selecione</option>
-											<option value="1" selected>DWEI</option>
+								<div class="row valign-wrapper">
+									<div class="input-field col s12 m3 offset-m2">
+										<select>
+											<option value="" disabled selected>Selecione</option>
+											<option value="1">DWEI</option>
 											<option value="2">SWII</option>
 											<option value="3">SRCI</option>
 										</select>
-										<label>Matéria</label>
+										<label>Turma</label>
 									</div>
 									<div class="input-field col s12 m2">
-										<label for="prova_criacao">Data de Criação</label>
-										<input id="prova_criacao" type="text" value="22/11/2017" disabled readonly>
+										<label>Data de Agendamento</label>
+										<input placeholder="&nbsp;" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col s12 m12" id="questions-results">
-										<ul class="collapsible popout" data-collapsible="accordion">
-											<li>
-											<div class="collapsible-header">
-												<span>1) Os teclados que são desenvolvidos no padrão ABNT2 não possuem o caractere cedilha.</span>
-											</div>
-											<div class="collapsible-body">
-												<span class="question-content">a) Verdadeiro</span>
-												<br>
-												<span class="question-content">b) Falso</span>
-											</div>
-											</li>
-											<li>
-											<div class="collapsible-header">
-												<span>2) Os teclados que são desenvolvidos no padrão ABNT2 não possuem o caractere cedilha.</span>
-											</div>
-											<div class="collapsible-body">
-												<span class="question-content">a) Verdadeiro</span>
-												<br>
-												<span class="question-content">b) Falso</span>
-											</div>
-											</li>
-											<li>
-											<div class="collapsible-header">
-												<span>3) Os teclados que são desenvolvidos no padrão ABNT2 não possuem o caractere cedilha.</span>
-											</div>
-											<div class="collapsible-body">
-												<span class="question-content">a) Verdadeiro</span>
-												<br>
-												<span class="question-content">b) Falso</span>
-											</div>
-											</li>
-										</ul>
+									<div class="col sm12 m3 center">
+										<button class="waves-effect waves-light btn orange lighten-1">Liberar Prova</button>
 									</div>
-								</div>
-								<div class="row">
-									<br>
-									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciar_prova.html">Voltar</button>
+									<div class="col sm12 m2 left">
+										&nbsp;
 									</div>
 								</div>
 							</form>
@@ -170,16 +130,68 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col s12 m8 offset-m2">
+					<table class="highlight centered bordered z-depth-1">
+						<thead class="light-green white-text">
+							<tr>
+								<th>Turma</th>
+								<th>Data do Agendamento</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody class="white">
+							<tr>
+								<td>ADS171</td>
+								<td>23/05/2017</td>
+								<td>
+									<!-- Se a flag for bloqueada
+									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
+									<!-- Se a flag for liberada-->
+									<a><i class="material-icons grey-text text-darken-1">check</i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>ADS171</td>
+								<td>23/05/2017</td>
+								<td>
+									<a><i class="material-icons grey-text text-darken-1">block</i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>ADS171</td>
+								<td>23/05/2017</td>
+								<td>
+									<a><i class="material-icons grey-text text-darken-1">block</i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col s12 m8 offset-m2 center">
+					<ul class="pagination">
+						<li class="disabled waves-effect">
+							<a href="#!">
+								<i class="material-icons">chevron_left</i>
+							</a>
+						</li>
+						<li class="waves-effect">
+							<a href="#!">
+								<i class="material-icons">chevron_right</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='js/configuracoes-datepicker.js'></script>
-	<script>
-		$(document).ready(function () {
-				$('select').material_select();
-			});
-	</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src='js/configuracoes-datepicker.js'></script>
+		<script>
+				$(document).ready(function () {
+					$('select').material_select();
+				});
+		</script>
 </body>
 
 </html>
