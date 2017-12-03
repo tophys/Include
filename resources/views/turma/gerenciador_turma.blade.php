@@ -74,7 +74,7 @@
 				<tr>
 					<td class="truncate">{{ $turma->nome }}</td>
 					<td>{{ $turma->materia()->first()->nome }}</td>
-					<td>{{ $turma->	timestamps }}</td>
+					<td>{{ $turma->	created_at->format('d-m-Y') }}</td>
 
 				@if ($turma->	ativo == 0)
    			  <td> Ativa </td>

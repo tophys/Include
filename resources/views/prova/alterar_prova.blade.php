@@ -16,18 +16,20 @@
                     <div class="card-content row">
                         <span class="page-title light-green-text">Alteração de prova</span>
                         <hr>
-                        <form method="PUT" action="{{ route('alterar.prova', ['id' => $prova->id]) }}">
-                            {{ method_field('PUT') }} {{ csrf_field() }}
+                        <form method="post" action="{{ route('alterar.prova', ['id' => $prova->id]) }}">
+                             {{ csrf_field() }}
                             <br>
                             <div class="row">
                                 <div class="input-field col s12 m7">
-                                    <input placeholder="&nbsp;" id="nome" type="text" class="validate" value="{{$prova -> nome}}">
+                                    <input placeholder="&nbsp;" id="nome" name="nome" type="text" class="validate" value="{{$prova -> nome}}">
                                     <label for="nome">Título</label>
                                 </div>
                                 <div class="input-field col s12 m3">
+                                <input type="hidden" id="id" value="{{$prova->id}}" />
                                     <select name='materia_id'>
                                         <option value="" disabled>Selecione</option>
-                                        @FOREACH ($materias as $materia) @IF ($materia->id == $prova->materia_id)
+                                        @FOREACH ($materias as $materia) 
+                                        @IF ($materia->id == $prova->materia_id)
                                         <option selected value="{{ $materia->id }}">{{ $materia-> nome }}</option>
                                         @ELSE
                                         <option value="{{ $materia->id }}">{{ $materia-> nome }}</option>
@@ -62,13 +64,13 @@
                             <div class="row">
                                 <br>
                                 <div class="col sm12 m3 offset-m3">
-									<button class="waves-effect right waves-light btn orange lighten-1" href="criar_questao.html">Criar Questão</button>
+									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar Questão</a>
 								</div>
 								<div class="col sm12 m3">
-									<button class="waves-effect right waves-light btn orange lighten-1" href="selecionar_questao.html">Selecionar Questões</button>
+									<a class="waves-effect right waves-light btn orange lighten-1" href="#">Selecionar Questões</a>
 								</div>
 								<div class="col sm12 m3">
-									<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciar_prova.html">Salvar Alterações</button>
+									<button class="waves-effect right waves-light btn orange lighten-1" >Salvar Alterações</button>
 								</div>
                             </div>
                         </form>

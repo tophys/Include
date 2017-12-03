@@ -37,12 +37,11 @@ class TurmaController extends Controller
         $turma->user_id = Auth::user()->id;
         $turma->ativo = 0;
         $turma->save();
-        return 'Turma Salva com êxito!';
+        return redirect('/gerenciar/turma');
     }
 
     public function excluirTurma($id)
     {
-        return 'Aqui com o id: ' . $id;
         Turma::where('id', $id)->update(array('ativo' => 1));
         return redirect('/gerenciar/turma');
     }

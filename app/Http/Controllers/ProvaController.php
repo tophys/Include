@@ -13,7 +13,7 @@ class ProvaController extends Controller
     public function gerenciarProva()
     {
         $materias = Materia::all()->where('ativo', 0);
-        $provas = Prova::all();
+        $provas = Prova::all()->where('ativo', 0);
         return view('prova.gerenciador_prova')->withMaterias($materias)->withProvas($provas);
     }
 
@@ -32,6 +32,8 @@ class ProvaController extends Controller
         $prova = new Prova();
         $prova->nome = $data->nome;
         $prova->user_id = Auth::user()->id;
+        $prova->materia_id = $data->materia_id;
+        $prova->ativo = 0;
         $prova->save();
         return redirect()->route('selecionar.questao', ['id' => $prova->id]);
     }
@@ -64,9 +66,19 @@ class ProvaController extends Controller
             
     }
 
+    public function excluirProva($id)
+    {
+        Prova::where('id', $id)->update(array('ativo' => 1));
+        return redirect('/gerenciar/prova');
+    }
+
     public function salvarAlteracaoProva(Request $data)
     {
-
+        Prova::where('id', $data->id)->update(array(
+            'nome' => $data->nome,
+            'materia_id' => $data->materia_id
+        ));
+        return redirect()->route('alterar.prova', ['id' => $data->id]);
     }
 
 }

@@ -85,7 +85,7 @@
 								<a href="{{route('alterar.prova', ['id' => $prova->id])}}">Alterar</a>
 							</li>
 							<li>
-								<a href="#!">Excluir</a>
+								<a href="{{route('excluir.prova', ['id' => $prova->id])}}">Excluir</a>
 							</li>
 						</ul> 
 					</td>

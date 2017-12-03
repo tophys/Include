@@ -26,8 +26,9 @@ Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
-Route::put('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
+Route::post('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
 Route::get('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@selecionarQuestaoProva']);
+Route::get('/gerenciar/prova/{id}/excluir',['as'=> 'excluir.prova', 'uses' => 'ProvaController@excluirProva']);
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
 Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => 'TurmaController@excluirTurma']);
