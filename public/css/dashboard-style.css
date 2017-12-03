@@ -280,3 +280,7 @@ tr > th{
 td > a{
   cursor: pointer;
 }
+
+.dropdown-content > li a{
+  color: #8bc34a;
+}
