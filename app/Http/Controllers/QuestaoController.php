@@ -18,9 +18,16 @@ class QuestaoController extends Controller
     }
     public function criarQuestao()
     {
-
         $materias = Materia::all()->where('ativo', 0);
         return view('questao.criar_questao')->withMaterias($materias);
+    }
+
+    public function adicionarAlternativaQuestao($id)
+    {
+        $materias = Materia::all()->where('ativo', 0);
+        $questao = Questao::find($id);
+        $alternativas = $questao->alternativas()->get();
+        return view('questao.criar_questao')->withMaterias($materias)->withAlternativas($alternativas)->withQuestao($questao);
     }
 
     public function salvarQuestao(Request $data)
@@ -43,6 +50,7 @@ class QuestaoController extends Controller
         $prova = Prova::find($id);
         $materias = Materia::take(10)->get();
         $questoes = Questao::take(10)->get();
+
         return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
     }
 }

@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="card-action">
-                       <a href="{{ url('gerenciar/novaprova')}}">Criar agora</a>
+                       <a href="{{ url('nova/prova')}}">Criar agora</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url('gerenciar/novaquestao')}}">Criar agora</a>
+                        <a href="{{ url('nova/questao')}}">Criar agora</a>
                     </div>
                 </div>
             </div>

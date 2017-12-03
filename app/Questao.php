@@ -10,11 +10,16 @@ class Questao extends Model
 
     public function materia()
     {
-        $this->belongsTo('App\Materia');
+        return $this->belongsTo('App\Materia');
     }
 
     public function provas()
     {
-        $this->belongsToMany('App\Prova');
+        return $this->belongsToMany('App\Prova');
+    }
+
+    public function alternativas()
+    {
+        return $this->hasMany('App\Alternativa');
     }
 }

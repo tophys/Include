@@ -23,16 +23,16 @@
 			  <br>
 			  <div class="row">
 				<div class="input-field col s12 m5">
-					<input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate">
+					<input placeholder="&nbsp;" id="prova_titulo" name="nome" type="text" class="validate">
 					<label for="prova_titulo">Título</label>
 				</div>
 				<div class="input-field col s12 m2">
 					<label>Data de Criação</label>
-					<input placeholder="&nbsp;" id="prova_criacao" type="text" class="datepicker" readonly>
+					<input placeholder="" id="prova_criacao" name="data_criacao" type="text" class="datepicker" readonly>
 				</div>
 				<div class="input-field col s12 m2">
 					<label>Data de Agendamento</label>
-					<input placeholder="&nbsp;" id="prova_agenda" type="text" class="datepicker" readonly>
+					<input placeholder="" id="prova_agenda" name="data_agendamento" type="text" class="datepicker" readonly>
 				</div>
 				<div class="input-field col s12 m3">
 					<select name='materia_id'>
@@ -45,7 +45,7 @@
 				</div>
 			  </div>
 			  <div class="col sm12 m12">
-				<a class="waves-effect right waves-light btn orange lighten-1">Pesquisar</a>
+				<button class="waves-effect right waves-light btn orange lighten-1">Pesquisar</button>
 			  </div>
 			  </form>
 			  </div>

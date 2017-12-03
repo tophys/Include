@@ -19,12 +19,12 @@
 			  <div class="card-content row">
 			  <span class="page-title light-green-text">Cadastro de prova</span>
 			  <hr>
-			  <form method="post" action="{{ route('nova.prova') }}">
+			  <form method="post" action="{{ route('nova.prova')}}">
               {{ csrf_field() }}
 			  <br>
 			  <div class="row">
                 <div class="input-field col s12 m7">
-                    <input placeholder="&nbsp;" id="nome" type="text" class="validate">
+                    <input placeholder="&nbsp;" name="nome" type="text" class="validate">
                     <label for="nome">Título</label>
                 </div>
                 <div class="input-field col s12 m3">

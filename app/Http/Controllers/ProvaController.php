@@ -33,7 +33,7 @@ class ProvaController extends Controller
         $prova->nome = $data->nome;
         $prova->user_id = Auth::user()->id;
         $prova->save();
-        return 'Prova salva com êxito!';
+        return redirect()->route('selecionar.questao', ['id' => $prova->id]);
     }
 
     public function alterarProva($id)
@@ -42,6 +42,26 @@ class ProvaController extends Controller
         $questoes = $prova->questoes()->get();
         $materias = Materia::all();
         return view('prova.alterar_prova')->withProva($prova)->withQuestoes($questoes)->withMaterias($materias);
+    }
+
+    public function buscarProvaGerenciar(Request $data)
+    {
+        $query->DB::table('provas');
+        if ($data->nome != '')
+        {
+            $query->where('nome','like', '%' . $data->nome . '%');
+        }
+        if ($data->data_criacao != '')
+        {
+            $dataCriacao = strtotime($data->data_criacao);
+            $query->where('created_at', $dataCriacao);
+        }
+        if ($data->data_agendamento != '')
+        {
+
+        }
+        $provas = $query->get();
+            
     }
 
     public function salvarAlteracaoProva(Request $data)
