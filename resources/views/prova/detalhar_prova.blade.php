@@ -59,14 +59,13 @@
                                       
                                         </li>
                                         @ENDFOREACH                                           
-											
 										</ul>
 									</div>
 								</div>
 								<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciar_prova.html">Voltar</button>
+										<button class="waves-effect right waves-light btn orange lighten-1" href="{{url('gerenciar/prova')}}">Voltar</button>
 									</div>
 								</div>
 							</form>
