@@ -39,13 +39,13 @@
 								</div>
 								<div class="row">
 									<div class="input-field col s12 m12">
-										<textarea placeholder="&nbsp;" name="nome" class="materialize-textarea"></textarea>
-										<label id="descricao" for="enunciado_descricao">Enunciado:</label>
+										<textarea placeholder="&nbsp;" name="descricao" class="materialize-textarea"></textarea>
+										<label id="enunciado" for="enunciado_descricao">Enunciado:</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col sm12 m12">
-										<a href="{{ route('nova.questao') }}" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
+										<button href="{{ route('nova.questao') }}" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</button>
 									</div>
 								</div>
 							</form>

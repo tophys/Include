@@ -101,7 +101,7 @@
 			  </ul>
 		</div>
 		<div class="fixed-action-btn horizontal">
-			<a href="#" class="btn-floating btn-large red">
+			<a href="{{route('nova.questao')}}" class="btn-floating btn-large red">
 			  <i class="large material-icons deep-orange lighten-1">add</i>
 			</a>
 		</div>

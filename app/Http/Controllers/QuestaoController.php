@@ -32,7 +32,7 @@ class QuestaoController extends Controller
 
     public function salvarQuestao(Request $data)
     {
-        $this->validade($data, array(
+        $this->validate($data, array(
             'descricao' => 'required',
             'materia_id' => 'required|integer'
         ));
@@ -41,8 +41,9 @@ class QuestaoController extends Controller
         $questao->user_id = Auth::user()->id;
         $questao->materia_id = $data->materia_id;
         $questao->ativo = 0;
-        $questao->salve();
-        return 'Questão salva com êxito';
+        $questao->traduzida = 1;
+        $questao->save();
+        return redirect()->route('criar.alternativa', ['id' => $questao->id]);
     }
 
     public function selecionarQuestaoProva($id)

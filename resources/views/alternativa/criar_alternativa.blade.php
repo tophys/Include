@@ -3,11 +3,11 @@
 @section('titulo','Criar Alternativa')
 
 @section('plugins')
-    <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+    <link rel="stylesheet" href="../../fullcalendar/fullcalendar.min.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.min.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.css" />
+	<link rel="stylesheet" href="../../fullcalendar/fullcalendar.css" />
+	<link rel="stylesheet" href="../../css/dashboard-style.css" />
 @endsection
 
 @section('conteudo')
@@ -19,7 +19,7 @@
                         <div class="card-content row">
                             <span class="page-title light-green-text">Cadastro de Alternativas</span>
                             <hr>
-                            <form method="post" action="{{ route('nova.alternativa') }}">
+                            <form method="post" action="{{ route('nova.alternativa', ['id' => $id]) }}">
 	                    	{{ csrf_field() }}
                                 <br>
                                 <div class="row">
@@ -27,14 +27,14 @@
                                         <div class="switch right">
                                             <label>
                                                 Errada
-                                                <input type="checkbox">
+                                                <input value="correta" type="checkbox">
                                                 <span class="lever"></span>
                                                 Correta
                                             </label>
                                         </div>
                                         <div class="input-field">
                                             <label for="altr_1">Alternativa</label>
-                                            <input id="descricao" type="text">
+                                            <input id="descricao" name="descricao" type="text">
                                         </div>
                                     </li>
                                 </div>
@@ -52,7 +52,7 @@
         </div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script src='../js/configuracoes-datepicker.js'></script>
+        <script src='../../js/configuracoes-datepicker.js'></script>
         <script>
             $(document).ready(function () {
                 $(".activate-toolbar").click(function () {

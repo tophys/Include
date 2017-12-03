@@ -75,7 +75,7 @@ class CreateTables extends Migration
             $table->integer('questao_id')->unsigned();
             $table->boolean('correta');
             $table->boolean('traduzida');
-            $table->string('descricao');
+            $table->text('descricao');
             $table->timestamps();
         });
 
