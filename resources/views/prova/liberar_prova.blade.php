@@ -23,9 +23,12 @@
 								<br>
 								<div class="row valign-wrapper">
 									<div class="input-field col s12 m3 offset-m2">
+									<select name='materia_id' id='materia_id'>
+									<option value="" disabled selected>Selecione</option>
                                     @FOREACH ($materias as $materia)
                                     <option value="{{ $materia->id }}">{{ $materia->nome }}</option>
                                     @ENDFOREACH
+									</select>
 										<label>Turma</label>
 									</div>
 									<div class="input-field col s12 m2">
@@ -58,13 +61,17 @@
 						<tbody class="white">
                         @FOREACH ($provas as $prova)
                         <tr>
-								<td>{{ $prova->materia()->first()->nome }}</td>
+								<td>{{ $prova->turma()->first()->nome }}</td>
 								<td>{{$prova -> created_at -> format('d-m-Y')}}</td>
 								<td>
 									<!-- Se a flag for bloqueada
 									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
 									<!-- Se a flag for liberada-->
+									@IF ($prova->ativo == true)
 									<a><i class="material-icons grey-text text-darken-1">check</i></a>
+									@else
+									<a><i class="material-icons grey-text text-darken-1">block</i></a>
+									@endif
 								</td>
                             </tr>
                             @endforeach
@@ -72,7 +79,10 @@
 								<td>ADS171</td>
 								<td>23/05/2017</td>
 								<td>
+						
 									<a><i class="material-icons grey-text text-darken-1">block</i></a>
+						
+
 								</td>
 							</tr>
 							<tr>
