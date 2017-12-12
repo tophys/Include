@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'cpf' => $data['cpf'],
             'password' => bcrypt($data['password']),
             'tipoUsuario' => $tipoUsuario,
+            'avatar' => 'default.jpg',
             'ativo' => 0,
         ]);
     }

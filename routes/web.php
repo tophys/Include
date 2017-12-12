@@ -24,6 +24,9 @@ Route::get('/dashboard/aluno', 'HomeController@dashboardAluno');
 Route::get('/dashboard/professor', 'HomeController@dashboardProfessor');
 Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
 
+Route::get('/perfil','UserController@perfilUsuario');
+Route::post('/perfil','UserController@atualizarFotoUsuario');
+
 Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
 Route::post('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);

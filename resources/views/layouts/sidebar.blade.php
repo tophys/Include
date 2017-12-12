@@ -1,6 +1,6 @@
 <ul class="side-nav fixed">
     <li class="user-details cyan darken-2 avatar">
-        <img src="https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png">
+        <img src="{{asset('uploads/avatars/' .Auth::user()->avatar)}}">
         <div class="avatar-text">
             <span class="user-name">{{Auth::user()->name }}</span>
             
