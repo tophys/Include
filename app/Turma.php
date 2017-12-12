@@ -11,4 +11,9 @@ class Turma extends Model
     {
         return $this->belongsTo('App\Materia');
     }
+
+    public function agendamentos()
+    {
+        return $this->hasMany('App\Agendamento');
+    }
 }

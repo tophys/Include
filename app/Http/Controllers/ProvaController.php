@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Materia;
+use App\Turma;
 use App\Prova;
+use App\Agendamento;
 use Illuminate\Support\Facades\Auth;
 use App\Questao;
 
@@ -81,11 +83,36 @@ class ProvaController extends Controller
         return redirect()->route('alterar.prova', ['id' => $data->id]);
     }
 
-    public function selecionarLiberacaoProva()
+    public function selecionarLiberacaoProva($id)
     {
-        $materias = Materia::all()->where('ativo', 0);
-        $provas = Prova::all()->where('ativo', 0)->where('user_id', Auth::user()->id);
-        return view('prova.liberar_prova')->withMaterias($materias)->withProvas($provas);
+        $turmas = Turma::all()->where('ativo',0)->where('user_id', Auth::user()->id);
+        //$materias = Materia::all()->where('ativo', 0);
+        //$provas = Prova::all()->where('ativo', 0)->where('user_id', Auth::user()->id);
+        //$agendamentos = $provas->agendamentos()->all()->where('ativo',0);
+        $agendamentos = Agendamento::all()->where('ativo', 0)->where('professor_id', Auth::user()->id);
+        return view('prova.liberar_prova')->withTurmas($turmas)->withAgendamentos($agendamentos)->withId($id);
+    }
+
+    public function liberarAgendamentoProva(Request $data)
+    {
+        $agendamento = new Agendamento();
+        $agendamento->turma_id = $data->turma_id;
+        $agendamento->prova_id = $data->prova_id;
+        $agendamento->professor_id = Auth::user()->id;
+        $dataAgendada = \Carbon\Carbon::parse($data->data_liberada);
+        $agendamento->data_liberada = $dataAgendada->format('Y-m-d');
+        $agendamento->ativo = 0;
+        $agendamento->executado = 1;
+        $agendamento->save();
+        return redirect('liberar.agendamento', ['id' => $data->prova_id]);
+    }
+
+    public function desativarAgendamentoProva($idProva, $idAgendamento)
+    {
+        Agendamento::where('id', $idAgendamento)->update(array(
+            'ativo' => 1
+        ));
+        return redirect('liberar.prova', $idProva);
     }
 
 }

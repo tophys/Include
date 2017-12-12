@@ -58,20 +58,22 @@ class CreateTables extends Migration
             $table->timestamps();
         });
 
-
+        /*
         Schema::create('agendamento_prova', function (Blueprint $table){
             $table->increments('id');
             $table->integer('agendamento_id')->unsigned();
             $table->integer('prova_id')->unsigned();
-        });
+        });*/
 
-        Schema::create('agendamento', function(Blueprint $table){
+        Schema::create('agendamentos', function(Blueprint $table){
             $table->increments('id');
             $table->integer('turma_id')->unsigned();
             $table->integer('prova_id')->unsigned();
+            $table->integer('professor_id')->unsigned();
             $table->date('data_liberada');
             $table->boolean('ativo');
             $table->boolean('executado');
+            $table->timestamps();
         });
 
         Schema::create('prova_questao', function (Blueprint $table) {
@@ -114,10 +116,16 @@ class CreateTables extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('materia_id')->references('id')->on('materias');
         });
-
+        /*
         Schema::table('agendamento_prova', function(Blueprint $table){
             $table->foreign('prova_id')->references('id')->on('provas');
             $table->foreign('agendamento_id')->references('id')->on('agendamentos');
+        });*/
+
+        Schema::table('agendamentos', function(Blueprint $table){
+            $table->foreign('prova_id')->references('id')->on('provas');
+            $table->foreign('turma_id')->references('id')->on('turmas');
+            $table->foreign('professor_id')->references('id')->on('users');
         });
 
         Schema::table('prova_questao', function(Blueprint $table){

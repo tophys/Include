@@ -19,21 +19,23 @@
 						<div class="card-content row">
 							<span class="page-title light-green-text">Liberação de provas</span>
 							<hr>
-							<form class="col s12 m12">
+							<form method="post" action="{{ route('liberar.agendamento', ['id' => $id]) }}" class="col s12 m12">
+							{{ csrf_field() }}
 								<br>
 								<div class="row valign-wrapper">
+									<input type="hidden" name="prova_id" value="{{$id}}"/>
 									<div class="input-field col s12 m3 offset-m2">
-									<select name='materia_id' id='materia_id'>
+									<select name='turma_id' id='turma_id'>
 									<option value="" disabled selected>Selecione</option>
-                                    @FOREACH ($materias as $materia)
-                                    <option value="{{ $materia->id }}">{{ $materia->nome }}</option>
+                                    @FOREACH ($turmas as $turma)
+                                    <option value="{{ $turma->id }}">{{ $turma->nome }}</option>
                                     @ENDFOREACH
 									</select>
 										<label>Turma</label>
 									</div>
 									<div class="input-field col s12 m2">
 										<label>Data de Agendamento</label>
-										<input placeholder="&nbsp;" id="prova_agenda" type="text" class="datepicker" readonly>
+										<input placeholder="&nbsp;" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
 									<div class="col sm12 m3 center">
 										<button class="waves-effect waves-light btn orange lighten-1">Liberar Prova</button>
@@ -55,43 +57,28 @@
                         <tr>
 								<th>Turma</th>
 								<th>Data do Agendamento</th>
+								<th>Prova</th>
 								<th>&nbsp;</th>
 							</tr>
 						</thead>
 						<tbody class="white">
-                        @FOREACH ($provas as $prova)
+                        @FOREACH ($agendamentos as $agendamento)
                         <tr>
-								<td>{{ $prova->turma()->first()->nome }}</td>
-								<td>{{$prova -> created_at -> format('d-m-Y')}}</td>
+								<td>{{$agendamento->turma->nome }}</td>
+								<td>{{ Carbon\Carbon::parse($agendamento->data_liberada)->format('d-m-Y') }}</td>
+								<td>{{$agendamento->prova->nome}}</td>
 								<td>
 									<!-- Se a flag for bloqueada
 									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
 									<!-- Se a flag for liberada-->
-									@IF ($prova->ativo == true)
-									<a><i class="material-icons grey-text text-darken-1">check</i></a>
+									@IF ($agendamento->executado == 0)
+									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">check</i></a>
 									@else
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>
+									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">block</i></a>
 									@endif
 								</td>
                             </tr>
                             @endforeach
-							<tr>
-								<td>ADS171</td>
-								<td>23/05/2017</td>
-								<td>
-						
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>
-						
-
-								</td>
-							</tr>
-							<tr>
-								<td>ADS171</td>
-								<td>23/05/2017</td>
-								<td>
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>
-								</td>
-							</tr>
 						</tbody>
 					</table>
 				</div>

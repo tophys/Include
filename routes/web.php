@@ -30,13 +30,17 @@ Route::post('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaCon
 Route::get('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@selecionarQuestaoProva']);
 Route::get('/gerenciar/prova/{id}/excluir',['as'=> 'excluir.prova', 'uses' => 'ProvaController@excluirProva']);
 Route::get('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.prova', 'uses' => 'ProvaController@selecionarLiberacaoProva']);
+Route::get('/gerenciar/prova/{id}/{agendamento}/desativar',['as'=> 'desativar.agendamento', 'uses' => 'ProvaController@desativarAgendamentoProva']);
+Route::post('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.agendamento', 'uses' => 'ProvaController@liberarAgendamentoProva']);
+
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
-Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
-Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => 'TurmaController@excluirTurma']);
 Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
 Route::put('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@salvarAlteracaoQuestao']);
 Route::get('/gerenciar/questao/{id}/{alternativa}/excluir', ['as'=> 'excluir.alternativa', 'uses' => 'AlternativaController@excluirAlternativa'] );
 Route::get('/gerenciar/questao/{id}/excluir', ['as'=> 'excluir.questao', 'uses' => 'QuestaoController@excluirQuestao']);
+
+Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
+Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => 'TurmaController@excluirTurma']);
 
 
 Route::get('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);
