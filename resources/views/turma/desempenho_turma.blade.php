@@ -24,43 +24,17 @@
 		<div class="row">
 			<div class="col s12 m12">
 			 <ul class="collection">
-
+			 @FOREACH ($users as $user)
     <li class="collection-item avatar">
       <img src="https://1r65zzvfjgtwegsn-zippykid.netdna-ssl.com/wp-content/uploads/2014/02/David-Sparks-300x271.jpeg" alt="" class="circle">
-      <span class="title">Luis Guilherme Marques Lino</span>
+      <span class="title">{{ $user->	nome }}</span>
       <p>Acertos: <b>7/10</b><br>
          Erros: <b>3/10</b>
       </p>
       <a href="#!" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
 		</li>
-		
-    <li class="collection-item avatar">
-				<img src="https://avatars.githubusercontent.com/u/898384?v=3" alt="" class="circle">
-				<span class="title">Luiz Carlos Burgos Faleiro Filho</span>
-				<p>Acertos: <b>7/10</b><br>
-					 Erros: <b>3/10</b>
-				</p>
-				<a href="#!" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-			</li>
-
-    <li class="collection-item avatar">
-      <img src="https://uturnpodcast.com/wp/wp-content/uploads/2016/05/P2100158.jpg" alt="" class="circle">
-      <span class="title">Paulo Passos Santiago</span>
-      <p>Acertos: <b>7/10</b><br>
-         Erros: <b>3/10</b>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-		</li>
-		
-    <li class="collection-item avatar">
-      <img src="https://media.nngroup.com/media/people/photos/IMG_2009_copy-retouched-square-closer-800px.jpg.400x400_q95_autocrop_crop_upscale.jpg" alt="" class="circle">
-      <span class="title">Stephanie Benites Lubatchewsky</span>
-      <p>Acertos: <b>7/10</b><br>
-         Erros: <b>3/10</b>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-		</li>
-		
+		@ENDFOREACH
+	
   </ul>
 		  </div>
 		</div>
