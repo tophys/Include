@@ -83,7 +83,7 @@
                     <td> Inativa </td>
                 @endif
                     <td>
-					    <a href="{{route('desempenho.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">style</i></a> 
+					    <a href="{{route('desempenho.prova', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">style</i></a> 
 					</td>
                     <td>
                         <a href="{{route('excluir.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 

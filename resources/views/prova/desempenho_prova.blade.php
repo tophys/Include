@@ -16,110 +16,31 @@
 	  <div class="row">
 			<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
-						<span class="page-title light-green-text">Provas do ADS171</span>
+						<span class="page-title light-green-text">Provas do {{ $materia->	nome }}</span>
 						<hr>
 					</div>
 			</div>
 		</div>
 		<div class="row">
+			@FOREACH ($provas as $prova)
 		  <div class="col s12 m4">
 			<div class="card orange lighten-1 white-text">  
 			  <div class="card-content valign-wrapper">
 				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
+				  <h6>{{ $materia->	nome }}</h6>
+				  <p>{{ $prova->	nome }}</p>
 				</div>
 				<div class="card-icon">
 				  <i class="material-icons medium valign">library_books</i>
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">library_books</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">library_books</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
+				<a href="{{route('desempenho.turma', ['id' => $turma->id])}}">Ver desempenho</a>
 			  </div>
 			</div>
 			</div>
-			<div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">library_books</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
-			  </div>
-			</div>
-			</div>
-			<div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">library_books</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
-			  </div>
-			</div>
-			</div>
-			<div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova ADS 1ºSem</h6>
-				  <p>Desenvolvimento Web I</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">library_books</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="desempenho_turma.html">Ver desempenho</a>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
+			@ENDFOREACH
+		  
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
