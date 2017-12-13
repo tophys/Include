@@ -64,6 +64,12 @@
   </ul>
 		  </div>
 		</div>
+		<div class="row">
+				<br>
+				<div class="col sm12 m3 right">
+					<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_prova.html">Voltar</button>
+				</div>
+			</div>
 	  </div>
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
