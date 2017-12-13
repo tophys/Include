@@ -40,6 +40,7 @@ Route::get('/gerenciar/prova/{id}/detalhar', ['as' => 'detalhar.prova', 'uses' =
 //Verificar esta rota Luis
 //
 Route::get('/gerenciar/prova/{id}/desempenho', ['as'=> 'desempenho.prova', 'uses' => 'ProvaController@DesempenhoProva']);
+//
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
@@ -53,6 +54,7 @@ Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => '
 //Verificar esta rota Luis
 //
 Route::get('/gerenciar/turma/{id}/desempenho', ['as'=> 'desempenho.turma', 'uses' => 'TurmaController@DesempenhoTurma']);
+//
 
 Route::get('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);
 Route::put('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@salvarAlteracaoAlternativa']);
