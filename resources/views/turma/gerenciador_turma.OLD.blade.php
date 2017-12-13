@@ -31,12 +31,12 @@
 					<input placeholder="&nbsp;" id="prova_criacao" type="text" class="datepicker" readonly>
 				</div>
 				<div class="input-field col s12 m3">
-                <select>
-                <option value="" disabled selected>Selecione</option>
-                  @FOREACH ($materias as $materia)
-                  <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
-              @ENDFOREACH
-                 </select>
+					<select>
+					  <option value="" disabled selected>Selecione</option>
+						@FOREACH ($materias as $materia)
+						<option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+					@ENDFOREACH
+					</select>
 					<label>Matéria</label>
 				</div>
 				<div class="input-field col s12 m3">
@@ -65,12 +65,11 @@
 					  <th>Matéria</th>
 						<th>Data de Criação</th>
 						<th>Estado</th>
-						<th>&nbsp;</th>
-						<th>&nbsp;</th>
+					  <th>&nbsp;</th>
 				  </tr>
 				</thead>
 
-                <tbody class="white">
+				<tbody class="white">
 				@FOREACH ($turmas as $turma)
 				<tr>
 					<td class="truncate">{{ $turma->nome }}</td>
@@ -78,29 +77,27 @@
 					<td>{{ $turma->	created_at->format('d-m-Y') }}</td>
 
 				@if ($turma->	ativo == 0)
-   			         <td> Ativa </td>
-                @else
-                    <td> Inativa </td>
-                @endif
-                    <td>
-					    <a href="{{route('desempenho.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">style</i></a> 
+   			  <td> Ativa </td>
+        @else
+          <td> Inativa </td>
+        @endif
+
+					<td>
+					<a href="{{route('excluir.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
 					</td>
-                    <td>
-                        <a href="{{route('excluir.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
-                    </td>
-				    </tr>
+				  </tr>
 				@ENDFOREACH
 				</tbody>
-			   
+			  </table>  
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
-				<li class="disabled waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+				<li class="waves-effect disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 				<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 			  </ul>
 		</div>
 		<div class="fixed-action-btn horizontal">
-			<a href="#" class="btn-floating btn-large red">
+			<a href="{{ route('nova.turma') }}" class="btn-floating btn-large red">
 			  <i class="large material-icons deep-orange lighten-1">add</i>
 			</a>
 		</div>
@@ -108,7 +105,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='js/configuracoes-datepicker.js'></script>
+	<script src='../js/configuracoes-datepicker.js'></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

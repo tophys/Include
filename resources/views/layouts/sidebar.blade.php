@@ -1,5 +1,5 @@
 <ul class="side-nav fixed">
-    <li class="user-details cyan darken-2 avatar">
+<li class="user-details cyan darken-2 avatar avatar-user">
         <img src="{{asset('uploads/avatars/' .Auth::user()->avatar)}}">
         <div class="avatar-text">
             <span class="user-name">{{Auth::user()->name }}</span>
