@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Image;
 use App\User;
+use Illuminate\Http\File;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
             {
                 $path = '/uploads/avatars/';
                 $lastpath= Auth::user()->avatar;
-                File::Delete(public_path( $path . $lastpath) );
+                \File::Delete(public_path( $path . $lastpath) );
             }
             $filename = Auth::user()->cpf . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)->fit(300,300)->save(public_path("/uploads/avatars/" . $filename));

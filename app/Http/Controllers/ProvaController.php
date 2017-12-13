@@ -115,4 +115,11 @@ class ProvaController extends Controller
         return redirect('liberar.prova', $idProva);
     }
 
+    public function detalharProva($id)
+    {
+        $prova = Prova::find($id);
+        $questoes = $prova->questoes()->where('ativo', 0);
+        return view('prova.detalhar_prova')->withProva($prova)->withQuestoes($questoes);
+    }
+
 }

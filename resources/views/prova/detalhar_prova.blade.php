@@ -1,13 +1,13 @@
 @extends('layouts.padrao') 
 
-@section('titulo','Dashboard Professor') 
+@section('titulo','Detalhar Prova') 
 
 @section('plugins')
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.min.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.min.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.css" />
-<link rel="stylesheet" href="../../css/dashboard-style.css" /> 
+<link rel="stylesheet" href="{{asset('fullcalendar/fullcalendar.min.css')}}" />
+<link rel="stylesheet" href="{{asset('fullcalendar/fullcalendar.print.min.css')}}" />
+<link rel="stylesheet" href="{{asset('fullcalendar/fullcalendar.print.css')}}" />
+<link rel="stylesheet" href="{{asset('fullcalendar/fullcalendar.css')}}" />
+<link rel="stylesheet" href="{{asset('css/dashboard-style.css')}}" /> 
 @endsection 
 
 @section('conteudo')
@@ -19,20 +19,17 @@
 						<div class="card-content row">
 							<span class="page-title light-green-text">Detalhes da Prova</span>
 							<hr>
-                            <form method="post" action="{{ route('detalhar.prova') }}">
-             				  {{ csrf_field() }}
+                            <form >
+             				  
 								<br>
 								<div class="row">
 									<div class="input-field col s12 m7">
-										<input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate" value="Prova de ADS - 1º Semestre" disabled>
+										<input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate" value="{{$prova->nome}}" disabled>
 										<label for="prova_titulo">Título</label>
 									</div>
 									<div class="input-field col s12 m3">
 									<select disable name='materia_id' id='materia_id'>
-                                    <option value="" disabled selected>Selecione</option>
-                                    @FOREACH ($materias as $materia)
-                                    <option value="{{ $materia->id }}">{{ $materia->nome }}</option>
-                                    @ENDFOREACH
+                                    <option  disabled selected>{{$prova->materia->nome}}</option>
                                     </select>
 										<label>Matéria</label>
 									</div>
@@ -65,7 +62,7 @@
 								<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1" href="{{url('gerenciar/prova')}}">Voltar</button>
+										<a class="waves-effect right waves-light btn orange lighten-1" href="{{url('gerenciar/prova')}}">Voltar</a>
 									</div>
 								</div>
 							</form>

@@ -76,7 +76,7 @@
 						<a class="dropdown-button" data-activates='data{{$prova->id}}'><i class="material-icons grey-text text-darken-1">more_vert</i></a>
 						<ul id='data{{$prova->id}}' class='dropdown-content'>
 							<li>
-								<a href="#!">Detalhar</a>
+								<a href="{{route('detalhar.prova', ['id' => $prova->id])}}">Detalhar</a>
 							</li>
 							<li>
 								<a href="{{route('liberar.prova', ['id' => $prova->id])}}">Liberar</a>

@@ -35,6 +35,7 @@ Route::get('/gerenciar/prova/{id}/excluir',['as'=> 'excluir.prova', 'uses' => 'P
 Route::get('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.prova', 'uses' => 'ProvaController@selecionarLiberacaoProva']);
 Route::get('/gerenciar/prova/{id}/{agendamento}/desativar',['as'=> 'desativar.agendamento', 'uses' => 'ProvaController@desativarAgendamentoProva']);
 Route::post('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.agendamento', 'uses' => 'ProvaController@liberarAgendamentoProva']);
+Route::get('/gerenciar/prova/{id}/detalhar', ['as' => 'detalhar.prova', 'uses' => 'ProvaController@detalharProva']);
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
 Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
