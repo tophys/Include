@@ -3,11 +3,11 @@
 @section('titulo','Criar Prova')
 
 @section('plugins')
-    <link rel="stylesheet" href="../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../css/dashboard-style.css" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.min.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.min.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.css')}}" />
+<link rel="stylesheet" href="{{asset('/css/dashboard-style.css')}}" />
 @endsection
 
 @section('conteudo')
@@ -55,7 +55,8 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='../js/configuracoes-datepicker.js'></script>
+	<script src="{{ asset('js/configuracoes-datepicker.js') }}"></script>
+
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

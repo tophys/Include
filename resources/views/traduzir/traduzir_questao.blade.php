@@ -1,11 +1,11 @@
 @extends('layouts.padrao') 
 @section('titulo','Traduzir Questao') 
 @section('plugins')
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.min.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.min.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.print.css" />
-<link rel="stylesheet" href="../../fullcalendar/fullcalendar.css" />
-<link rel="stylesheet" href="../../css/dashboard-style.css" /> 
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.min.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.min.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.css')}}" />
+<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.css')}}" />
+<link rel="stylesheet" href="{{asset('/css/dashboard-style.css')}}" />
 @endsection 
 @section('conteudo')
 <div class="main">
@@ -22,6 +22,7 @@
               </div>
               <div class="row">
                   <form>
+                  
                     <div class="col s12 m12 card transparent z-depth-0">
                         <div class="card-content">
                             <div class="row">
@@ -35,11 +36,11 @@
                             </div>
                             <div class="input-field col s12 m3">
                                 <select>
-                                  <option value="" disabled selected>Selecione</option>
-                                  <option value="1">DWEI</option>
-                                  <option value="2">SWII</option>
-                                  <option value="3">SRCI</option>
-                                </select>
+                                <option value="" disabled selected>Selecione</option>
+                                @FOREACH ($materias as $materia)
+                                <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
+                                  @ENDFOREACH
+                               </select>
                                 <label>Matéria</label>
                             </div>
                             <div class="input-field col s12 m3">
@@ -61,36 +62,14 @@
                     <div class="col s12 m12" id="questions-results">
                     <ul class="collection with-header">
                         <li class="collection-header light-green"><span class="page-title white-text">Resultado da busca</span></li>
+                        @foreach($questoes as $questao)
                         <li class="collection-item">
                             <div>
-                                <span>Os teclados que são desenvolvidos no padrão
-                                        ABNT2 não possuem o caractere cedilha. </span>
-                                <a href="traduzir_alternativa.html" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
+                                <span>{{$questao -> descricao}} </span>
+                                <a href="{{ route('traduzir.alternativa', ['id' => $id]) }}" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
                             </div>
                         </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>Entre os dispositivos de entrada de dados em
-                                        informática, incluem-se:</span>
-                                <a href="traduzir_alternativa.html" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-                            </div>
-                        </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>Para a recuperação de arquivos em HD
-                                        danificado, um dos procedimentos
-                                        normalmente utilizados é o Particionar. </span>
-                                <a href="traduzir_alternativa.html" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-                            </div>
-                        </li>
-                        <li class="collection-item">
-                            <div>
-                                <span>A menor unidade de informação armazenável em
-                                        um computador é o byte, suficiente, em muitos
-                                        casos, para armazenar um caracter. </span>
-                                <a href="traduzir_alternativa.html" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                     </div>
                     <div class="col s12 m12 center">
@@ -108,7 +87,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='js/configuracoes-datepicker.js'></script>
+	<script src="{{ asset('js/configuracoes-datepicker.js') }}"></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){
