@@ -73,7 +73,10 @@ Route::post('/nova/turma', [ 'as' => 'nova.turma', 'uses' => 'TurmaController@sa
 Route::get('/nova/alternativa/{id}', 'AlternativaController@criarAlternativa');
 Route::post('/nova/alternativa/{id}', [ 'as' => 'nova.alternativa', 'uses' => 'AlternativaController@salvarAlternativa']);
 
-
+Route::get('/traduzir/alternativa/{id}', ['as' => 'traduzir.alternativa', 'uses' => 'UploadController@showAlternativa']);
+Route::post('/traduzir/alternativa/{id}', ['as' => 'traduzir.alternativa', 'uses' => 'UploadController@uploadAlternativa']);
+Route::get('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@showQuestao']);
+Route::post('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@uploadQuestao']);
 
 
 

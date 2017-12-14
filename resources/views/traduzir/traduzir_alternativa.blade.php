@@ -21,6 +21,7 @@
 								<div class="input-field col s12 m12">
 									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>{{ $questao -> descricao}}</textarea>
 									<label for="enunciado_descricao">Enunciado:</label>
+									<input type="file" name="alternativa" />
 									<a class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>
 								</div>
 							<div class="row">
@@ -30,13 +31,16 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
                                         </li>
-                                        @FOREACH($questoes as $questao)
+                                        @FOREACH($questao->alternativas as $alternativa)
 										<li class="collection-item">
 											<div>
-												<span>{{ $alternativa->	descricao }} </span>
-												<a href="#!" class="secondary-content">
-													<i class="material-icons light-green-text">file_upload</i>
-												</a>
+												<form action="" method="post">
+													<span>{{ $alternativa->	descricao }} </span>
+													<input type="file" name="alternativa" />
+													<a class="secondary-content">
+														<i class="material-icons light-green-text">file_upload</i>
+													</a>
+												</form> 
 											</div>
                                         </li>
                                         @ENDFOREACH
