@@ -43,6 +43,9 @@ class ProvaController extends Controller
     public function alterarProva($id)
     {
         $prova = Prova::find($id);
+        if (count(Agendamento::where('executado', 0)->where('prova_id', $id)->get()) != 0)
+            return redirect()->route('detalhar.prova', ['id' => $id]);
+            
         $questoes = $prova->questoes()->where('ativo', 0)->get();
         $materias = Materia::all();
         return view('prova.alterar_prova')->withProva($prova)->withQuestoes($questoes)->withMaterias($materias);

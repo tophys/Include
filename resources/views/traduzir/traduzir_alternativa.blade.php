@@ -21,8 +21,12 @@
 								<div class="input-field col s12 m12">
 									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>{{ $questao -> descricao}}</textarea>
 									<label for="enunciado_descricao">Enunciado:</label>
-									<input type="file" name="alternativa" />
-									<a class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>
+									<form enctype="multipart/form-data" id="formQuestao" action="{{route('traduzir.questao', ['id' => $questao->id] )}}" method="post">
+										<input type="file" name="alternativa" />
+										<input type="hidden" name="questao_id" value="{{$questao->id}}" />
+										{{ csrf_field() }}
+									</form>
+									<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>
 								</div>
 							<div class="row">
 								<div class="col s12 m12" id="questions-results">
@@ -34,10 +38,13 @@
                                         @FOREACH($questao->alternativas as $alternativa)
 										<li class="collection-item">
 											<div>
-												<form action="" method="post">
+												<form enctype="multipart/form-data" id="form{{$alternativa->id}}" action="{{route('traduzir.alternativa', ['id' => $questao->id] )}}" method="post">
+													{{ csrf_field() }}
+													<input type="hidden" name="questao_id" value="{{$questao->id}}" />
+													<input type="hidden" name="alternativa_id" value="{{$alternativa->id}}" />
 													<span>{{ $alternativa->	descricao }} </span>
 													<input type="file" name="alternativa" />
-													<a class="secondary-content">
+													<a class="secondary-content" onclick="event.preventDefault();document.getElementById('form{{$alternativa->id}}').submit();">
 														<i class="material-icons light-green-text">file_upload</i>
 													</a>
 												</form> 
