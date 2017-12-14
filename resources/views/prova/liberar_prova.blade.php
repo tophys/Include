@@ -58,7 +58,7 @@
 								<th>Turma</th>
 								<th>Data do Agendamento</th>
 								<th>Prova</th>
-								<th>&nbsp;</th>
+								<th>Executada</th>
 							</tr>
 						</thead>
 						<tbody class="white">

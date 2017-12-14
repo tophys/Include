@@ -48,7 +48,7 @@
                                         </div>
                                         
                                         <div class="collapsible-body">
-                                        @FOREACH ($alternativas as $alternativa)
+                                        @FOREACH ($questao->alternativas as $alternativa)
                                             <span class="question-content">{{$alternativa -> descricao}}</span>
                                             <br>
                                             @endforeach

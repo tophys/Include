@@ -43,7 +43,7 @@ class ProvaController extends Controller
     public function alterarProva($id)
     {
         $prova = Prova::find($id);
-        $questoes = $prova->questoes()->get();
+        $questoes = $prova->questoes()->where('ativo', 0)->get();
         $materias = Materia::all();
         return view('prova.alterar_prova')->withProva($prova)->withQuestoes($questoes)->withMaterias($materias);
     }
@@ -118,8 +118,20 @@ class ProvaController extends Controller
     public function detalharProva($id)
     {
         $prova = Prova::find($id);
-        $questoes = $prova->questoes()->where('ativo', 0);
+        $questoes = $prova->questoes()->where('ativo', 0)->get();
         return view('prova.detalhar_prova')->withProva($prova)->withQuestoes($questoes);
+    }
+    public function desempenhoProva($id)
+    {
+        $agendamentos = Agendamento::where('ativo', 0)->where('executado', 0)->where('turma_id', $id)->get();
+        $provas = collect([]);
+        foreach ($agendamentos as $agendamento)
+        {
+            $provas->push(Prova::find($agendamento->prova_id));
+        }
+        $turma = Turma::find($id);
+        return view('prova.desempenho_prova')->withAgendamentos($agendamentos)
+        ->withProvas($provas)->withTurma($turma);
     }
 
 }

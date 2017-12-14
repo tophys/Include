@@ -3,11 +3,11 @@
 @section('titulo','Selecionar Questões')
 
 @section('plugins')
-    <link rel="stylesheet" href="../../../fullcalendar/fullcalendar.min.css" />
-	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.min.css" />
-	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.print.css" />
-	<link rel="stylesheet" href="../../../fullcalendar/fullcalendar.css" />
-	<link rel="stylesheet" href="../../../css/dashboard-style.css" />
+    <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.min.css')}}" />
+	<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.min.css')}}" />
+	<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.css')}}" />
+	<link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.css')}}" />
+	<link rel="stylesheet" href="{{asset('/css/dashboard-style.css')}}" />
 @endsection
 
 @section('conteudo')
@@ -66,12 +66,19 @@
                     <ul class="collection with-header">
                         <li class="collection-header light-green"><span class="page-title white-text">Resultado da busca</span></li>
                         @FOREACH ($questoes as $questao)
+                        
                         <li class="collection-item">
-                        <div>
+                            <div>
+                            <form action="{{route('selecionar.questao', ['id' => $prova->id])}}" method="POST">
+                                {{csrf_field()}}
+                                <input type="hidden" name="prova_id" value="{{$prova->id}}" />
+                                <input type="hidden" name="questao_id" value="{{$questao->id}}" />
                                 <span>{{ $questao->	descricao }} </span>
-                                <button href="#!" class="secondary-content"><i class="material-icons light-green-text">add</i></button>
+                                <button class="secondary-content"><i class="material-icons light-green-text">add</i></button>
+                            </form>
                             </div>
-                            </li>
+                        </li>
+                      
                        @ENDFOREACH                       
                     </ul>
                     </div>
@@ -99,7 +106,7 @@
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src='../../../js/configuracoes-datepicker.js'></script>
+	<script src="{{asset('/js/configuracoes-datepicker.js')}}"></script>
 	<script>
 		$(document).ready(function() {
 			$(".activate-toolbar").click(function(){

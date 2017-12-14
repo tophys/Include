@@ -51,5 +51,10 @@ class User extends Authenticatable
         return false;
     }
 
+    public function respostas()
+    {
+        return $this->hasMany('App\Resposta');
+    }
+
 
 }

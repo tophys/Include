@@ -42,6 +42,7 @@ class QuestaoController extends Controller
         $questao->materia_id = $data->materia_id;
         $questao->ativo = 0;
         $questao->traduzida = 1;
+        $questao->src = '';
         $questao->save();
         return redirect()->route('nova.alternativa', ['id' => $questao->id]);
     }
@@ -49,10 +50,26 @@ class QuestaoController extends Controller
     public function selecionarQuestaoProva($id)
     {
         $prova = Prova::find($id);
-        $materias = Materia::take(10)->get();
-        $questoes = Questao::take(10)->get();
+        $materias = Materia::all();
+        $questoes = Questao::whereDoesntHave('provas', function($q) use ($id){
+            $q->where('prova_id', $id);
+        })->get();
 
         return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
+    }
+
+    public function salvarQuestaoSelecionada(Request $data)
+    {
+        $prova = Prova::find($data->prova_id);
+        $prova->questoes()->attach($data->questao_id);
+        return redirect()->route('selecionar.questao', ['id' => $data->prova_id]);
+    }
+
+    public function deselecionarQuestao($idProva, $idQuestao)
+    {
+        $prova = Prova::find($idProva);
+        $prova->questoes()->detach($idQuestao);
+        return redirect()->route('alterar.prova', ['id' => $idProva]);
     }
 
     public function alterarQuestao($id)

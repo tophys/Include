@@ -31,6 +31,8 @@ Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
 Route::get('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
 Route::post('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
 Route::get('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@selecionarQuestaoProva']);
+Route::post('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@salvarQuestaoSelecionada']);
+Route::get('/gerenciar/prova/{id}/{questao}/deselecionar', ['as' => 'deselecionar.questao' , 'uses' => 'QuestaoController@deselecionarQuestao']);
 Route::get('/gerenciar/prova/{id}/excluir',['as'=> 'excluir.prova', 'uses' => 'ProvaController@excluirProva']);
 Route::get('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.prova', 'uses' => 'ProvaController@selecionarLiberacaoProva']);
 Route::get('/gerenciar/prova/{id}/{agendamento}/desativar',['as'=> 'desativar.agendamento', 'uses' => 'ProvaController@desativarAgendamentoProva']);
@@ -39,7 +41,7 @@ Route::get('/gerenciar/prova/{id}/detalhar', ['as' => 'detalhar.prova', 'uses' =
 
 //Verificar esta rota Luis
 //
-Route::get('/gerenciar/prova/{id}/desempenho', ['as'=> 'desempenho.prova', 'uses' => 'ProvaController@DesempenhoProva']);
+Route::get('/gerenciar/provas/{id}/desempenho', ['as'=> 'desempenho.prova', 'uses' => 'ProvaController@desempenhoProva']);
 //
 
 Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
@@ -53,7 +55,7 @@ Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => '
 
 //Verificar esta rota Luis
 //
-Route::get('/gerenciar/turma/{id}/desempenho', ['as'=> 'desempenho.turma', 'uses' => 'TurmaController@DesempenhoTurma']);
+Route::get('/gerenciar/turma/{id}/desempenho', ['as'=> 'desempenho.turma', 'uses' => 'TurmaController@desempenhoTurma']);
 //
 
 Route::get('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);

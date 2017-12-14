@@ -65,8 +65,8 @@
 					  <th>Matéria</th>
 						<th>Data de Criação</th>
 						<th>Estado</th>
-						<th>&nbsp;</th>
-						<th>&nbsp;</th>
+						<th>Detalhar</th>
+						<th>Excluir</th>
 				  </tr>
 				</thead>
 

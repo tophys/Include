@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Materia;
 use App\Turma;
 use Illuminate\Support\Facades\Auth;
+use App\Resposta;
+use App\Agendamento;
+use App\Prova;
+use App\Questao;
 
 class TurmaController extends Controller
 {
@@ -45,4 +49,23 @@ class TurmaController extends Controller
         Turma::where('id', $id)->update(array('ativo' => 1));
         return redirect('/gerenciar/turma');
     }
+
+    public function desempenhoTurma($id)
+    {
+        $respostas = Resposta::where('agendamento_id', $id);
+        $agendamento = Agendamento::find($id);
+        $users = collect([]);
+        $corretas = collect([]);
+        $prova = Prova::find($agendamento->prova_id);
+        $turma = Turma::find($agendamento->turma_id);
+        $total = count($prova->questoes());
+        foreach ($respostas as $resposta)
+        {
+            $users->push(User::find($resposta->user_id));
+            $corretas->push(count(Resposta::where('agendamento_id', $id)->where('user_id', $resposta->user_id)->where('correta', 0)->get()));
+        } 
+        return view('turma.desempenho_turma')->withUsers($users)->withCorretas($corretas)
+        ->withTotal($total)->withProva($prova)->withTurma($turma);
+    }
+
 }

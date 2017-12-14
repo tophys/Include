@@ -45,6 +45,7 @@ class CreateTables extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
             $table->boolean('ativo');
+            $table->string('src');
             $table->boolean('traduzida');
             $table->timestamps();
         });
@@ -88,14 +89,43 @@ class CreateTables extends Migration
             $table->boolean('correta');
             $table->boolean('traduzida');
             $table->boolean('ativo');
+            $table->string('src');
             $table->text('descricao');
             $table->timestamps();
+        });
+
+        Schema::create('realizadas', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('agendamento_id')->unsigned();
+        });
+
+        Schema::create('respostas', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('agendamento_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('questao_id')->unsigned();
+            $table->integer('alternativa_id')->unsigned();
+            $table->boolean('correta');
         });
 
 
 
 
         //CRIAÇÃO DAS CONSTRAINTS
+
+        Schema::table('realizadas', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('agendamento_id')->references('id')->on('agendamentos');
+        });
+
+        Schema::table('respostas', function(Blueprint $table)
+        {
+            $table->foreign('agendamento_id')->references('id')->on('agendamentos');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('questao_id')->references('id')->on('questoes');
+            $table->foreign('alternativa_id')->references('id')->on('alternativas');
+        });
 
         Schema::table('turmas', function(Blueprint $table){
             $table->foreign('materia_id')->references('id')->on('materias');
@@ -119,7 +149,7 @@ class CreateTables extends Migration
         /*
         Schema::table('agendamento_prova', function(Blueprint $table){
             $table->foreign('prova_id')->references('id')->on('provas');
-            $table->foreign('agendamento_id')->references('id')->on('agendamentos');
+            4$table->foreign('agendamento_id')->references('id')->on('agendamentos');
         });*/
 
         Schema::table('agendamentos', function(Blueprint $table){

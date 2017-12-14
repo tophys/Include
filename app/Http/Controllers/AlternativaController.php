@@ -32,6 +32,7 @@ class AlternativaController extends Controller
         $alternativa->descricao = $data->descricao;
         $alternativa->questao_id = $data->questao_id;
         $alternativa->traduzida = 1;
+        $alternativa->src = '';
         $alternativa->ativo = 0;
         $alternativa->save();
         return redirect()->route('alterar.questao', ['id' => $data->questao_id]);

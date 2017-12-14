@@ -52,9 +52,9 @@
                                         <li class="collection-item">
                                             <div>
                                                 <span>{{ $questao->descricao }} </span>
-                                                <button href="#!" class="secondary-content">
-                                                    <i class="material-icons light-green-text">add</i>
-                                                </button>
+                                                <a href="{{route('deselecionar.questao', ['id' => $prova->id, 'questao' => $questao->id])}}" class="secondary-content">
+                                                    <i class="material-icons light-green-text">-</i>
+                                                </a>
                                             </div>
                                         </li>
                                         @ENDFOREACH
@@ -67,7 +67,7 @@
 									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar Questão</a>
 								</div>
 								<div class="col sm12 m3">
-									<a class="waves-effect right waves-light btn orange lighten-1" href="#">Selecionar Questões</a>
+									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('selecionar.questao', ['id' => $prova->id])}}">Selecionar Questões</a>
 								</div>
 								<div class="col sm12 m3">
 									<button class="waves-effect right waves-light btn orange lighten-1" >Salvar Alterações</button>
