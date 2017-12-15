@@ -49,13 +49,13 @@
 								</div>
 								<div class="row">
 									<div class="col sm12 m3 offset-m4">
-										<a href="alterar_alternativa.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</a>
+										<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}" class="waves-effect right waves-light btn orange lighten-1">Alterar Alternativas</a>
 									</div>
 									<div class="col sm12 m3">
-										<a href="alterar_correta.html" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
+										<a href="{{route('alterar.correta', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
 									</div>
 									<div class="col sm12 m2">
-										<button href="gerenciador_questao.html" class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
+										<button href="{{ url('gerenciar/questao')}}" class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
 									</div>
 								</div>
 							</form>
