@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Include@ - Questões</title>
+	<link rel="icon" href="images/logo-icon.png">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Pacifico'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet prefetch' href='css/dashboard-style.css'>
+</head>
+
+<body>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper cyan">
+				<ul>
+					<li>
+						<a href="dashboard_colaborador.html" class="brand-logo">
+							<img src="images/logo-large.png">
+						</a>
+					</li>
+				</ul>
+				<ul class="right">
+					<li>
+						<a class="dropdown-button" href="#!" data-activates="menu-dropdown">
+							<i class="material-icons">more_vert</i>
+						</a>
+					</li>
+					<ul id="menu-dropdown" class="dropdown-content">
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">account_circle</i>
+								<span class="left"> Perfil</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">settings</i>
+								<span class="left"> Ajustes</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">help</i>
+								<span class="left"> Ajuda</span>
+							</a>
+						</li>
+						<li>
+							<a href="#!" class="grey-text text-darken-2">
+								<i class="material-icons left">exit_to_app</i>
+								<span class="left"> Sair</span>
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<ul class="side-nav fixed">
+		<li class="user-details cyan darken-2 avatar">
+			<img src="https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png">
+			<div class="avatar-text">
+				<span class="user-name">Carlos Coletto</span>
+				<span class="user-title">Colaborador</span>
+			</div>
+		</li>
+		<li>
+			<a href="dashboard_colaborador.html">
+				<i class="material-icons text-darken-1">dashboard</i>Principal</a>
+		</li>
+		<hr class="divider">
+		<li>
+			<a href="gerenciador_turma.html">
+				<i class="material-icons">people</i>Turmas</a>
+		</li>
+		<li>
+			<a href="gerenciador_prova.html">
+				<i class="material-icons">library_books</i>Provas</a>
+		</li>
+		<li class="active">
+			<a href="gerenciador_questao.html">
+				<i class="material-icons">question_answer</i>Questões</a>
+		</li>
+		<hr class="divider">
+		<li>
+			<a href="#">
+				<i class="material-icons">today</i>Calendário</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="material-icons">notifications_active</i>Avisos</a>
+		</li>
+	</ul>
+
+	<div class="main">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col s12 m12">
+					<div class="card filter-card transparent z-depth-0">
+						<div class="card-content row">
+							<span class="page-title light-green-text">Consulta de questões</span>
+							<hr>
+							<form class="col s12 m12">
+								<br>
+								<div class="row">
+									<div class="input-field col s12 m4">
+										<input placeholder="&nbsp;" id="prova_titulo" type="text" class="validate">
+										<label for="prova_titulo">Enunciado</label>
+									</div>
+									<div class="input-field col s12 m2">
+										<label>Data de Criação</label>
+										<input placeholder="&nbsp;" id="prova_criacao" type="text" class="datepicker" readonly>
+									</div>
+									<div class="input-field col s12 m3">
+										<select>
+											<option value="" disabled selected>Selecione</option>
+											<option value="1">DWEI</option>
+											<option value="2">SWII</option>
+											<option value="3">SRCI</option>
+										</select>
+										<label>Matéria</label>
+									</div>
+									<div class="input-field col s12 m3">
+										<select>
+											<option value="" disabled selected>Selecione</option>
+											<option value="1">Múltipla-escolha</option>
+										</select>
+										<label>Tipo</label>
+									</div>
+								</div>
+								<div class="col sm12 m12">
+									<a class="waves-effect right waves-light btn orange lighten-1">Pesquisar</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m12">
+					<table class="highlight centered bordered z-depth-1">
+						<thead class="light-green white-text">
+							<tr>
+								<th>Enunciado</th>
+								<th>Matéria</th>
+								<th>Data de Criação</th>
+								<th>Tipo</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+
+						<tbody class="white">
+							<tr>
+								<td>Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
+								<td>Desenvolvimento Web I</td>
+								<td>15/05/2017</td>
+								<td>Múltipla-escolha</td>
+								<td>
+									<a class="dropdown-button" data-activates='dropdown1'>
+										<i class="material-icons grey-text text-darken-1">more_vert</i>
+									</a>
+									<ul id='dropdown1' class='dropdown-content'>
+										<li>
+											<a href="detalhar_questao.html">Detalhar</a>
+										</li>
+										<li>
+											<a href="alterar_questao.html">Alterar</a>
+										</li>
+										<li>
+											<a href="excluir_questao.html">Excluir</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
+								<td>Desenvolvimento Web I</td>
+								<td>15/05/2017</td>
+								<td>Múltipla-escolha</td>
+								<td>
+									<a class="dropdown-button" data-activates='dropdown2'>
+										<i class="material-icons grey-text text-darken-1">more_vert</i>
+									</a>
+									<ul id='dropdown2' class='dropdown-content'>
+										<li>
+											<a href="detalhar_questao.html">Detalhar</a>
+										</li>
+										<li>
+											<a href="alterar_questao.html">Alterar</a>
+										</li>
+										<li>
+											<a href="excluir_questao.html">Excluir</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Qual das opções abaixo melhor define a necessidade da árvore DOM ao se elaborar uma página?</td>
+								<td>Desenvolvimento Web I</td>
+								<td>15/05/2017</td>
+								<td>Múltipla-escolha</td>
+								<td>
+									<a class="dropdown-button" data-activates='dropdown3'>
+										<i class="material-icons grey-text text-darken-1">more_vert</i>
+									</a>
+									<ul id='dropdown3' class='dropdown-content'>
+										<li>
+											<a href="detalhar_questao.html">Detalhar</a>
+										</li>
+										<li>
+											<a href="alterar_questao.html">Alterar</a>
+										</li>
+										<li>
+											<a href="excluir_questao.html">Excluir</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col s12 m12 center">
+					<ul class="pagination">
+						<li class="disabled waves-effect">
+							<a href="#!">
+								<i class="material-icons">chevron_left</i>
+							</a>
+						</li>
+						<li class="waves-effect">
+							<a href="#!">
+								<i class="material-icons">chevron_right</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="fixed-action-btn horizontal">
+					<a href="criar_questao.html" class="btn-floating btn-large red">
+						<i class="large material-icons deep-orange lighten-1">add</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src='js/configuracoes-datepicker.js'></script>
+		<script>
+			$(document).ready(function () {
+				$(".activate-toolbar").click(function () {
+					$('.fixed-action-btn.toolbar').openToolbar();
+				});
+
+				$(document).ready(function () {
+					$('select').material_select();
+				});
+			});
+		</script>
+</body>
+
+</html>
