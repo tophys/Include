@@ -67,7 +67,7 @@
 									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar Questão</a>
 								</div>
 								<div class="col sm12 m3">
-									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('selecionar.questao', ['id' => $prova->id])}}">Selecionar Questões</a>
+									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('selecionar.questao.professor', ['id' => $prova->id])}}">Selecionar Questões</a>
 								</div>
 								<div class="col sm12 m3">
 									<button class="waves-effect right waves-light btn orange lighten-1" >Salvar Alterações</button>

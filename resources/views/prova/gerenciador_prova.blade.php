@@ -92,7 +92,7 @@
 				</tr>
 				@ENDFOREACH
 				</tbody>
-			  </table>  
+		</table>  
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">

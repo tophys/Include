@@ -60,16 +60,18 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
 										</li>
+										
 										@FOREACH ($alternativas as $alternativa)
 										<li class="collection-item">
 											<div class="radio-button-label">
 												@IF ($alternativa->correta == 0)
-												<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
+												<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" checked disabled/>
 												@ELSE
-												<input class="with-gap" name="alternativas" type="radio" id="alt1" disabled/>
+												<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/>
 												@ENDIF
-												<label id="descricao" for="alt1"> {{$alternativa -> descricao}} </label>
-												<a class="right dropdown-button" data-activates="data{{$alternativa->id}}">
+												<label id="descricao" for="lbdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
+												
+												<a class="right dropdown-button" data-activates='data{{$alternativa->id}}'>
 													<i class="material-icons grey-text text-darken-1">more_vert</i>
 												</a>
 												<ul id='data{{$alternativa->id}}' class='dropdown-content'>
@@ -80,27 +82,28 @@
 														<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
 													</li>
 												</ul>
+												
 											</div>
 										</li>
 										@ENDFOREACH		
-										</ul>
-									</div>
+									</ul>
 								</div>
-								<div class="row">
-									<br>
-									<div class="col sm12 m4 right">
-										<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.correta', ['id' => $questao->id])}}">Alterar Alternativa Correta</a>
-									</div>
+							</div>
+							<div class="row">
+								<br>
+								<div class="col sm12 m4 right">
+									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.correta', ['id' => $questao->id])}}">Alterar Alternativa Correta</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<script src="{{ asset('js/configuracoes-datepicker.js') }}"></script>
-			<script>
+		</div>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src="{{ asset('js/configuracoes-datepicker.js') }}"></script>
+		<script>
 
 			$(document).ready(function () {
 				$('select').material_select();

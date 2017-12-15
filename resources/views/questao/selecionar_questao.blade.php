@@ -69,12 +69,12 @@
                         
                         <li class="collection-item">
                             <div>
-                            <form action="{{route('selecionar.questao', ['id' => $prova->id])}}" method="POST">
+                            <form id="selectQuestao" action="{{route('selecionar.questao.professor', ['id' => $prova->id])}}" method="POST">
                                 {{csrf_field()}}
                                 <input type="hidden" name="prova_id" value="{{$prova->id}}" />
                                 <input type="hidden" name="questao_id" value="{{$questao->id}}" />
                                 <span>{{ $questao->	descricao }} </span>
-                                <button class="secondary-content"><i class="material-icons light-green-text">add</i></button>
+                                <a onclick="event.preventDefault();document.getElementById('selectQuestao').submit();" class="secondary-content"><i class="material-icons light-green-text">add</i></a>
                             </form>
                             </div>
                         </li>
@@ -95,7 +95,7 @@
 					<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar nova questão</a>
                   </div>
                   <div class="col sm12 m3">
-					<button class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.prova', ['id' => $prova->id])}}">Salvar a Prova</button>
+					<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.prova', ['id' => $prova->id])}}">Voltar</a>
 				  </div>
 			  </div>
 			  </form>

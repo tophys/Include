@@ -54,7 +54,6 @@ class QuestaoController extends Controller
         $questoes = Questao::whereDoesntHave('provas', function($q) use ($id){
             $q->where('prova_id', $id);
         })->get();
-
         return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
     }
 
@@ -68,7 +67,7 @@ class QuestaoController extends Controller
     {
         $prova = Prova::find($data->prova_id);
         $prova->questoes()->attach($data->questao_id);
-        return redirect()->route('selecionar.questao', ['id' => $data->prova_id]);
+        return redirect()->route('selecionar.questao.professor', ['id' => $data->prova_id]);
     }
 
     public function deselecionarQuestao($idProva, $idQuestao)

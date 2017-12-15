@@ -29,8 +29,8 @@ Route::group(['middleware' => ['professor']], function ()
     Route::get('/gerenciar/prova', 'ProvaController@gerenciarProva');
     Route::get('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@alterarProva']);
     Route::post('/gerenciar/prova/{id}',['as'=> 'alterar.prova', 'uses' => 'ProvaController@salvarAlteracaoProva']);
-    Route::get('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@selecionarQuestaoProva']);
-    Route::post('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao', 'uses' => 'QuestaoController@salvarQuestaoSelecionada']);
+    Route::get('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao.professor', 'uses' => 'QuestaoController@selecionarQuestaoProva']);
+    Route::post('/gerenciar/prova/{id}/selecionar',['as'=> 'selecionar.questao.professor', 'uses' => 'QuestaoController@salvarQuestaoSelecionada']);
     Route::get('/gerenciar/prova/{id}/{questao}/deselecionar', ['as' => 'deselecionar.questao' , 'uses' => 'QuestaoController@deselecionarQuestao']);
     Route::get('/gerenciar/prova/{id}/excluir',['as'=> 'excluir.prova', 'uses' => 'ProvaController@excluirProva']);
     Route::get('/gerenciar/prova/{id}/liberar',['as'=> 'liberar.prova', 'uses' => 'ProvaController@selecionarLiberacaoProva']);
