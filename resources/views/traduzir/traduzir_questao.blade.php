@@ -62,11 +62,11 @@
                     <div class="col s12 m12" id="questions-results">
                     <ul class="collection with-header">
                         <li class="collection-header light-green"><span class="page-title white-text">Resultado da busca</span></li>
-                        @foreach($questoes as $questao)
+                        @foreach($questao->alternativas as $alternativa)
                         <li class="collection-item">
                             <div>
-                                <span>{{$questao -> descricao}} </span>
-                                <a href="{{ route('traduzir.alternativa', ['id' => $id]) }}" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
+                                <span>{{$alternativa -> descricao}} </span>
+                                <a href="{{ route('traduzir.alternativa', ['id' => $alternativa->id]) }}" class="secondary-content"><i class="material-icons light-green-text">chevron_right</i></a>
                             </div>
                         </li>
                         @endforeach

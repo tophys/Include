@@ -22,11 +22,13 @@
 									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>{{ $questao -> descricao}}</textarea>
 									<label for="enunciado_descricao">Enunciado:</label>
 									<form enctype="multipart/form-data" id="formQuestao" action="{{route('traduzir.questao', ['id' => $questao->id] )}}" method="post">
-										<input type="file" name="alternativa" />
+										<input type="file" name="questao" />
 										<input type="hidden" name="questao_id" value="{{$questao->id}}" />
 										{{ csrf_field() }}
 									</form>
-									<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>
+									<!--<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>-->
+									<a href="{{ route('show.questao', ['id' => $questao->id])}}" class="btn-floating halfway-fab waves-effect waves-light right light-green"><i class="material-icons">file_upload</i></a>
+
 								</div>
 							<div class="row">
 								<div class="col s12 m12" id="questions-results">

@@ -19,21 +19,29 @@
 							<br>
 							<div class="row">
 								<div class="input-field col s12 m12">
-									<textarea placeholder="&nbsp;" id="texto_traduzido" class="materialize-textarea" disabled>Um malware (software malicioso) é um software ilegal destinado a se infiltrar nos computadores. Vírus, trojanhorses, worms e spywares são considerados malwares, mas softwares legais podem ser considerados indevidamente como malwares quando:</textarea>
+									<textarea placeholder="&nbsp;" id="texto_traduzido" class="materialize-textarea" disabled>{{$questao->descricao}}</textarea>
 									<label for="texto_traduzido">Texto traduzido:</label>
 								</div>
 							</div>
 							<div class="col s12 m6">
+							@if ($questao->traduzida == 0)
 								<video class="responsive-video" controls>
-									<source src="videos/big_buck_bunny.mp4" type="video/mp4">
+									<source src="/uploads/questoes/{{$questao->src}}" type="video/mp4">
 								</video>
+							@else
+								<h4>Questão sem tradução</h4>
+							@endif
 							</div>
+							
 							<div class="col s12 m6">
-								<form action="#">
+							<form enctype="multipart/form-data" id="formQuestao" action="{{route('traduzir.questao', ['id' => $questao->id] )}}" method="post">
+							
+										<input type="hidden" name="questao_id" value="{{$questao->id}}" />
+										{{ csrf_field() }}
 									<div class="file-field input-field">
 										<div class="btn light-green">
 											<span>Selecionar</span>
-											<input type="file">
+											<input type="file"  name="questao" />
 										</div>
 										<div class="file-path-wrapper">
 											<input class="file-path validate" type="text" placeholder="Selecione um vídeo para enviar">
@@ -44,10 +52,10 @@
 							<div class="row">
 								<br>
 								<div class="col sm12 m2 offset-m8">
-									<button class="waves-effect right waves-light btn orange lighten-1">Voltar</button>
+									<a  class="waves-effect right waves-light btn orange lighten-1">Voltar</a>
 								</div>
 								<div class="col sm12 m2 right">
-									<button class="waves-effect right waves-light btn orange lighten-1">Enviar</button>
+									<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="waves-effect right waves-light btn orange lighten-1">Enviar</a>
 								</div>
 							</div>
 						</div>

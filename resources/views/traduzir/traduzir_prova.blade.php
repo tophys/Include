@@ -17,7 +17,7 @@
 							<span class="page-title light-green-text">Tradução de prova</span>
 							<hr>
 							<form class="col s12 m12">
-							{{ method_field('PUT') }} {{ csrf_field() }}
+							 {{ csrf_field() }}
 								<br>
 								<div class="row">
 									<div class="input-field col s12 m4">
@@ -77,9 +77,13 @@
 								<td>{{ $prova-> nome }}</td>
 								<td>{{ $materia->	nome }}</td>
 								<td>{{$prova -> created_at-> format('d-m-Y')}}</td>
-								<td>{{$agendamento -> data_liberada}}</td>
+								@if ($prova->agendamentos != null)
+								<td>Sim</td>
+								@else
+								<td>Não</td>
+								@endif
 								<td>
-									<a href="{{ url('INSERIR ROTA')}}"><i class="material-icons grey-text text-darken-1">chevron_right</i></a>
+									<a href="{{ route('selecionar.questao', ['id' => $prova->id])}}"><i class="material-icons grey-text text-darken-1">chevron_right</i></a>
 								</td>
 							</tr>
 							@Endforeach

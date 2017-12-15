@@ -17,7 +17,7 @@
 							<span class="page-title light-green-text">Seleção de questão para tradução</span>
 							<hr>
 							<form>
-                            {{ method_field('PUT') }} {{ csrf_field() }}
+                            {{ csrf_field() }}
 								<br>
 								<div class="row">
 									<div class="input-field col s12 m7">
@@ -44,11 +44,11 @@
 											<li class="collection-header light-green">
 												<span class="page-title white-text">Questões</span>
                                             </li>
-                                            @Foreach($alternativas as $alternativa)
+                                            @Foreach($questoes as $questao)
 											<li class="collection-item">
 												<div>
-													<span>{{$alternativa -> descricao}} </span>
-													<a href="{{ route('traduzir.alternativa', ['id' => $id]) }}" class="secondary-content">
+													<span>{{$questao -> descricao}} </span>
+													<a href="{{ route('traduzir.alternativa', ['id' => $questao->id]) }}" class="secondary-content">
 														<i class="material-icons light-green-text">chevron_right</i>
 													</a>
 												</div>

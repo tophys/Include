@@ -26,7 +26,7 @@
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="{{ url('traduzir/prova')}}">Traduzir agora</a>
+				<a href="{{ url('/seleciomar/prova')}}">Traduzir agora</a>
 			  </div>
 			</div>
 		  </div>
