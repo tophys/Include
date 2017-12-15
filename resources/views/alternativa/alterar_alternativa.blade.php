@@ -19,22 +19,16 @@
                         <div class="card-content row">
                             <span class="page-title light-green-text">Alteração de Alternativas</span>
                             <hr>
-                            <form method="PUT" action="{{ route('alterar.alternativa', ['id' => $alternativa->id]) }}">
-                            {{ method_field('PUT') }} {{ csrf_field() }}
+                            <form method="POST" action="{{ route('alterar.alternativa', ['id' => $idQuestao,'alternativa' => $alternativa->id]) }}">
+                             {{ csrf_field() }}
+                             <input type="hidden" value="{{$idQuestao}}" name="questao_id" />
+                             <input type="hidden" value="{{$alternativa->id}}" name="alternativa_id" />
                                 <br>
                                 <div class="row">
                                     <div class="col sm12 m12">
-                                        <div class="switch right">
-                                            <label>
-                                                Errada
-                                                <input name="correta" value="correta" type="checkbox">
-                                                <span class="lever"></span>
-                                                Correta
-                                            </label>
-                                        </div>
                                         <div class="input-field">
                                             <label for="altr_1">Alternativa</label>
-                                            <input id="altr_1" type="text" vlaue="{{$alternativa ->descricao}}">
+                                            <input id="altr_1" name="descricao" type="text" value="{{$alternativa ->descricao}}" />
                                         </div>
                                     </li>
                                 </div>

@@ -41,18 +41,21 @@ Route::group(['middleware' => ['professor']], function ()
 
     Route::get('/gerenciar/questao', 'QuestaoController@gerenciarQuestao');
     Route::get('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@alterarQuestao']);
-    Route::put('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@salvarAlteracaoQuestao']);
+    Route::post('/gerenciar/questao/{id}',['as'=> 'alterar.questao', 'uses' => 'QuestaoController@salvarAlteracaoQuestao']);
     Route::get('/gerenciar/questao/{id}/{alternativa}/excluir', ['as'=> 'excluir.alternativa', 'uses' => 'AlternativaController@excluirAlternativa'] );
-    Route::get('/gerenciar/questao/{id}/excluir', ['as'=> 'excluir.questao', 'uses' => 'QuestaoController@excluirQuestao']);
+    Route::get('/gerenciar/questao/{id}/excluir', ['as' => 'excluir.questao', 'uses' => 'QuestaoController@excluirQuestao']);
+    Route::get('/gerenciar/questao/{id}/detalhar', ['as' => 'detalhar.questao', 'uses' => 'QuestaoController@detalharQuestao']);
 
     Route::get('/gerenciar/turma', 'TurmaController@gerenciarTurma');
     Route::get('/gerenciar/turma/{id}/excluir', ['as'=> 'excluir.turma', 'uses' => 'TurmaController@excluirTurma']);
     Route::get('/gerenciar/turma/{id}/desempenho', ['as'=> 'desempenho.turma', 'uses' => 'TurmaController@desempenhoTurma']);
 
-    Route::get('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);
-    Route::put('/gerenciar/alternativa/{id}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@salvarAlteracaoAlternativa']);
-    Route::get('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.alternativa.correta', 'uses' => 'AlternativaController@alterarAlternativaCorreta']);
-    Route::post('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.alternativa.correta', 'uses' => 'AlternativaController@salvarAlternativaCorreta']);
+    Route::get('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.correta', 'uses' => 'AlternativaController@alterarAlternativaCorreta']);
+    Route::post('/gerenciar/alternativa/{id}/correta', ['as'=> 'alterar.correta', 'uses' => 'AlternativaController@salvarAlternativaCorreta']);
+    
+    Route::get('/gerenciar/alternativa/{id}/{alternativa}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@alterarAlternativa']);
+    Route::post('/gerenciar/alternativa/{id}/{alternativa}',['as'=> 'alterar.alternativa', 'uses' => 'AlternativaController@salvarAlteracaoAlternativa']);
+    
 
     Route::get('/nova/prova','ProvaController@criarProva');
     Route::post('/nova/prova',['as'=> 'nova.prova', 'uses' => 'ProvaController@salvarProva']);
@@ -86,6 +89,7 @@ Route::group(['middleware' => ['interprete']], function ()
     Route::get('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@showQuestao']);
     Route::post('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@uploadQuestao']);
     Route::get('/traduzir/questao/{id}/show', ['as' => 'show.questao', 'uses' => 'UploadController@showTrazudirQuestao']);
+    Route::get('/selecionar/questao', 'UploadController@selecionarQuestao');
 });
 
 

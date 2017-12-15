@@ -74,7 +74,7 @@
 												</a>
 												<ul id='data{{$alternativa->id}}' class='dropdown-content'>
 													<li>
-														<a href="{{route('alterar.alternativa', ['id' => $alternativa->id])}}">Alterar</a>
+														<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Alterar</a>
 													</li>
 													<li>
 														<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
@@ -89,7 +89,7 @@
 								<div class="row">
 									<br>
 									<div class="col sm12 m4 right">
-										<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.alternativa.correta', ['id' => $questao->id])}}">Alterar Alternativa Correta</a>
+										<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.correta', ['id' => $questao->id])}}">Alterar Alternativa Correta</a>
 									</div>
 								</div>
 							</div>

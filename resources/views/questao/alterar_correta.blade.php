@@ -20,7 +20,7 @@
 							<span class="page-title light-green-text">Alterar Alternativa correta</span>
 							<hr>
 							<br>
-							<form method="POST"  action="{{route('alterar.alternativa.correta', ['id' => $id])}}">
+							<form method="POST"  action="{{route('alterar.correta', ['id' => $id])}}">
 							{{ csrf_field() }}
 								<div class="row">
 								<div class="col s12 m12" id="questions-results">

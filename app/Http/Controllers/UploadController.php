@@ -64,6 +64,13 @@ class UploadController extends Controller
         return view('traduzir.traduzir_questao')->withQuestao($questao)->withMaterias($materias);
     }
 
+    public function selecionarQuestao()
+    {
+        $materias = Materia::all();
+        $questoes = Questao::where('ativo', 0)->get();
+        return view('traduzir.selecionar_questao')->withMaterias($materias)->withQuestoes($questoes);
+    }
+
     public function uploadQuestao(Request $data)
     {
         if ($data->hasFile('questao'))

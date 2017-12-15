@@ -42,7 +42,8 @@
 		<div class="row">
 				<br>
 				<div class="col sm12 m3 right">
-					<button class="waves-effect right waves-light btn orange lighten-1" href="gerenciador_prova.html">Voltar</button>
+					<a class="waves-effect right waves-light btn orange lighten-1" href="{{url('/gerenciar/turma')}}">Voltar</a>
+					
 				</div>
 			</div>
 	  </div>

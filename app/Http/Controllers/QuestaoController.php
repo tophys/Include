@@ -58,6 +58,12 @@ class QuestaoController extends Controller
         return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
     }
 
+    public function detalharQuestao($id)
+    {
+        $questao = Questao::find($id);
+        return view('questao.detalhar_questao')->withQuestao($questao);
+    }
+
     public function salvarQuestaoSelecionada(Request $data)
     {
         $prova = Prova::find($data->prova_id);

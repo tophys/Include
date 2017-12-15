@@ -22,7 +22,7 @@
 									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>{{ $questao -> descricao}}</textarea>
 									<label for="enunciado_descricao">Enunciado:</label>
 									<form enctype="multipart/form-data" id="formQuestao" action="{{route('traduzir.questao', ['id' => $questao->id] )}}" method="post">
-										<input type="file" name="questao" />
+										
 										<input type="hidden" name="questao_id" value="{{$questao->id}}" />
 										{{ csrf_field() }}
 									</form>

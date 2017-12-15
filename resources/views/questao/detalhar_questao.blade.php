@@ -1,6 +1,6 @@
 @extends('layouts.padrao')
 
-@section('titulo','Criar Questão')
+@section('titulo','Detalhar Questão')
 
 @section('plugins')
 <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.min.css')}}" />
@@ -27,17 +27,14 @@
 									</div>
 									<div class="input-field col s12 m3">
 										<select disabled>
-											<option value="" disabled>Selecione</option>
-                                            @FOREACH ($materias as $materia)
-                                            <option value="{{ $materia->id }}">{{ $materia->nome }}</option>
-                                            @ENDFOREACH
+                                            <option selected value="{{ $questao->materia->id }}">{{ $questao->materia->nome }}</option>
 										</select>
 										<label>Matéria</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s12 m12">
-										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>Um malware (software malicioso) é um software ilegal destinado a se infiltrar nos computadores. Vírus, trojanhorses, worms e spywares são considerados malwares, mas softwares legais podem ser considerados indevidamente como malwares quando:</textarea>
+										<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea" disabled>{{$questao->descricao}}</textarea>
 										<label for="enunciado_descricao">Enunciado:</label>
 									</div>
 								</div>
@@ -47,22 +44,26 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
                                         </li>
-                                        @foreach($questoes as $questao)
+                                        @foreach($questao->alternativas as $alternativa)
 										<li class="collection-item">
-												<div class="radio-button-label">
-														<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
-														<label for="alt1">{{$questao -> descricao}}  </label>
-												</div>
+											<div class="radio-button-label">
+													@if ($alternativa->correta == 0)
+													<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
+													@else
+													<input class="with-gap" name="alternativas" type="radio" id="alt1" disabled/>
+													@endif
+													<label for="alt1">{{$alternativa -> descricao}}  </label>
+											</div>
                                         </li>
                                         @endforeach										
 									</ul>
 								</div>
 							</div>
 							<div class="row">
-									<br>
-									<div class="col sm12 m3 right">
-										<a class="waves-effect right waves-light btn orange lighten-1" href="{{url('gerenciar/questao')}}">Voltar</a>
-									</div>
+								<br>
+								<div class="col sm12 m3 right">
+									<a class="waves-effect right waves-light btn orange lighten-1" href="{{url('gerenciar/questao')}}">Voltar</a>
+								</div>
 							</div>
 						</div>
 					</div>

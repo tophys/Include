@@ -36,8 +36,8 @@
 							<div class="col s12 m6">
 							<form enctype="multipart/form-data" id="formQuestao" action="{{route('traduzir.questao', ['id' => $questao->id] )}}" method="post">
 							
-										<input type="hidden" name="questao_id" value="{{$questao->id}}" />
-										{{ csrf_field() }}
+								<input type="hidden" name="questao_id" value="{{$questao->id}}" />
+								{{ csrf_field() }}
 									<div class="file-field input-field">
 										<div class="btn light-green">
 											<span>Selecionar</span>

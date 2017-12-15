@@ -25,6 +25,11 @@ class ProvaController extends Controller
         return view('prova.criar_prova')->withMaterias($materias);   
     }
 
+    public function selecionarQuestaoProva($id)
+    {
+
+    }
+
     public function salvarProva(Request $data)
     {
         $this->validate($data,array(

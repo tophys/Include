@@ -65,8 +65,8 @@
     @ELSEIF (Auth::user()->Interprete())
     @IF (Request::is('/dashboard/interprete'))<li class="active">@else <li>@endif<a href="{{url('/dashboard/interprete')}}"><i class="material-icons">dashboard</i>Principal</a></li>
 	  <hr class="divider">
-	  <li><a href="{{ url('/seleciomar/prova')}}"><i class="material-icons">library_books</i>Provas</a></li>
-	  <li><a href="traducao_questao.html"><i class="material-icons">question_answer</i>Questões</a></li>
+    @IF (Request::is('/dashboard/interprete'))<li class="active">@else <li>@endif<a href="{{ url('/seleciomar/prova')}}"><i class="material-icons">library_books</i>Provas</a></li>
+	  <li><a href="{{url('/selecionar/questao')}}"><i class="material-icons">question_answer</i>Questões</a></li>
 	  <hr class="divider">
       <li><a href="#"><i class="material-icons">notifications_active</i>Avisos</a></li>
       @ENDIF 

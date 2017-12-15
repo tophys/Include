@@ -79,7 +79,7 @@
 					<a class="dropdown-button" data-activates="data{{$questao->id}}"><i class="material-icons grey-text text-darken-1">more_vert</i></a> 
 					<ul id='data{{$questao->id}}' class='dropdown-content'>
 							<li>
-								<a href="#!">Detalhar</a>
+								<a href="{{route('detalhar.questao', ['id' => $questao->id])}}">Detalhar</a>
 							</li>
 							<li>
 								<a href="{{route('alterar.questao', ['id' => $questao->id])}}">Alterar</a>
@@ -104,6 +104,7 @@
 			<a href="{{route('nova.questao')}}" class="btn-floating btn-large red">
 			  <i class="large material-icons deep-orange lighten-1">add</i>
 			</a>
+			
 		</div>
 	  </div>
 	</div>

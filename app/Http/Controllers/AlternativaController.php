@@ -13,9 +13,10 @@ class AlternativaController extends Controller
         return view('alternativa.criar_alternativa')->withId($id);
     }
 
-    public function alterarAlternativa()
+    public function alterarAlternativa($id, $idQuestao)
     {
-        return view('alternativa.alterar_alternativa');
+        $alternativa = Alternativa::find($id);
+        return view('alternativa.alterar_alternativa')->withAlternativa($alternativa)->withIdQuestao($idQuestao);
     }
 
     public function salvarAlternativa(Request $data)
@@ -37,6 +38,14 @@ class AlternativaController extends Controller
         $alternativa->save();
         return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
         
+    }
+
+    public function salvarAlteracaoAlternativa(Request $data)
+    {
+        Alternativa::where('id', $data->alternativa_id)->update([
+            'descricao' => $data->descricao
+        ]);
+        return redirect()->route('alterar.questao', ['id' => $data->questao_id]);
     }
 
     public function alterarAlternativaCorreta($id)
