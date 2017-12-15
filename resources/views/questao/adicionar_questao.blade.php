@@ -74,16 +74,16 @@
 												<a class="right dropdown-button" data-activates='data{{$alternativa->id}}'>
 													<i class="material-icons grey-text text-darken-1">more_vert</i>
 												</a>
-												<ul id='data{{$alternativa->id}}' class='dropdown-content'>
-													<li>
-														<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Alterar</a>
-													</li>
-													<li>
-														<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
-													</li>
-												</ul>
 												
 											</div>
+													<ul id='data{{$alternativa->id}}' class='dropdown-content'>
+														<li>
+															<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Alterar</a>
+														</li>
+														<li>
+															<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
+														</li>
+													</ul>
 										</li>
 										@ENDFOREACH		
 									</ul>
