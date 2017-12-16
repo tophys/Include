@@ -48,8 +48,18 @@
 							<div class="row">
 									<br>
 									<div class="col sm12 m3 right">
-										<button class="waves-effect right waves-light btn orange lighten-1">Salvar Alterações</button>
+										<a href="#modalSalvar" class="modal-trigger waves-effect right waves-light btn orange lighten-1">Salvar Alterações</a>
 									</div>
+									<div id="modalSalvar" class="modal">
+									<div class="modal-content">
+										<h4>Alterar Alternativa Correta</h4>
+										<p>Tem certeza de que deseja alterar a alternativa correta?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar Alterações</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
 							</div>
 							</form>
 						</div>
