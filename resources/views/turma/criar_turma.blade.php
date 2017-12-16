@@ -51,8 +51,18 @@
                 </div>
               </div>
 			  <div class="col sm12 m10 offset-m1">
-				<button class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
-			  </div>
+				<a class="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalNovo">Salvar</a>
+				</div>
+				<div id="modalNovo" class="modal">
+									<div class="modal-content">
+										<h4>Salvar Turma</h4>
+										<p>Deseja salvar esta turma?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
 			  </form>
 			  </div>
 			  </div>
