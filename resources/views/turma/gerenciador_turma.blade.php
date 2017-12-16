@@ -86,12 +86,21 @@
 					    <a href="{{route('desempenho.prova', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">style</i></a> 
 					</td>
                     <td>
-                        <a href="{{route('excluir.turma', ['id' => $turma->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
+                        <a class="modal-trigger" href="#modal{{$turma->id}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
                     </td>
 				    </tr>
 				@ENDFOREACH
 				</tbody>
-			   
+			  <div id="modal{{$turma->id}}" class="modal">
+							<div class="modal-content">
+								<h4>Excluir Turma</h4>
+								<p>Tem certeza de que deseja excluir esta turma? Após confirmar ela não estará mais disponível.</p>
+							</div>
+							<div class="modal-footer">
+								<a href="{{route('excluir.turma', ['id' => $turma->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Excluir</a>
+								<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+							</div>
+						</div>
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
@@ -117,6 +126,7 @@
 
 			$(document).ready(function() {
 				$('select').material_select();
+				$('.modal').modal();
 			});
 		});
 	</script>
