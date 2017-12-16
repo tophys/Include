@@ -27,7 +27,7 @@
 											</div>
 											</div>
 											<div class="card-action">
-											<a href="#"><i class="material-icons right">forward</i></a>
+											<a href="{{url('/executar')}}"><i class="material-icons right">forward</i></a>
 											</div>
 										</div>
 									</div>

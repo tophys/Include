@@ -27,8 +27,8 @@
 							@if ($questao->traduzida == 0)
 								<video class="responsive-video" controls>
 									<source src="/uploads/questoes/{{$questao->src}}" type="video/mp4">
-									<source src="/uploads/alternativas/{{$alternativa->src}}" type="video/ogg">
-									<source src="/uploads/alternativas/{{$alternativa->src}}" type="video/webm">
+									<source src="/uploads/questoes/{{$questao->src}}" type="video/ogg">
+									<source src="/uploads/questoes/{{$questao->src}}" type="video/webm">
 									Seu navegador não suporta este tipo de vídeo
 								</video>
 							@else
@@ -58,7 +58,7 @@
 									<a  class="waves-effect right waves-light btn orange lighten-1">Voltar</a>
 								</div>
 								<div class="col sm12 m2 right">
-									<a class="waves-effect right waves-light btn orange lighten-1 modal-trigger">Enviar</a>
+									<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="waves-effect right waves-light btn orange lighten-1 modal-trigger">Enviar</a>
 								</div>
 								
 										

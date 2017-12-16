@@ -16,12 +16,13 @@
 	  <div class="row">
 			<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
-						<span class="page-title light-green-text">Provas Disponiveis para {{ $turma->	nome }}</span>
+						<span class="page-title light-green-text">Provas Disponiveis para {{Auth::user()->name}}</span>
 						<hr>
 					</div>
 			</div>
 		</div>
 		<div class="row">
+		
 		@FOR ($i = 0; $i < count($provas); $i++)
 		
 		  <div class="col s12 m4">
@@ -36,8 +37,15 @@
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="{{route('realizar.prova', ['id' => $provas[$i]->id])}}">Realizar esta Prova</a>
-			  </div>
+				<form action="{{ route('show.prova') }}" method="post" >
+				{{csrf_field()}}
+					<input type="hidden" value="{{$agendamentos[$i]->id}}" name="idAgendamento" />
+					<input type="hidden" value="0" name="questaoAtual" />
+					<input type="hidden" value="" name="questoes" />
+				
+					<button >Realizar esta Prova</button>
+			  </form>
+				</div>
 			</div>
 			</div>
 			@ENDFOR	  

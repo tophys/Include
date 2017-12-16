@@ -16,10 +16,11 @@
         <div class="row">
             <div class="col s12 m4">
 						<img src="{{asset('/images/img-final.png')}}">
+                        <h5>Prova realizada com sucesso!</h5>
             </div>
-						<div class="col sm12 m4 center">
-						<a class="waves-effect right waves-light btn orange lighten-1" href="{{url('/dashboard/aluno')}}">Voltar para a Home</a>
-						</div>    
+            <div class="col sm12 m4 center">
+            <a class="waves-effect right waves-light btn orange lighten-1" href="{{url('/dashboard/aluno')}}">Voltar para a Home</a>
+            </div>    
         </div>
     </div>
 </div>

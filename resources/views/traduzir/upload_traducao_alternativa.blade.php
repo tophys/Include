@@ -38,7 +38,7 @@
                         
                         <div class="col s12 m6">
                         <form enctype="multipart/form-data" id="formAlternativa" action="{{route('traduzir.alternativa', ['id' => $alternativa->id] )}}" method="post">
-                            <input type="hidden" name="questao_id" value="{{$id}}" />$_COOKIE
+                            <input type="hidden" name="questao_id" value="{{$id}}" />
                             <input type="hidden" name="alternativa_id" value="{{$alternativa->id}}" />
                             {{ csrf_field() }}
                                 <div class="file-field input-field">

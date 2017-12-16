@@ -76,6 +76,11 @@ Route::group(['middleware' => ['aluno']], function ()
     Route::get('/dashboard/aluno', 'HomeController@dashboardAluno');
     Route::get('/prova/{id}/realizar', ['as'=> 'realizar.prova', 'uses' => 'RealizarController@provaAluno']);
 
+    Route::post('/mostrar/prova', ['as' => 'show.prova', 'uses' => 'ExecutarController@executarProva']);
+    Route::post('/executar/prova', ['as' => 'executar.prova', 'uses' => 'ExecutarController@salvarResposta']);
+    Route::get('/executar', 'ExecutarController@apresentarProvas');
+    
+
 });
 
 //Rotas Interprete
@@ -92,6 +97,9 @@ Route::group(['middleware' => ['interprete']], function ()
     Route::get('/traduzir/questao/{id}/show', ['as' => 'show.questao', 'uses' => 'UploadController@showTrazudirQuestao']);
     Route::get('/traduzir/alternativa/{id}/{alternativa}/show', ['as' => 'show.alternativa', 'uses' => 'UploadController@showTrazudirAlternativa']);
     Route::get('/selecionar/questao', 'UploadController@selecionarQuestao');
+
+    
+
 });
 
 

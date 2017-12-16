@@ -46,22 +46,7 @@
 			  </div>
 			</div>
 		  </div>
-		  <div class="col s12 m4">
-			<div class="card orange lighten-1 white-text">  
-			  <div class="card-content valign-wrapper">
-				<div class="card-text">
-				  <h6>Prova Próxima</h6>
-				  <p>Traduza a prova mais próxima a ser aplicada.</p>
-				</div>
-				<div class="card-icon">
-				  <i class="material-icons medium valign">access_alarm</i>
-				</div>
-			  </div>
-			  <div class="card-action">
-				<a href="{{ url('/traduzir/alternativa/{id}')}}">Traduzir agora</a>
-			  </div>
-			</div>
-		  </div>
+		  
 		</div>
 		<div class="row">
 				<div class="col s12 m4">
@@ -76,7 +61,7 @@
 					</div>
 					</div>
 					<div class="card-action">
-					<a href="{{ url('/traduzir/provas/{id}')}}">Alterar agora</a>
+					<a href="{{ url('/selecionar/prova')}}">Alterar agora</a>
 					</div>
 				</div>
 				</div>
@@ -92,26 +77,11 @@
 					</div>
 					</div>
 					<div class="card-action">
-					<a href="{{ url('/traduzir/questao/{id}')}}">Traduzir agora</a>
+					<a href="{{ url('/selecionar/questao') }}">Traduzir agora</a>
 					</div>
 				</div>
 				</div>
-				<div class="col s12 m4">
-				<div class="card orange lighten-2 white-text">  
-					<div class="card-content valign-wrapper">
-					<div class="card-text">
-						<h6>Meus Avisos</h6>
-						<p>Veja as últimas novidades para você.</p>
-					</div>
-					<div class="card-icon">
-						<i class="material-icons medium valign">notifications_active</i>
-					</div>
-					</div>
-					<div class="card-action">
-					<a href="{{ url('/traduzir/alternativa/{id}')}}">Ver agora</a>
-					</div>
-				</div>
-				</div>
+				
 			</div>
 	  </div>
 	</div>
