@@ -74,7 +74,7 @@
                                 <input type="hidden" name="prova_id" value="{{$prova->id}}" />
                                 <input type="hidden" name="questao_id" value="{{$questao->id}}" />
                                 <span>{{ $questao->	descricao }} </span>
-                                <a onclick="event.preventDefault();document.getElementById('selectQuestao').submit();" href="#modal{{$questao->id}}" class="secondary-content modal-trigger"><i class="material-icons light-green-text">add</i></a>
+                                <a href="#modal{{$questao->id}}" class="secondary-content modal-trigger"><i class="material-icons light-green-text">add</i></a>
                             </form>
                             </div>
                         </li>
