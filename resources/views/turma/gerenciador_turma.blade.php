@@ -105,11 +105,11 @@
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
 				<li class="disabled waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-				<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				<li class="waves-effect"><a ><i class="material-icons">chevron_right</i></a></li>
 			  </ul>
 		</div>
 		<div class="fixed-action-btn horizontal">
-			<a href="#" class="btn-floating btn-large red">
+			<a href="{{url('/nova/turma')}}" class="btn-floating btn-large red">
 			  <i class="large material-icons deep-orange lighten-1">add</i>
 			</a>
 		</div>

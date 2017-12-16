@@ -53,7 +53,7 @@
                                             <div>
                                                 <span>{{ $questao->descricao }} </span>
                                                 <a href="{{route('deselecionar.questao', ['id' => $prova->id, 'questao' => $questao->id])}}" class="secondary-content">
-                                                    <i class="material-icons light-green-text">-</i>
+                                                    <i class="material-icons light-green-text">remove_circle</i>
                                                 </a>
                                             </div>
                                         </li>
