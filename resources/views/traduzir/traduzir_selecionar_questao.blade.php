@@ -26,10 +26,7 @@
 									</div>
 									<div class="input-field col s12 m3">
                                     <select>
-									<option value="" disabled selected>Selecione</option>
-									  @FOREACH ($materias as $materia)
-									  <option value="{{ $materia->id }}">{{ $materia->	nome }}</option>
-								  	  @ENDFOREACH
+									  <option value="{{ $prova->materia->id }}">{{ $prova->materia->	nome }}</option>
 									 </select>
 										<label>Matéria</label>
 									</div>

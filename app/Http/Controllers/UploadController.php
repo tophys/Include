@@ -54,7 +54,7 @@ class UploadController extends Controller
                 'traduzida' => 0
             ));
         }
-        return redirect()->route('traduzir.alternativa', ['id' => $data->questao_id]);
+        return redirect()->route('show.alternativa', ['id' => $data->questao_id, 'alternativa' => $data->alternativa_id]);
     }
 
     public function showQuestao($id)
@@ -100,6 +100,12 @@ class UploadController extends Controller
     {
         $questao = Questao::find($id);
         return view('traduzir.upload_traducao')->withQuestao($questao);
+    }
+
+    public function showTrazudirAlternativa($id, $idAlternativa)
+    {
+        $alternativa = Alternativa::find($idAlternativa);
+        return view('traduzir.upload_traducao_alternativa')->withAlternativa($alternativa)->withId($id);
     }
 
 }

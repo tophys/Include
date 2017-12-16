@@ -103,11 +103,12 @@ class ProvaController extends Controller
         $agendamento->turma_id = $data->turma_id;
         $agendamento->prova_id = $data->prova_id;
         $agendamento->professor_id = Auth::user()->id;
-        $agendamento->data_liberada = \Carbon\Carbon::parse($data->data_liberada)->format('Y-m-d');
+        //$agendamento->data_liberada = \Carbon\Carbon::parse($data->data_liberada)->format('Y-m-d');
+        $agendamento->data_liberada = date('Y-m-d', strtotime($data->data_liberada));
         $agendamento->ativo = 0;
         $agendamento->executado = 1;
         $agendamento->save();
-        return redirect('liberar.agendamento', ['id' => $data->prova_id]);
+        return redirect()->route('liberar.agendamento', ['id' => $data->prova_id]);
     }
 
     public function desativarAgendamentoProva($idProva, $idAgendamento)
@@ -115,7 +116,7 @@ class ProvaController extends Controller
         Agendamento::where('id', $idAgendamento)->update(array(
             'ativo' => 1
         ));
-        return redirect('liberar.prova', $idProva);
+        return redirect()->route('liberar.prova', ['id' => $idProva]);
     }
 
     public function detalharProva($id)

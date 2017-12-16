@@ -27,6 +27,9 @@
 							@if ($questao->traduzida == 0)
 								<video class="responsive-video" controls>
 									<source src="/uploads/questoes/{{$questao->src}}" type="video/mp4">
+									<source src="/uploads/alternativas/{{$alternativa->src}}" type="video/ogg">
+									<source src="/uploads/alternativas/{{$alternativa->src}}" type="video/webm">
+									Seu navegador não suporta este tipo de vídeo
 								</video>
 							@else
 								<h4>Questão sem tradução</h4>

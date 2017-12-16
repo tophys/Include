@@ -59,6 +59,7 @@
 								<th>Data do Agendamento</th>
 								<th>Prova</th>
 								<th>Executada</th>
+								<th>Desativar</th>
 							</tr>
 						</thead>
 						<tbody class="white">
@@ -72,10 +73,13 @@
 									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
 									<!-- Se a flag for liberada-->
 									@IF ($agendamento->executado == 0)
-									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">check</i></a>
+									<a ><i class="material-icons grey-text text-darken-1">check</i></a>
 									@else
-									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">block</i></a>
+									<a ><i class="material-icons grey-text text-darken-1">block</i></a>
 									@endif
+								</td>
+								<td>
+									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">block</i></a
 								</td>
                             </tr>
                             @endforeach

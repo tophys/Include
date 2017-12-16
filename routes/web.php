@@ -82,13 +82,14 @@ Route::group(['middleware' => ['interprete']], function ()
 {
 
     Route::get('/dashboard/interprete', 'HomeController@dashboardInterprete');
-    Route::get('/seleciomar/prova', 'UploadController@showProvas');
+    Route::get('/selecionar/prova', 'UploadController@showProvas');
     Route::get('/selecionar/prova/{id}/questao', ['as' => 'selecionar.questao', 'uses' => 'UploadController@showQuestoesProva']);
     Route::get('/traduzir/alternativa/{id}', ['as' => 'traduzir.alternativa', 'uses' => 'UploadController@showAlternativa']);
     Route::post('/traduzir/alternativa/{id}', ['as' => 'traduzir.alternativa', 'uses' => 'UploadController@uploadAlternativa']);
     Route::get('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@showQuestao']);
     Route::post('/traduzir/questao/{id}', ['as' => 'traduzir.questao', 'uses' => 'UploadController@uploadQuestao']);
     Route::get('/traduzir/questao/{id}/show', ['as' => 'show.questao', 'uses' => 'UploadController@showTrazudirQuestao']);
+    Route::get('/traduzir/alternativa/{id}/{alternativa}/show', ['as' => 'show.alternativa', 'uses' => 'UploadController@showTrazudirAlternativa']);
     Route::get('/selecionar/questao', 'UploadController@selecionarQuestao');
 });
 

@@ -14,7 +14,7 @@
 				<div class="col s12 m12">
 					<div class="card filter-card transparent z-depth-0">
 						<div class="card-content">
-							<span class="page-title light-green-text">Tradução de Alternativa</span>
+							<span class="page-title light-green-text">Escolher tradução</span>
 							<hr>
 							<br>
 							<div class="row">
@@ -45,8 +45,8 @@
 													<input type="hidden" name="questao_id" value="{{$questao->id}}" />
 													<input type="hidden" name="alternativa_id" value="{{$alternativa->id}}" />
 													<span>{{ $alternativa->	descricao }} </span>
-													<input type="file" name="alternativa" />
-													<a class="secondary-content" onclick="event.preventDefault();document.getElementById('form{{$alternativa->id}}').submit();">
+													<!--<input type="file" name="alternativa" />-->
+													<a class="secondary-content"  href="{{ route('show.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}" >
 														<i class="material-icons light-green-text">file_upload</i>
 													</a>
 												</form> 

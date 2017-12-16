@@ -58,11 +58,12 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="#">Liberar Agora</a>
+                        <a href="{{url('/gerenciar/prova')}}">Liberar Agora</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!--
         <div class="row">
             <div class="col s12 m4">
                 <ul class="collection with-header">
@@ -92,7 +93,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div>-->
             <div class="col s12 m8">
                 <div class="card cyan">
                     <div class="card-content valign-wrapper" id="calendar">
