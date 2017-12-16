@@ -38,17 +38,9 @@
 										<input placeholder="&nbsp;" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
 									<div class="col sm12 m3 center">
-										<a class="waves-effect waves-light btn orange lighten-1 modal-trigger" href="#modalLiberar">Liberar Prova</a>
+										<a class="waves-effect waves-light btn orange lighten-1 modal-trigger" >Liberar Prova</a>
 									</div>
-									<div id="modalLiberar" class="modal">
-										<div class="modal-content">
-											<h4>Liberar Prova</h4>
-											<p>Tem certeza de que deseja liberar esta prova?</p>
-										</div>
-										<div class="modal-footer">
-											<a onclick="event.preventDefault();document.getElementById('liberar-prova').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
-											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
-										</div>
+									
 									</div>
 									<div class="col sm12 m2 left">
 										&nbsp;
