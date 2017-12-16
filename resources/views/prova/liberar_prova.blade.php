@@ -19,7 +19,7 @@
 						<div class="card-content row">
 							<span class="page-title light-green-text">Liberação de provas</span>
 							<hr>
-							<form method="post" action="{{ route('liberar.agendamento', ['id' => $id]) }}" class="col s12 m12">
+							<form method="post" id="liberar_prova" action="{{ route('liberar.agendamento', ['id' => $id]) }}" class="col s12 m12">
 							{{ csrf_field() }}
 								<br>
 								<div class="row valign-wrapper">
@@ -46,7 +46,7 @@
 											<p>Tem certeza de que deseja liberar esta prova?</p>
 										</div>
 										<div class="modal-footer">
-											<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
+											<a onclick="event.preventDefault();document.getElementById('liberar-prova').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
 											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 										</div>
 									</div>
