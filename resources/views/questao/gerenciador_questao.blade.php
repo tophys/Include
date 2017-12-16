@@ -80,7 +80,7 @@
 										<a href="{{route('alterar.questao', ['id' => $questao->id])}}">Alterar</a>
 									</li>
 									<li>
-										<a class="modal-trigger" href="#modal{{$questao->id}}">Excluir</a>
+										<a class="modal-trigger" href="modal{{$questao->id}}">Excluir</a>
 									</li>
 								</ul>
 							</td>
