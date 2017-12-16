@@ -40,24 +40,46 @@
 						</form>
 						<div class="row">
 							<br>
-							<div class="col s12 m12" id="questions-results">
-								<ul class="collection with-header">
-									<li class="collection-header light-green">
-										<span class="page-title white-text">Alternativas</span>
-									</li>
-									@FOREACH ($alternativas as $alternativa)
-									<li class="collection-item">
-										<div class="radio-button-label">
+							<div class="col s12 m12">
+							<table class="highlight centered bordered z-depth-1">
+								<thead class="light-green white-text">
+								<tr>
+									<th>Alternativas</th>
+										<th>&nbsp;</th>
+										<th>&nbsp;</th>
+								</tr>
+								</thead>
+
+								<tbody class="white">
+								@FOREACH ($alternativas as $alternativa)
+								<tr>
+									<td><div class="radio-button-label">
 											@IF ($alternativa->correta == 0)
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" checked disabled/> @ELSE
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> @ENDIF
 											<label for="altdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
 										</div>
-										<div><a class="secondary-content" href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">edit</i></a></div>
-										<div><a class="secondary-content" href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a></div>
-									</li>
-									@ENDFOREACH
-								</ul>
+									</td>
+									<td>
+									<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">edit</i></a>
+									</td>
+									<td>
+										<a class="modal-trigger" href="#modal{{$alternativa->id}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
+									</td>
+									</tr>
+										<div id="modal{{$alternativa->id}}" class="modal">
+													<div class="modal-content">
+														<h4>Excluir Alternativa</h4>
+														<p>Tem certeza de que deseja excluir esta alternativa?</p>
+													</div>
+													<div class="modal-footer">
+														<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Excluir</a>
+														<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+													</div>
+												</div>
+								@ENDFOREACH
+								</tbody>
+							</table>
 							</div>
 						</div>
 					</div>
