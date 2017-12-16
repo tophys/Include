@@ -58,8 +58,18 @@
 									<a  class="waves-effect right waves-light btn orange lighten-1">Voltar</a>
 								</div>
 								<div class="col sm12 m2 right">
-									<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="waves-effect right waves-light btn orange lighten-1">Enviar</a>
+									<a href="#modalEnviar" class="waves-effect right waves-light btn orange lighten-1 modal-trigger">Enviar</a>
 								</div>
+								<div id="#modalEnviar" class="modal">
+										<div class="modal-content">
+											<h4>Enviar Tradução</h4>
+											<p>Deseja enviar esta tradução?</p>
+										</div>
+										<div class="modal-footer">
+											<a onclick="event.preventDefault();document.getElementById('formQuestao').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+										</div>
+									</div>
 							</div>
 						</div>
 					</div>
