@@ -4,13 +4,13 @@
 	<div class="container-fluid">
 		<div class="row">
 			<form enctype="multipart/form-data" action="/perfil" method="post">
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col m6 offset-m3">
 					<h2 class="center">{{ $user->name }}</h2>
 				</div>
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col m6 offset-m3">
 					<img src="/uploads/avatars/{{ $user->avatar }}" class="materialboxed" style="width:150px; height:150px; float:left;  border-radius: 50%;" />
 				</div>
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col m6 offset-m3">
 					<div class="file-field input-field">
 						<div class="btn light-green">
 							<span>Selecionar</span>
@@ -21,7 +21,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col m6 offset-m3">
 					<button class="waves-effect center waves-light btn orange lighten-1">Enviar foto</button>
 				</div>
 				{{ csrf_field() }}
