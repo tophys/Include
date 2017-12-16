@@ -52,11 +52,21 @@
                                         <li class="collection-item">
                                             <div>
                                                 <span>{{ $questao->descricao }} </span>
-                                                <a href="{{route('deselecionar.questao', ['id' => $prova->id, 'questao' => $questao->id])}}" class="secondary-content">
+                                                <a href="#modal{{$questao->id}}" class="secondary-content modal-trigger">
                                                     <i class="material-icons light-green-text">remove_circle</i>
                                                 </a>
                                             </div>
                                         </li>
+                                        <div id="modal{{$questao->id}}" class="modal">
+									<div class="modal-content">
+										<h4>Remover Questão da Prova</h4>
+										<p>Tem certeza de que deseja remover esta questão da prova?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="{{route('deselecionar.questao', ['id' => $prova->id, 'questao' => $questao->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Remove</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
                                         @ENDFOREACH
                                     </ul>
                                 </div>
@@ -70,7 +80,15 @@
 									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('selecionar.questao.professor', ['id' => $prova->id])}}">Selecionar Questões</a>
 								</div>
 								<div class="col sm12 m3">
-									<button class="waves-effect right waves-light btn orange lighten-1" >Salvar Alterações</button>
+                                    <a class="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalSalvar" >Salvar Alterações</a>
+                                    <div id="modalSalvar" class="modal">
+                                        <div class="modal-content">
+                                            <h4>Alterações salvas com sucesso!</h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                                        </div>
+                                    </div>
 								</div>
                             </div>
                         </form>
@@ -91,6 +109,7 @@
 
         $(document).ready(function () {
             $('select').material_select();
+            $('.modal').modal();
         });
     });
 </script> 
