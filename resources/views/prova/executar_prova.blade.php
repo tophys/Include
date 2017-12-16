@@ -25,6 +25,7 @@
 							<input type="hidden" value="{{$idAgendamento}}" name="idAgendamento" />
 							<input type="hidden" value="{{$questaoAtual}}" name="questaoAtual" />
 							<input type="hidden" value="{{$questoes}}" name="questoes" />
+							<input type="hidden" value="{{$questao->id}}" name="questao_id" />
 								<span class="page-title cyan-text">{{ $prova-> nome }}</span>
 								<button class="waves-effect waves-light btn btn-terminar transparent z-depth-0 cyan-text right">Salvar</button>
 								<hr>
@@ -41,6 +42,11 @@
 									</div>
 									<div class="col s12 m1 center">
 										<ul class="pagination">
+											<li class="cyan number">
+												<a class="white-text">
+													{{$questaoAtual}}
+												</a>
+											</li>
 											
 										</ul>
 									</div>
@@ -71,7 +77,7 @@
 											<li class="collection-item row">
 												<div class="col sm12 m11">
 													<div class="radio-button-label">
-														<input class="with-gap" name="alternativas" type="radio" id="alt{{$alternativa->id}}" />
+														<input class="with-gap" name="alternativas" checked type="radio" value="{{$alternativa->id}}" id="alt{{$alternativa->id}}" />
 														<label for="alt{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
 													</div>
 												</div>
@@ -107,6 +113,15 @@
 			<div class="row">
 				<div class="col m12 s12">
 					<ul class="pagination">
+					@for ($i = 1; $i <= $qstTotal ; $i++)
+						@if ($i == $questaoAtual)
+						<li class="active-effect">
+						@else
+						<li class="waves-effect">
+						@endif
+							<a href="#!">{{$i}}</a>
+						</li>
+					@endfor
 					<!--<li class="disabled arrows">
 							<a href="#!">
 								<i class="material-icons">chevron_left</i>
@@ -143,7 +158,7 @@
 							<a href="#!">9</a>
 						</li>
 						<li class="waves-effect">
-							<a href="#!">10</a>
+						[]	<a href="#!">10</a>
 						</li>
 						<li class="waves-effect arrows">
 							<a href="#!">

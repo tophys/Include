@@ -22,6 +22,7 @@ class ExecutarController extends Controller
         $prova = Prova::find($agendamento->prova_id);
         $questoes = [];
         $objQuestoes = $prova->questoes;
+        $qstTotal = count($prova->questoes);
         if ($questaoAtual == 0) {
             for ($i = 0; $i < count($objQuestoes) ; $i++)
             {
@@ -35,9 +36,8 @@ class ExecutarController extends Controller
         if ($questaoAtual != 0)
         {
             //retorno dos dados de checagem da página
-            $questaoAtual++;
             $questaoRealizada = $data->questao_id;
-            $alternativa = $data->alternativa_id;
+            $alternativa = $data->alternativas;
             //se for a primeira resposta, atualiza que a questão foi realizada e atualiza o executado do agendamento
             if($questaoAtual == 1) {
                 $realizada = new Realizada();
@@ -45,36 +45,46 @@ class ExecutarController extends Controller
                 $realizada->agendamento_id = $idAgendamento;
                 $realizada->save();
 
-                Agendamento::where('id', $idAgendamento)->update(array(
-                    'executada', 0
-                ));
+                Agendamento::where('id', $idAgendamento)->update(array('executado'=> 0));
+                
             }
-            $respondida = new Respondida();
+            $respondida = new Resposta();
             $respondida->agendamento_id = $idAgendamento;
-            $agendamento->user_id = Auth::user()->id;
-            $respondida->questao_id = $questaoRealizada->id;
+            $respondida->user_id = Auth::user()->id;
+            $respondida->questao_id = $questaoRealizada;
             $respondida->alternativa_id = $alternativa;
-            $alternativaCorreta = $questao->alternativas()->where('correta', 0)->get();
-            $respondida->correta = ($alternativaCorreta->id == $alternativa->id) ? 0 : 1;
+            $alternativaCorreta = 1;
+            $alternativasFind = Questao::find($questaoRealizada)->alternativas;
+            foreach ($alternativasFind as $alternativaFind)
+                if ($alternativaFind->correta == 0 && $alternativaFind->id == $alternativa) $alternativaCorreta = 0;
+
+
+            $respondida->correta = $alternativaCorreta;
             $respondida->save();
         }
 
         /*$count = count($prova->questoes()->get());
         $validate = $questaoAtual +1;
         if ($count == $validate)*/
-        if (count($questoes) == 0 && $questaoAtual != 0)
+        //return 'atual ' . $questaoAtual . ' total ' . $qstTotal;
+        if ($questaoAtual == $qstTotal)
         {
             //PROVA CONCLUÍDA
-            $this->finalizarProva();
+            return view('prova.finalizar_prova');
         }
-        $questao = Questao::find($questoes[$questaoAtual]);
-        $questoes = array_pop($questoes);
-        $questoes = serialize($questoes);
-        $questaoAtual++;
+        else
+        {
+            $questao = Questao::find($questoes[$questaoAtual]);
+            //$questoes = array_pop($questoes);
+            $questoes = serialize($questoes);
+            $questaoAtual++;
+            
+    
+            return view('prova.executar_prova')->withQuestao($questao)->withIdAgendamento($idAgendamento)
+            ->withQuestaoAtual($questaoAtual)->withQuestoes($questoes)->withProva($prova)->withQstTotal($qstTotal);
+        }
         
-
-        return view('prova.executar_prova')->withQuestao($questao)->withIdAgendamento($idAgendamento)
-        ->withQuestaoAtual($questaoAtual)->withQuestoes($questoes)->withProva($prova);
+       
 
         //$this->apresentarQuestao($idAgendamento, $questaoAtual, $serialQuestoes, $prova);
 
@@ -132,7 +142,7 @@ class ExecutarController extends Controller
 
     public function finalizarProva()
     {
-        return view('prova.finalizar_prova');
+        
     }
 
 }

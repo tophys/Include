@@ -98,6 +98,7 @@ class CreateTables extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('agendamento_id')->unsigned();
+            $table->timestamps();
         });
 
         Schema::create('respostas', function(Blueprint $table){
@@ -107,6 +108,7 @@ class CreateTables extends Migration
             $table->integer('questao_id')->unsigned();
             $table->integer('alternativa_id')->unsigned();
             $table->boolean('correta');
+            $table->timestamps();
         });
 
 
