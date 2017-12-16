@@ -20,7 +20,7 @@
 							<span class="page-title light-green-text">Alterar Alternativa correta</span>
 							<hr>
 							<br>
-							<form method="POST"  action="{{route('alterar.correta', ['id' => $id])}}">
+							<form method="POST" id="alterar-correta"  action="{{route('alterar.correta', ['id' => $id])}}">
 							{{ csrf_field() }}
 								<div class="row">
 								<div class="col s12 m12" id="questions-results">
@@ -56,7 +56,7 @@
 										<p>Tem certeza de que deseja alterar a alternativa correta?</p>
 									</div>
 									<div class="modal-footer">
-										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar Alterações</a>
+										<a onclick="event.preventDefault();document.getElementById('alterar-correta').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar Alterações</a>
 										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 									</div>
 								</div>

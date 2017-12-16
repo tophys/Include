@@ -19,7 +19,7 @@
 						<div class="card-content">
 							<span class="page-title light-green-text">Alteração de Questão</span>
 							<hr>
-							<form method="PUT" action="{{ route('alterar.questao', ['id' => $questao->id]) }}">
+							<form method="PUT" id="alterar-questao" action="{{ route('alterar.questao', ['id' => $questao->id]) }}">
                             {{ method_field('PUT') }} {{ csrf_field() }}
 								<br>
 								<div class="row">
@@ -63,7 +63,7 @@
 											<p>Tem certeza de que deseja alterar esta questão?</p>
 										</div>
 										<div class="modal-footer">
-											<a href="TEM QUE ENFIAR O SUBMIT AQUI TBM {{ url('gerenciar/questao')}}" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar</a>
+											<a onclick="event.preventDefault();document.getElementById('alterar-questao').submit();" href="{{ url('gerenciar/questao')}}" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar</a>
 											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 										</div>
 									</div>
