@@ -46,7 +46,7 @@
 											<p>Tem certeza de que deseja liberar esta prova?</p>
 										</div>
 										<div class="modal-footer">
-											<submit onclick="event.preventDefault();document.getElementById('liberar-prova');" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</submit>
+											<a onclick="event.preventDefault();document.getElementById('liberar-prova').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
 											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 										</div>
 									</div>
@@ -86,7 +86,7 @@
 									@endif
 								</td>
 								<td>
-									<a class="modal-trigger" href="modal{{$agendamento->prova_id}}"><i class="material-icons grey-text text-darken-1">block</i></a>
+									<a class="modal-trigger" href="modal{{$agendamento->prova_id}}"><i class="material-icons grey-text text-darken-1">block</i></a
 								</td>
 								<div id="modal{{$agendamento->prova_id}}" class="modal">
 										<div class="modal-content">
