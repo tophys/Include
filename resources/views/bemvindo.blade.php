@@ -37,14 +37,14 @@
 
 <!--Hero-->
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
+    <div class="container cyan">
         <h1 class="text_h center header cd-headline letters type">
             <span>Include é </span> 
             <span class="cd-words-wrapper waiting">
                 <b class="is-visible">:</b>
-                <b class="deep-orange lighten-1">educar</b>
-                <b class="light-green">inovar</b>
-                <b class="orange lighten-1">aprender</b>
+                <b class="deep-orange-text text-lighten-1">educar</b>
+                <b class="light-green-text">inovar</b>
+                <b class="orange-text text-lighten-1">aprender</b>
             </span>
         </h1>
     </div>
