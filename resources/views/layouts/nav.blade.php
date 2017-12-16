@@ -3,7 +3,7 @@
     <nav>
         <div class="nav-wrapper cyan">
             <ul>
-             <li><a href="{{url('/home')}}" class="brand-logo"><img src="../images/logo-large.png"></a></li>
+             <li><a href="{{url('/home')}}" class="brand-logo"><img src="{{asset('/images/logo-large.png')}}"></a></li>
             </ul>
             <ul class="right">
                 <li><a class="dropdown-button" href="#!" data-activates="menu-dropdown"><i class="material-icons">more_vert</i></a></li>

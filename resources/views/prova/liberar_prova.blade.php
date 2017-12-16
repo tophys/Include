@@ -35,7 +35,7 @@
 									</div>
 									<div class="input-field col s12 m2">
 										<label>Data de Agendamento</label>
-										<input placeholder="&nbsp;" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
+										<input placeholder="&nbsp;" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
 									<div class="col sm12 m3 center">
 										<button class="waves-effect waves-light btn orange lighten-1">Liberar Prova</button>

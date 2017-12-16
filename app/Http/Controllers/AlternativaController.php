@@ -63,7 +63,9 @@ class AlternativaController extends Controller
 
     public function excluirAlternativa($idQuestao, $idAlternativa)
     {
-        Alternativa::where('id', $idAlternativa)->update(array('ativo' => 1));
+        //Alternativa::where('id', $idAlternativa)->update(array('ativo' => 1));
+        $alternativa = Alternativa::find($idAlternativa);
+        $alternativa->delete();
         return redirect()->route('alterar.questao', ['id' => $idQuestao]);
     }
 

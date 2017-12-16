@@ -1,9 +1,16 @@
-@extends('layouts.padrao') @section('titulo','Gerenciar Questão') @section('plugins')
+@extends('layouts.padrao') 
+
+@section('titulo','Liberação de Prova') 
+
+@section('plugins')
 <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.min.css')}}" />
 <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.min.css')}}" />
 <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.print.css')}}" />
 <link rel="stylesheet" href="{{asset('/fullcalendar/fullcalendar.css')}}" />
-<link rel="stylesheet" href="{{asset('/css/dashboard-style.css')}}" /> @endsection @section('conteudo')
+<link rel="stylesheet" href="{{asset('/css/dashboard-style.css')}}" />
+@endsection 
+
+@section('conteudo')
 <div class="main">
 	<div class="container-fluid">
 		<div class="row">
@@ -21,20 +28,15 @@
 									<input id="questao_criacao" type="text" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" disabled readonly>
 								</div>
 								<div class="input-field col s12 m3">
-									<select name='materia_id' id='materia_id'>
-										<option value="" disabled selected>Selecione</option>
-										@FOREACH ($materias as $materia) @IF ($materia->id == $questao->materia_id)
-										<option selected value="{{ $materia->id }}">{{ $materia->nome }}</option>
-										@ELSE
-										<option value="{{ $materia->id }}">{{ $materia->nome }}</option>
-										@ENDIF @ENDFOREACH
+									<select disabled name='materia_id' id='materia_id'>
+										<option selected value="{{ $questao->materia->id }}">{{ $questao->materia->nome }}</option>
 									</select>
 									<label>Matéria</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12 m12">
-									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea">{{ $questao->descricao }}</textarea>
+									<textarea placeholder="&nbsp;" id="enunciado_descricao" disabled class="materialize-textarea">{{ $questao->descricao }}</textarea>
 									<label id="descricao" for="enunciado_descricao">Enunciado:</label>
 								</div>
 							</div>
@@ -56,8 +58,10 @@
 									<li class="collection-item">
 										<div class="radio-button-label">
 											@IF ($alternativa->correta == 0)
-											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" checked disabled/> @ELSE
-											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> @ENDIF
+											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" checked disabled/> 
+											@ELSE
+											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> 
+											@ENDIF
 											<label id="lbldata{{$alternativa->id}}" for="altdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
 
 											<a class="right dropdown-button" data-activates='data{{$alternativa->id}}'>
