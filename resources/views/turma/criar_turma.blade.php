@@ -53,7 +53,7 @@
               </div>
 
 			  <div class="col sm12 m10 offset-m1">
-				<aclass="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalNovo">Salvar</a>
+				<a class="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalNovo">Salvar</a>
 				</div>
 				<div id="modalNovo" class="modal">
 									<div class="modal-content">

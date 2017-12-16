@@ -74,11 +74,20 @@
                                 <input type="hidden" name="prova_id" value="{{$prova->id}}" />
                                 <input type="hidden" name="questao_id" value="{{$questao->id}}" />
                                 <span>{{ $questao->	descricao }} </span>
-                                <a onclick="event.preventDefault();document.getElementById('selectQuestao').submit();" class="secondary-content"><i class="material-icons light-green-text">add</i></a>
+                                <a onclick="event.preventDefault();document.getElementById('selectQuestao').submit();" href="#modal{{$questao->id}}" class="secondary-content modal-trigger"><i class="material-icons light-green-text">add</i></a>
                             </form>
                             </div>
                         </li>
-                      
+                        <div id="modal{{$questao->id}}" class="modal">
+									<div class="modal-content">
+										<h4>Adicionar questão na prova</h4>
+										<p>Tem certeza de que deseja adicionar esta questão?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Adicionar</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
                        @ENDFOREACH                       
                     </ul>
                     </div>
@@ -115,6 +124,7 @@
 
 			$(document).ready(function() {
 				$('select').material_select();
+                $('.modal').modal();
 			});
 		});
 	</script>
