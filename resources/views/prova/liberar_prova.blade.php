@@ -46,7 +46,7 @@
 											<p>Tem certeza de que deseja liberar esta prova?</p>
 										</div>
 										<div class="modal-footer">
-											<a onclick="event.preventDefault();document.getElementById('liberar-prova').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
+											<submit onclick="event.preventDefault();document.getElementById('liberar-prova');" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</submit>
 											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 										</div>
 									</div>
