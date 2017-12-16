@@ -15,7 +15,7 @@
 	  <div class="container-fluid">
 		<div class="row">
 		<div class="col s12 m12">
-		<form method="post" action="{{ route('nova.turma') }}">
+		<form method="post" id="criar-turma" action="{{ route('nova.turma') }}">
 		{{ csrf_field() }}
 			<div class="card filter-card transparent z-depth-0">  
 			  <div class="card-content row">
@@ -23,6 +23,7 @@
 			  <hr>
 			  <div class="card col s12 m10 offset-m1">
 			  <div class="card-content row">
+
 			  <form class="col s12 m12">
 			  <br>
 			  <div class="row">
@@ -50,8 +51,9 @@
                     <label for="descricao">Descrição:</label>
                 </div>
               </div>
+
 			  <div class="col sm12 m10 offset-m1">
-				<a class="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalNovo">Salvar</a>
+				<aclass="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalNovo">Salvar</a>
 				</div>
 				<div id="modalNovo" class="modal">
 									<div class="modal-content">
@@ -59,7 +61,7 @@
 										<p>Deseja salvar esta turma?</p>
 									</div>
 									<div class="modal-footer">
-										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+										<a  onclick="event.preventDefault();document.getElementById('criar-turma').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
 										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 									</div>
 								</div>
