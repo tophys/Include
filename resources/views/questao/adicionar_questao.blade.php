@@ -56,15 +56,15 @@
 										<a href="#" class="dropdown-button right" data-activates='data{{$alternativa->id}}'>
 											<i class="material-icons grey-text text-darken-1">more_vert</i>
 										</a>
-										<ul id='data{{$alternativa->id}}' class='dropdown-content'>
-											<li>
-												<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Alterar</a>
-											</li>
-											<li>
-												<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
-											</li>
-										</ul>
 									</li>
+											<ul id='data{{$alternativa->id}}' class='dropdown-content'>
+												<li>
+													<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Alterar</a>
+												</li>
+												<li>
+													<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}">Excluir</a>
+												</li>
+											</ul>
 									@ENDFOREACH
 								</ul>
 							</div>
@@ -76,7 +76,6 @@
 							<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.correta', ['id' => $questao->id])}}">Alterar Alternativa Correta</a>
 						</div>
 					</div>
-			
 				</div>
 			</div>
 		</div>
@@ -92,8 +91,7 @@
 
 		$('.dropdown-button').dropdown({
 			hover: false, // Activate on hover
-			belowOrigin: true, // Displays dropdown below the button
-			alignment: 'right' // Displays dropdown with edge aligned to the left of button
+			belowOrigin: true // Displays dropdown below the button
 		}
 		);
 	});
