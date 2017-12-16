@@ -28,7 +28,7 @@
 										<input id="questao_criacao" type="text" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" disabled readonly>
 									</div>
 									<div class="input-field col s12 m3">
-										<select>
+										<select name="materia_id">
 										<option value="" disabled selected>Selecione</option>
                                         @FOREACH ($materias as $materia)
                                         <option value="{{ $materia->id }}">{{ $materia->nome }}</option>
@@ -45,7 +45,7 @@
 								</div>
 								<div class="row">
 									<div class="col sm12 m12">
-                                    <a href="{{ route('nova.questao') }}" class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</a>
+                                    <button class="waves-effect right waves-light btn orange lighten-1">Incluir Alternativas</button>
 									</div>
 								</div>
 							</form>
@@ -56,34 +56,11 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
 										</li>
-                                        @FOREACH($alternativas as $alternativa)
-										<li class="collection-item">                                            
-											<div class="radio-button-label">
-												<input class="with-gap" name="alternativas" type="radio" id="{{$alternativa -> id}}" disabled/>
-												<label for="{{$alternativa -> id}}"></label>
-												<a href="#" class="dropdown-button right" data-activates='dropdown1'>
-													<i class="material-icons grey-text text-darken-1">more_vert</i>
-												</a>
-											</div>
-											<ul id='dropdown1' class='dropdown-content'>
-												<li>
-													<a href="{{route('alterar.questao', ['id' => $id])}}">Alterar</a>
-												</li>
-												<li>
-													<a href="{{route('excluir.questao', ['id' => $id])}}">Excluir</a>
-												</li>
-                                            </ul>                                            
-										</li>
-                                        @ENDFOREACH
+                                        
 									</ul>
 								</div>
 							</div>
-							<div class="row">
-								<br>
-								<div class="col sm12 m4 right">
-									<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.correta', ['id' => $id])}}">Alterar Alternativa Correta</a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
