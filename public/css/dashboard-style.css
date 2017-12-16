@@ -1,6 +1,7 @@
 body {
   font-size: 13px;
   background: #FCFCFC url('../images/logo_grande_do_fundo.png') no-repeat fixed right bottom;
+  background-size: 100px;
 }
 
 h6 { font-size: 1.5rem; margin-top: 0; }
