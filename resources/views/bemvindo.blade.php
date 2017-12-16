@@ -3,13 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#2196F3">
     <title>Include</title>
 
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
 </head>
-<body id="top" class="scrollspy cyan">
+<body id="top" class="scrollspy">
 
 <!-- Pre Loader -->
 <div id="loader-wrapper">
@@ -22,7 +23,7 @@
 
 <!--Navigation-->
  <div class="navbar-fixed">
-    <nav id="nav_f" class="cyan" role="navigation">
+    <nav id="nav_f" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
             <a href="#" id="logo-container" class="brand-logo">Include@</a>
@@ -36,7 +37,7 @@
 
 <!--Hero-->
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container cyan">
+    <div class="container">
         <h1 class="text_h center header cd-headline letters type">
             <span>Include é </span> 
             <span class="cd-words-wrapper waiting">
