@@ -53,8 +53,8 @@
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> @ENDIF
 											<label for="altdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
 										</div>
-										<a href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">edit</i></a> 
-										<a href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
+										<a class="right" href="{{route('alterar.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">edit</i></a> 
+										<a class="right" href="{{route('excluir.alternativa', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
 									</li>
 									@ENDFOREACH
 								</ul>
