@@ -74,6 +74,7 @@ Route::group(['middleware' => ['aluno']], function ()
 {
 
     Route::get('/dashboard/aluno', 'HomeController@dashboardAluno');
+    Route::get('/prova/{id}/realizar', ['as'=> 'realizar.prova', 'uses' => 'RealizarController@provaAluno']);
 
 });
 
