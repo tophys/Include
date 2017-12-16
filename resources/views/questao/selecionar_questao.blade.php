@@ -100,12 +100,23 @@
                 </div>
 			  <div class="row">
                   <br>
-                  <div class="col sm12 m3 offset-m6">
+                  <div class="col sm12 m3 offset-m3">
 					<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('nova.questao')}}">Criar nova questão</a>
                   </div>
                   <div class="col sm12 m3">
 					<a class="waves-effect right waves-light btn orange lighten-1" href="{{route('alterar.prova', ['id' => $prova->id])}}">Voltar</a>
-				  </div>
+                  </div>
+                  <div class="col sm12 m3">
+					<a class="waves-effect right waves-light btn orange lighten-1 modal-trigger" href="#modalSalvar">Salvar Prova</a>
+                  </div>
+                  <div id="modalSalvar" class="modal">
+									<div class="modal-content">
+										<h4>Prova salva com sucesso!</h4>
+									</div>
+									<div class="modal-footer">
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+									</div>
+								</div>
 			  </div>
 			  </form>
 			  </div>
