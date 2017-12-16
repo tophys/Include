@@ -89,18 +89,18 @@
                         <a class="modal-trigger" href="#modal{{$turma->id}}"><i class="material-icons activate-toolbar grey-text text-darken-1">delete</i></a> 
                     </td>
 				    </tr>
+						<div id="modal{{$turma->id}}" class="modal">
+									<div class="modal-content">
+										<h4>Excluir Turma</h4>
+										<p>Tem certeza de que deseja excluir esta turma? Após confirmar ela não estará mais disponível.</p>
+									</div>
+									<div class="modal-footer">
+										<a href="{{route('excluir.turma', ['id' => $turma->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Excluir</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
 				@ENDFOREACH
 				</tbody>
-			  <div id="modal{{$turma->id}}" class="modal">
-							<div class="modal-content">
-								<h4>Excluir Turma</h4>
-								<p>Tem certeza de que deseja excluir esta turma? Após confirmar ela não estará mais disponível.</p>
-							</div>
-							<div class="modal-footer">
-								<a href="{{route('excluir.turma', ['id' => $turma->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Excluir</a>
-								<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
-							</div>
-						</div>
 		</div>
 		<div class="col s12 m12 center">
 			  <ul class="pagination">
