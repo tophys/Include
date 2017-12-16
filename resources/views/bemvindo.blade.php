@@ -43,7 +43,7 @@
             <span class="cd-words-wrapper waiting">
                 <b class="is-visible">:</b>
                 <b class="deep-orange-text text-lighten-1">educar</b>
-                <b class="blue-text">inovar</b>
+                <b class="white-text">inovar</b>
                 <b class="orange-text text-lighten-1">aprender</b>
             </span>
         </h1>
