@@ -85,8 +85,18 @@
 								<a href="{{route('alterar.prova', ['id' => $prova->id])}}">Alterar</a>
 							</li>
 							<li>
-								<a href="{{route('excluir.prova', ['id' => $prova->id])}}">Excluir</a>
+								<a href="#modal{{$prova->id}}" class="modal-trigger">Excluir</a>
 							</li>
+							<div id="modal{{$prova->id}}" class="modal">
+									<div class="modal-content">
+										<h4>Excluir Prova</h4>
+										<p>Tem certeza de que deseja excluir esta prova? Após confirmar ela não estará mais disponível.</p>
+									</div>
+									<div class="modal-footer">
+										<a href="{{route('excluir.prova', ['id' => $prova->id])}}" class="modal-action modal-close waves-effect waves-green btn-flat">Excluir</a>
+										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+									</div>
+								</div>
 						</ul> 
 					</td>
 				</tr>
@@ -118,6 +128,7 @@
 
 			$(document).ready(function() {
 				$('select').material_select();
+				$('.modal').modal();
 			});
 		});
 	</script>
