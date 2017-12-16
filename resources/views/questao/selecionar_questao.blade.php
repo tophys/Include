@@ -24,7 +24,7 @@
 				</div>	
               </div>
               <div class="row">
-                  <form method="post" action="">
+                  <form method="post" id="select-questao" action="">
                   {{ csrf_field() }}
                     <div class="col s12 m12 card transparent z-depth-0">
                         <div class="card-content">
@@ -84,7 +84,7 @@
 										<p>Tem certeza de que deseja adicionar esta questão?</p>
 									</div>
 									<div class="modal-footer">
-										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Adicionar</a>
+										<a onclick="event.preventDefault();document.getElementById('select-questao').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Adicionar</a>
 										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 									</div>
 								</div>
