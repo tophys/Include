@@ -28,7 +28,7 @@
 							</div>
 							<div class="row">
 								<div class="input-field col s12 m12">
-									<textarea placeholder="&nbsp;" id="enunciado_descricao" class="materialize-textarea"></textarea>
+								<textarea placeholder="&nbsp;" disabled id="enunciado_descricao" class="materialize-textarea">{{$questao->descricao}}</textarea>
 									<label for="enunciado_descricao">Enunciado:</label>
 								</div>
 							</div>

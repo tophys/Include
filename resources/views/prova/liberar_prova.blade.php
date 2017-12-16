@@ -86,9 +86,9 @@
 									@endif
 								</td>
 								<td>
-									<a class="modal-trigger" href="modal{{$prova->id}}"><i class="material-icons grey-text text-darken-1">block</i></a
+									<a class="modal-trigger" href="modal{{$agendamento->prova_id}}"><i class="material-icons grey-text text-darken-1">block</i></a
 								</td>
-								<div id="modal{{$prova->id}}" class="modal">
+								<div id="modal{{$agendamento->prova_id}}" class="modal">
 										<div class="modal-content">
 											<h4>Bloquear Prova</h4>
 											<p>Tem certeza de que deseja bloquear esta prova?</p>

@@ -15,8 +15,8 @@ class AlternativaController extends Controller
 
     public function alterarAlternativa($id, $idQuestao)
     {
-        $alternativa = Alternativa::find($id);
-        return view('alternativa.alterar_alternativa')->withAlternativa($alternativa)->withIdQuestao($idQuestao);
+        $alternativa = Alternativa::find($idQuestao);
+        return view('alternativa.alterar_alternativa')->withAlternativa($alternativa)->withIdQuestao($id);
     }
 
     public function salvarAlternativa(Request $data)

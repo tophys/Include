@@ -84,7 +84,7 @@
 										<p>Tem certeza de que deseja adicionar esta questão?</p>
 									</div>
 									<div class="modal-footer">
-										<a onclick="event.preventDefault();document.getElementById('select-questao').submit();" class="modal-action modal-close waves-effect waves-green btn-flat">Adicionar</a>
+										<a onclick="event.preventDefault();document.getElementById('selectQuestao').submit();"  class="modal-action modal-close waves-effect waves-green btn-flat">Adicionar</a>
 										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 									</div>
 								</div>
