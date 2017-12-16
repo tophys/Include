@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Include@ - Início</title>
+	<link rel="icon" href="images/logo-icon.png">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Pacifico'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.min.css' />
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.print.min.css' />
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.print.css' />
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+	<link rel="stylesheet" href="css/dashboard-style.css">
+</head>
+<body>
+	<div class="navbar-fixed">
+	  <nav>
+		<div class="nav-wrapper cyan">
+		  <ul>
+			<li><a href="dashboard_aluno.html" class="brand-logo"><img src="images/logo-large.png"></a></li>
+		  </ul>
+		  <ul class="right">
+			<li><a class="dropdown-button" href="#!" data-activates="menu-dropdown"><i class="material-icons">more_vert</i></a></li>
+				<ul id="menu-dropdown" class="dropdown-content">
+				  <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">account_circle</i> <span class="left"> Perfil</span></a></li>
+				  <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">settings</i> <span class="left"> Ajustes</span></a></li>
+				  <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">help</i> <span class="left"> Ajuda</span></a></li>
+				  <li><a href="#!" class="grey-text text-darken-2"><i class="material-icons left">exit_to_app</i> <span class="left"> Sair</span></a></li>
+				</ul>
+		  </ul>
+		</div>
+	  </nav>
+	</div>
+	<ul class="side-nav fixed">
+	  <li class="user-details cyan darken-2 avatar avatar-user">
+			  <img src="https://lh3.googleusercontent.com/-W2XryVdi-lA/U6tSAh3SsbI/AAAAAAAAFGY/ZHJiUEcR_Zs/w480-h480/avatar%2Bmaterial%2Bdesign.png">
+			  <div class="avatar-text">
+				<span class="user-name">Luiz Faleiro</span>
+				<span class="user-title">Aluno</span>
+			  </div>  
+      </li>
+			<li class="active"><a href="dashboard_aluno.html"><i class="material-icons">dashboard</i>Principal</a></li>
+			<hr class="divider">
+	  <li><a href="consulta_prova.html"><i class="material-icons">library_books</i>Provas</a></li>
+	  <hr class="divider">
+	  <li><a href="#"><i class="material-icons">notifications_active</i>Avisos</a></li>
+	</ul>
+	
+	<div class="main">
+        <div class="container-fluid">
+           
+               
+                            <img src="include/public/images/img-final.png">
+                
+                            <div class="col sm12 m4 center">
+                            <a class="waves-effect right waves-light btn orange lighten-1" href="{{url('/dashboard/aluno')}}">Voltar para a Home</a>
+                            </div>    
+        
+           </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{asset('js/configuracoes-datepicker.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+    
+            // page is now ready, initialize the calendar...
+    
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+        });
+    </script>
+</body>
+</html>
