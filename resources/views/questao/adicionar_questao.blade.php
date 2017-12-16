@@ -101,6 +101,7 @@
 
 	$(document).ready(function () {
 		$('select').material_select();
+		$('.modal').modal();
 
 		$('.dropdown-button').dropdown({
 			hover: false, // Activate on hover
