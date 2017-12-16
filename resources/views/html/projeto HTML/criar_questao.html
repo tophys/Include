@@ -138,83 +138,56 @@
 										<li class="collection-header light-green">
 											<span class="page-title white-text">Alternativas</span>
 										</li>
-										<li class="collection-item">
-											<div class="radio-button-label">
-												<input class="with-gap" name="alternativas" type="radio" id="alt1" checked disabled/>
-												<label for="alt1">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar um caracter.</label>
-												<a class="right">
-													<i class="material-icons grey-text text-darken-1">more_vert</i>
-												</a>
-											</div>
-										</li>
-										<li class="collection-item">
-											<div class="radio-button-label">
-												<input class="with-gap" name="alternativas" type="radio" id="alt2" disabled/>
-												<label for="alt2">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar um caracter.</label>
-												<a class="right">
-													<i class="material-icons grey-text text-darken-1">more_vert</i>
-												</a>
-											</div>
-										</li>
-										<li class="collection-item">
-											<div class="radio-button-label">
-												<input class="with-gap" name="alternativas" type="radio" id="alt3" disabled/>
-												<label for="alt3">
-													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar um caracter.</label>
-												<a class="right">
-													<i class="material-icons grey-text text-darken-1">more_vert</i>
-												</a>
-											</div>
-										</li>
+
 										<li class="collection-item">
 											<div class="radio-button-label">
 												<input class="with-gap" name="alternativas" type="radio" id="alt4" disabled/>
 												<label for="alt4">
 													A menor unidade de informação armazenável em um computador é o byte, suficiente, em muitos casos, para armazenar um caracter.</label>
-													<a href="#" class="dropdown-button right" data-activates='dropdown1'>
-														<i class="material-icons grey-text text-darken-1">more_vert</i>
-													</a>
-												</div>
-												<ul id='dropdown1' class='dropdown-content'>
-													<li>
-														<a href="alterar_questao.html">Alterar</a>
-													</li>
-													<li>
-														<a href="excluir_questao.html">Excluir</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</div>
+												<a href="#" class="dropdown-button right" data-activates='dropdown1'>
+													<i class="material-icons grey-text text-darken-1">more_vert</i>
+												</a>
+											</div>
+											<ul id='dropdown1' class='dropdown-content'>
+												<li>
+													<a href="alterar_questao.html">Alterar</a>
+												</li>
+												<li>
+													<a href="excluir_questao.html">Excluir</a>
+												</li>
+											</ul>
+										</li>
+
+									</ul>
 								</div>
-								<div class="row">
-									<br>
-									<div class="col sm12 m4 right">
-										<a class="waves-effect right waves-light btn orange lighten-1" href="alterar_correta.html">Alterar Alternativa Correta</a>
-									</div>
+							</div>
+							<div class="row">
+								<br>
+								<div class="col sm12 m4 right">
+									<a class="waves-effect right waves-light btn orange lighten-1" href="alterar_correta.html">Alterar Alternativa Correta</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<script src='js/configuracoes-datepicker.js'></script>
-			<script>
+		</div>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src='js/configuracoes-datepicker.js'></script>
+		<script>
 
 			$(document).ready(function () {
 				$('select').material_select();
 
 				$('.dropdown-button').dropdown({
-						hover: false, // Activate on hover
-						belowOrigin: true, // Displays dropdown below the button
-						alignment: 'right' // Displays dropdown with edge aligned to the left of button
-					}
+					hover: false, // Activate on hover
+					belowOrigin: true, // Displays dropdown below the button
+					alignment: 'right' // Displays dropdown with edge aligned to the left of button
+				}
 				);
 			});
 		</script>
 </body>
+
 </html>

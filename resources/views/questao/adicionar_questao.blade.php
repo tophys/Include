@@ -62,7 +62,7 @@
 											@ELSE
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> 
 											@ENDIF
-											<label id="lbldata{{$alternativa->id}}" for="altdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
+											<label for="altdata{{$alternativa->id}}"> {{$alternativa -> descricao}} </label>
 										</div>
 										<a href="#" class="right dropdown-button" data-activates='data{{$alternativa->id}}'>
 											<i class="material-icons grey-text text-darken-1">more_vert</i>
