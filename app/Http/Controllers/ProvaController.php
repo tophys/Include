@@ -38,7 +38,7 @@ class ProvaController extends Controller
         $prova->materia_id = $data->materia_id;
         $prova->ativo = 0;
         $prova->save();
-        return redirect()->route('selecionar.questao', ['id' => $prova->id]);
+        return redirect()->route('selecionar.questao.professor', ['id' => $prova->id]);
     }
 
     public function alterarProva($id)
@@ -103,8 +103,7 @@ class ProvaController extends Controller
         $agendamento->turma_id = $data->turma_id;
         $agendamento->prova_id = $data->prova_id;
         $agendamento->professor_id = Auth::user()->id;
-        $dataAgendada = \Carbon\Carbon::parse($data->data_liberada);
-        $agendamento->data_liberada = $dataAgendada->format('Y-m-d');
+        $agendamento->data_liberada = \Carbon\Carbon::parse($data->data_liberada)->format('Y-m-d');
         $agendamento->ativo = 0;
         $agendamento->executado = 1;
         $agendamento->save();

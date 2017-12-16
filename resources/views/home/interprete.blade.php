@@ -42,7 +42,7 @@
 				</div>
 			  </div>
 			  <div class="card-action">
-				<a href="{{ url('/traduzir/questao/{id}')}}">Traduzir agora</a>
+				<a href="{{ route('selecionar.questao')}}">Traduzir agora</a>
 			  </div>
 			</div>
 		  </div>
