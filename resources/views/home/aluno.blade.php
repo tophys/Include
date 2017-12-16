@@ -31,22 +31,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col s12 m6">
-										<div class="card light-green white-text">  
-											<div class="card-content valign-wrapper">
-											<div class="card-text">
-												<h6>Consultar Provas</h6>
-												<p>Veja as provas que já foram realizadas.</p>
-											</div>
-											<div class="card-icon">
-												<i class="material-icons medium valign">dvr</i>
-											</div>
-											</div>
-											<div class="card-action">
-											<a href="#"><i class="material-icons right">forward</i></a>
-											</div>
-										</div>
-									</div>
+									
 					</div>
 
 
