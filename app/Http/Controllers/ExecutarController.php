@@ -94,11 +94,16 @@ class ExecutarController extends Controller
     {
         $agendamentos = Agendamento::where('ativo', 0)->where('data_liberada', \Carbon\Carbon::today())->get();
         $provas = collect([]);
+        $executado = collect([]);
         foreach ($agendamentos as $agendamento)
         {
             $provas->push(Prova::find($agendamento->prova_id));
+            $feita = 1;
+            if (count(Realizada::where('agendamento_id', $agendamento->id)->where('user_id', Auth::user()->id) ) > 0 )
+                $feita = 0;
+            $executado->push($feita);
         }
-        return view('prova.selecionar_prova')->withProvas($provas)->withAgendamentos($agendamentos);
+        return view('prova.selecionar_prova')->withProvas($provas)->withAgendamentos($agendamentos)->withExecutado($executado);
     }
 
     public function apresentarQuestao($idAgendamento, $questaoAtual, $questoes, $prova)

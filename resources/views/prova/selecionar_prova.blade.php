@@ -24,7 +24,7 @@
 		<div class="row">
 		
 		@FOR ($i = 0; $i < count($provas); $i++)
-		
+			@IF ($executado[$i] == 1)
 		  <div class="col s12 m4">
 			<div class="card orange lighten-1 white-text">  
 			  <div class="card-content valign-wrapper">
@@ -48,6 +48,7 @@
 				</div>
 			</div>
 			</div>
+			@ENDIF
 			@ENDFOR	  
 			<div class="row">
 				<br>
