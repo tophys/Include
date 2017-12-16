@@ -19,7 +19,7 @@
                         <div class="card-content row">
                             <span class="page-title light-green-text">Alteração de Alternativas</span>
                             <hr>
-                            <form method="POST" action="{{ route('alterar.alternativa', ['id' => $idQuestao,'alternativa' => $alternativa->id]) }}">
+                            <form method="POST" id="alterar-alt" action="{{ route('alterar.alternativa', ['id' => $idQuestao,'alternativa' => $alternativa->id]) }}">
                              {{ csrf_field() }}
                              <input type="hidden" value="{{$idQuestao}}" name="questao_id" />
                              <input type="hidden" value="{{$alternativa->id}}" name="alternativa_id" />
@@ -43,7 +43,7 @@
 										<p>Tem certeza de que deseja alterar esta alternativa?</p>
 									</div>
 									<div class="modal-footer">
-										<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar Alterações</a>
+										<a onclick="event.preventDefault();document.getElementById('alterar-alt').submit();"class="modal-action modal-close waves-effect waves-green btn-flat">Salvar Alterações</a>
 										<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
 									</div>
                                 </div>
