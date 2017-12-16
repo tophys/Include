@@ -53,7 +53,7 @@
 								<tbody class="white">
 								@FOREACH ($alternativas as $alternativa)
 								<tr>
-									<td><div class="radio-button-label">
+									<td class="left"><div class="radio-button-label">
 											@IF ($alternativa->correta == 0)
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" checked disabled/> @ELSE
 											<input class="with-gap" name="alternativas" type="radio" id="altdata{{$alternativa->id}}" disabled/> @ENDIF
