@@ -55,7 +55,17 @@
 										<a href="{{route('alterar.correta', ['id' => $questao->id, 'alternativa' => $alternativa->id])}}" class="waves-effect right waves-light btn orange lighten-1">Alterar Correta</a>
 									</div>
 									<div class="col sm12 m2">
-										<button href="{{ url('gerenciar/questao')}}" class="waves-effect right waves-light btn orange lighten-1">Salvar</button>
+										<a href="#modalSalvar" class="waves-effect right waves-light btn orange lighten-1">Salvar</a>
+									</div>
+									<div id="modalSalvar" class="modal">
+										<div class="modal-content">
+											<h4>Alterar Questão</h4>
+											<p>Tem certeza de que deseja alterar esta questão?</p>
+										</div>
+										<div class="modal-footer">
+											<a href="TEM QUE ENFIAR O SUBMIT AQUI TBM {{ url('gerenciar/questao')}}" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar</a>
+											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+										</div>
 									</div>
 								</div>
 							</form>
@@ -71,6 +81,7 @@
 
 			$(document).ready(function () {
 				$('select').material_select();
+				$('.modal').modal();
 
 				$('.dropdown-button').dropdown({
 					hover: false, // Activate on hover
