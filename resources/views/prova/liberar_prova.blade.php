@@ -38,7 +38,17 @@
 										<input placeholder="&nbsp;" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
 									<div class="col sm12 m3 center">
-										<button class="waves-effect waves-light btn orange lighten-1">Liberar Prova</button>
+										<a class="waves-effect waves-light btn orange lighten-1 modal-trigger" href="#modalLiberar">Liberar Prova</a>
+									</div>
+									<div id="modalLiberar" class="modal">
+										<div class="modal-content">
+											<h4>Liberar Prova</h4>
+											<p>Tem certeza de que deseja liberar esta prova?</p>
+										</div>
+										<div class="modal-footer">
+											<a href="ROTA AQUI" class="modal-action modal-close waves-effect waves-green btn-flat">Liberar</a>
+											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+										</div>
 									</div>
 									<div class="col sm12 m2 left">
 										&nbsp;
@@ -69,9 +79,6 @@
 								<td>{{ Carbon\Carbon::parse($agendamento->data_liberada)->format('d-m-Y') }}</td>
 								<td>{{$agendamento->prova->nome}}</td>
 								<td>
-									<!-- Se a flag for bloqueada
-									<a><i class="material-icons grey-text text-darken-1">block</i></a>-->
-									<!-- Se a flag for liberada-->
 									@IF ($agendamento->executado == 0)
 									<a ><i class="material-icons grey-text text-darken-1">check</i></a>
 									@else
@@ -79,8 +86,18 @@
 									@endif
 								</td>
 								<td>
-									<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">block</i></a
+									<a class="modal-trigger" href="modal{{$prova->id}}"><i class="material-icons grey-text text-darken-1">block</i></a
 								</td>
+								<div id="modal{{$prova->id}}" class="modal">
+										<div class="modal-content">
+											<h4>Bloquear Prova</h4>
+											<p>Tem certeza de que deseja bloquear esta prova?</p>
+										</div>
+										<div class="modal-footer">
+											<a href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Bloquear</a>
+											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+										</div>
+									</div>
                             </tr>
                             @endforeach
 						</tbody>
@@ -108,6 +125,7 @@
 		<script>
 				$(document).ready(function () {
 					$('select').material_select();
+					$('.modal').modal();
 				});
 		</script>
 @endsection
