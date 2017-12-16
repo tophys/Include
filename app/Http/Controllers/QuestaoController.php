@@ -53,7 +53,7 @@ class QuestaoController extends Controller
         $materias = Materia::all();
         $questoes = Questao::whereDoesntHave('provas', function($q) use ($id){
             $q->where('prova_id', $id);
-        })->get();
+        })->where('ativo', 0)->get();
         return view('questao.selecionar_questao')->withMaterias($materias)->withProva($prova)->withQuestoes($questoes);
     }
 

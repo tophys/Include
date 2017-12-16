@@ -38,7 +38,7 @@
 										<input placeholder="&nbsp;" value="{{Carbon\Carbon::today()->format('d-m-Y')}}" name="data_liberada" id="prova_agenda" type="text" class="datepicker" readonly>
 									</div>
 									<div class="col sm12 m3 center">
-										<a class="waves-effect waves-light btn orange lighten-1 modal-trigger" >Liberar Prova</a>
+										<a onclick="event.preventDefault();document.getElementById('liberar_prova').submit();" class="waves-effect waves-light btn orange lighten-1 modal-trigger" >Liberar Prova</a>
 									</div>
 									
 									</div>
@@ -78,7 +78,7 @@
 									@endif
 								</td>
 								<td>
-									<a class="modal-trigger" href="modal{{$agendamento->prova_id}}"><i class="material-icons grey-text text-darken-1">block</i></a
+									<a class="modal-trigger"  href="{{ route('desativar.agendamento', ['id' => $agendamento->prova_id, 'agendamento' => $agendamento->id]) }}"><i class="material-icons grey-text text-darken-1">block</i></a
 								</td>
 								<div id="modal{{$agendamento->prova_id}}" class="modal">
 										<div class="modal-content">
